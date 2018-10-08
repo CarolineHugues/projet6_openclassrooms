@@ -6,3 +6,40 @@ Author: Caroline Hugues
 Author URI: https://www.carolinehugues.ovh/
 Version: 0.1.0
 */
+
+/*-----------------------------------------------------------
+						Menu
+------------------------------------------------------------*/
+
+.navigation-top.site-navigation-fixed, #top-menu{
+	background-color: #22427C !important;
+}
+
+.navigation-top.site-navigation-fixed{
+	box-shadow: 0px 4px 4px rgba(34, 66, 124, 0.24), 0px 0px 4px rgba(34, 66, 124, 0.12);
+	border:none;
+}
+
+.navigation-top .current-menu-item a, .navigation-top .current_page_item a{
+	color:#FFFFFF !important;
+	pointer-events: none;
+	cursor: default;
+}
+
+.navigation-top .wrap{
+	margin-left:0;
+	padding-top:0.05px;
+	padding-bottom:0.05px;
+}
+
+#top-menu{
+	height:75px;
+}
+
+#menu-item-30 a{
+	padding:0;
+}
+
+#top-menu li{
+	vertical-align:middle; 
+}
