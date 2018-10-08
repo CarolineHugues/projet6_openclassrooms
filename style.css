@@ -43,3 +43,7 @@ Version: 0.1.0
 #top-menu li{
 	vertical-align:middle; 
 }
+
+#top-menu a{
+	font-size:16px; 
+}
