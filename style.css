@@ -11,11 +11,16 @@ Version: 0.1.0
 						Texte et liens
 ------------------------------------------------------------*/
 
-@font-face{
-	font-family:'Source Sans Pro Bold';
-	src: url('font/SourceSansPro-Bold/SourceSansPro-Bold.eot') format('eot');
-	src: url('font/SourceSansPro-Bold/SourceSansPro-Bold.ttf') format('ttf'),
-		 url('font/SourceSansPro-Bold/SourceSansPro-Bold.otf') format('otf');;
+@font-face {
+	font-family: 'Source Sans Pro Bold';
+	src: url('font/SourceSansPro-Bold/SourceSansPro-Bold.ttf'),
+		 url('font/SourceSansPro-Bold/SourceSansPro-Bold.eot'),
+		 url('font/SourceSansPro-Bold/SourceSansPro-Bold.otf');
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('font/Roboto-regular/Roboto-Regular.ttf');
 }
 
 h1,
@@ -23,17 +28,19 @@ h2,
 h3,
 h4,
 h5,
-h6{
-	font-family: 'Source Sans Pro Bold', sans-serif;
+h6,
+.navigation-top.wrap a{
+	font-family: 'Source Sans Pro Bold', arial;
 	color: #22427C !important;
 }
 
 p{
 	font-family: 'Roboto', sans-serif;
+	color:#000000;
 }
 
 a{
-	color: #cea525;
+	color: #cea525 !important;
 }
 
 a:hover{
