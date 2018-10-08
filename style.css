@@ -6,3 +6,36 @@ Author: Caroline Hugues
 Author URI: https://www.carolinehugues.ovh/
 Version: 0.1.0
 */
+
+/*-----------------------------------------------------------
+						Texte et liens
+------------------------------------------------------------*/
+
+@font-face{
+	font-family:'Source Sans Pro Bold';
+	src: url('font/SourceSansPro-Bold/SourceSansPro-Bold.eot') format('eot');
+	src: url('font/SourceSansPro-Bold/SourceSansPro-Bold.ttf') format('ttf'),
+		 url('font/SourceSansPro-Bold/SourceSansPro-Bold.otf') format('otf');;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+	font-family: 'Source Sans Pro Bold', sans-serif;
+	color: #22427C !important;
+}
+
+p{
+	font-family: 'Roboto', sans-serif;
+}
+
+a{
+	color: #cea525;
+}
+
+a:hover{
+	color: #295095 !important;
+}
