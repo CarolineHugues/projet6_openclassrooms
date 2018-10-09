@@ -8,3 +8,6 @@ function theme_enqueue_styles() {
 '/style.css');
 	wp_enqueue_style('child-style', get_stylesheet_uri(), array('parent-style'));
 }
+
+/* Register new menus */
+register_nav_menu( 'top-mobile-menu', 'Menu supérieur mobile' );
