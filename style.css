@@ -1,14 +1,14 @@
 /*
 Theme Name: twentyseventeen-child
 Template: twentyseventeen
-Description: Theme enfant du BDE ENSICAEN
+Description: Theme enfant du site web du BDE ENSICAEN
 Author: Caroline Hugues
 Author URI: https://www.carolinehugues.ovh/
 Version: 0.1.0
 */
 
 /*-----------------------------------------------------------
-						Texte et liens
+					Text : fonts and sizes 
 ------------------------------------------------------------*/
 
 @font-face {
@@ -23,6 +23,13 @@ Version: 0.1.0
 	src: url('font/Roboto-regular/Roboto-Regular.ttf');
 }
 
+@font-face {
+	font-family: 'Source Sans Pro Regular';
+	src: url('font/SourceSansPro-Regular/SourceSansPro-Regular.ttf'),
+		 url('font/SourceSansPro-Regular/SourceSansPro-Regular.eot'),
+		 url('font/SourceSansPro-Regular/SourceSansPro-Regular.otf');
+}
+
 h1,
 h2,
 h3,
@@ -31,12 +38,37 @@ h5,
 h6,
 .navigation-top.wrap a{
 	font-family: 'Source Sans Pro Bold', arial;
-	color: #22427C !important;
 }
 
 p{
 	font-family: 'Roboto', sans-serif;
-	color:#000000;
+}
+
+#top-menu a, #top-mobile-menu a{
+	font-family: 'Source Sans Pro Regular';
+	font-size:16px; 
+}
+
+/*-----------------------------------------------------------
+						Colors
+------------------------------------------------------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navigation-top.wrap a{
+	color: #22427C !important;
+}
+
+.navigation-top.site-navigation-fixed, 
+#top-menu, 
+#site-navigation, 
+#top-mobile-menu,
+#top-social-menu{
+	background-color: #22427C !important;
 }
 
 a{
@@ -45,4 +77,17 @@ a{
 
 a:hover{
 	color: #295095 !important;
+}
+
+.navigation-top .current-menu-item a, 
+.navigation-top .current_page_item a{
+	color:#FFFFFF !important;
+}
+
+#nav-top .icon{
+	fill:#FFFFFF !important;
+}
+
+p{
+	color:#000000;
 }
