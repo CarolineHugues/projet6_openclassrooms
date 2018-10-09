@@ -1,49 +1,137 @@
 /*
 Theme Name: twentyseventeen-child
 Template: twentyseventeen
-Description: Theme enfant du BDE ENSICAEN
+Description: Theme enfant du site web du BDE ENSICAEN
 Author: Caroline Hugues
 Author URI: https://www.carolinehugues.ovh/
 Version: 0.1.0
 */
 
 /*-----------------------------------------------------------
+						Header
+------------------------------------------------------------*/
+
+#masthead{
+	min-height: 80px;
+}
+
+/*-----------------------------------------------------------
 						Menu
 ------------------------------------------------------------*/
 
-.navigation-top.site-navigation-fixed, #top-menu{
-	background-color: #22427C !important;
+#logo-bde{
+	width:132px;
 }
 
-.navigation-top.site-navigation-fixed{
+#logo-bde .custom-logo-link{
+	padding:0 0 0 0;
+}
+
+#nav-top{
+	display:flex;
+	justify-content:space-around;
+}
+
+.navigation-top{
 	box-shadow: 0px 4px 4px rgba(34, 66, 124, 0.24), 0px 0px 4px rgba(34, 66, 124, 0.12);
 	border:none;
 }
 
 .navigation-top .current-menu-item a, .navigation-top .current_page_item a{
-	color:#FFFFFF !important;
 	pointer-events: none;
 	cursor: default;
 }
 
 .navigation-top .wrap{
-	margin-left:0;
 	padding-top:0.05px;
 	padding-bottom:0.05px;
+	max-width:100%;
 }
 
-#top-menu{
-	height:75px;
+#top-menu, #top-social-menu{
+	min-height:75px;
 }
 
-#menu-item-30 a{
-	padding:0;
+#top-social-menu{
+	display: flex !important;
+	align-items: center;
+	padding:0 0 0 0;
 }
 
 #top-menu li{
 	vertical-align:middle; 
 }
 
-#top-menu a{
-	font-size:16px; 
+
+/*----------------- Menu sandwich ---------------*/
+
+.menu-menu-superieur-mobile-container{
+	display: none;
+}
+
+
+
+
+/*-----------------------------------------------------------
+						Media queries
+------------------------------------------------------------*/
+
+@media screen and (max-width: 800px) 
+{
+/*-----------------------------------------------------------
+					Menu sandwich
+------------------------------------------------------------*/
+
+	#logo-bde{
+		margin: auto;
+	}
+
+	.menu-menu-superieur-container{
+		display:none;
+	}
+
+	.menu-menu-superieur-mobile-container{
+		display:initial;
+	}
+
+	#top-social-menu li{
+		padding:0 9px 0 9px;
+	}
+
+	#top-mobile-menu li, #top-social-menu li{
+		border:none;
+	}
+
+	#nav-top #logo-bde:nth-child(1)
+	{
+		order: 2;
+	}
+
+	#nav-top .menu-menu-des-liens-de-reseaux-sociaux-container:nth-child(4)
+	{
+		order: 3;
+	}
+
+	.menu-toggle{
+		width:132px;
+		padding-left: 0;
+		padding-right:0;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.menu-toggle:focus{
+		outline:none;
+	}
+
+	#nav-top .icon{
+		height:1.8em !important;
+		width:1.8em !important;
+	}
+
+	.navigation-top {
+		position: fixed;		
+		width: 100%;
+		z-index: 10;
+	}
 }
