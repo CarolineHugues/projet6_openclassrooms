@@ -12,13 +12,6 @@ Version: 0.1.0
 ------------------------------------------------------------*/
 
 @font-face {
-	font-family: 'Source Sans Pro Bold';
-	src: url('font/SourceSansPro-Bold/SourceSansPro-Bold.ttf'),
-		 url('font/SourceSansPro-Bold/SourceSansPro-Bold.eot'),
-		 url('font/SourceSansPro-Bold/SourceSansPro-Bold.otf');
-}
-
-@font-face {
 	font-family: 'Roboto';
 	src: url('font/Roboto-regular/Roboto-Regular.ttf');
 }
@@ -37,7 +30,8 @@ h4,
 h5,
 h6,
 .navigation-top.wrap a{
-	font-family: 'Source Sans Pro Bold', arial;
+	font-family: 'Source Sans Pro Regular', arial;
+	font-weight: bold !important;
 }
 
 p{
@@ -45,7 +39,7 @@ p{
 }
 
 #top-menu a, #top-mobile-menu a{
-	font-family: 'Source Sans Pro Regular';
+	font-family: 'Source Sans Pro Regular', arial;
 	font-size:16px; 
 }
 
