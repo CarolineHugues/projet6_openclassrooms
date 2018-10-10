@@ -52,8 +52,7 @@ h2,
 h3,
 h4,
 h5,
-h6,
-.navigation-top.wrap a{
+h6{
 	color: #22427C !important;
 }
 
@@ -61,7 +60,8 @@ h6,
 #top-menu, 
 #site-navigation, 
 #top-mobile-menu,
-#top-social-menu{
+#top-social-menu,
+footer{
 	background-color: #22427C !important;
 }
 
@@ -69,12 +69,13 @@ a{
 	color: #cea525 !important;
 }
 
-a:hover{
+a:hover {
 	color: #295095 !important;
 }
 
 .navigation-top .current-menu-item a, 
-.navigation-top .current_page_item a{
+.navigation-top .current_page_item a,
+footer p{
 	color:#FFFFFF !important;
 }
 
