@@ -29,8 +29,8 @@ h3,
 h4,
 h5,
 h6,
-.navigation-top.wrap a{
-	font-family: 'Source Sans Pro Regular', arial;
+#n2-ss-3 h2{
+	font-family: 'Source Sans Pro Regular', arial !important;
 	font-weight: bold !important;
 }
 
@@ -75,7 +75,8 @@ a:hover {
 
 .navigation-top .current-menu-item a, 
 .navigation-top .current_page_item a,
-footer p{
+footer p,
+#n2-ss-3 h2{
 	color:#FFFFFF !important;
 }
 
@@ -85,4 +86,17 @@ footer p{
 
 p{
 	color:#000000;
+}
+
+/*-----------------------------------------------------------
+						Buttons
+------------------------------------------------------------*/
+
+.buttons-slideshow{
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 2px rgba(0, 0, 0, 0.12);
+	border-radius: 2px;
+}
+
+.buttons-slideshow:hover{
+	box-shadow: none;
 }
