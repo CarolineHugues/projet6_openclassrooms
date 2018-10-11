@@ -33,6 +33,10 @@ Version: 0.1.0
 	justify-content:space-around;
 }
 
+.wrap, .navigation-top .wrap{
+	max-width:100%;
+}
+
 .navigation-top{
 	box-shadow: 0px 4px 4px rgba(34, 66, 124, 0.24), 0px 0px 4px rgba(34, 66, 124, 0.12);
 	border:none;
@@ -46,7 +50,6 @@ Version: 0.1.0
 .navigation-top .wrap{
 	padding-top:0.05px;
 	padding-bottom:0.05px;
-	max-width:100%;
 }
 
 #top-menu, #top-social-menu{
