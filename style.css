@@ -24,6 +24,13 @@ Version: 0.1.0
 		 url('font/SourceSansPro-Regular/SourceSansPro-Regular.otf');
 }
 
+@font-face {
+	font-family: 'Source Sans Pro Bold';
+	src: url('font/SourceSansPro-Bold/SourceSansPro-Bold.ttf'),
+		 url('font/SourceSansPro-Bold/SourceSansPro-Bold.eot'),
+		 url('font/SourceSansPro-Bold/SourceSansPro-Bold.otf');
+}
+
 h1,
 h2,
 h3,
@@ -31,12 +38,21 @@ h4,
 h5,
 h6,
 #n2-ss-3 h2{
-	font-family: 'Source Sans Pro Regular', arial !important;
-	font-weight: bold !important;
+	font-family: 'Source Sans Pro Bold', arial !important;
+}
+
+h1{
+	font-size:3.5vw !important;
+	text-transform: none !important;
+}
+
+h2{
+	margin-left:20px;
 }
 
 p{
 	font-family: 'Roboto', sans-serif;
+	text-align:justify;
 }
 
 #top-menu a, #top-mobile-menu a{
@@ -62,7 +78,8 @@ h6{
 #site-navigation, 
 #top-mobile-menu,
 #top-social-menu,
-footer{
+footer,
+.entry-header::before{
 	background-color: #22427C !important;
 }
 
