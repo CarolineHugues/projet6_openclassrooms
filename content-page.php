@@ -16,13 +16,13 @@
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<?php twentyseventeen_edit_link( get_the_ID() ); ?>
-		<div class="single-featured-image-header">
-			<?php if ( has_post_thumbnail() ) { 
-  				the_post_thumbnail('', array(
+		<?php if ( has_post_thumbnail() ) { ?>
+			<div class="single-featured-image-header">
+  				<?php the_post_thumbnail('', array(
     			'alt' => $title,
-    			'title' => $title));
-			} ?>
-		</div><!-- .single-featured-image-header -->
+    			'title' => $title)); ?>
+    		</div><!-- .single-featured-image-header -->
+		<?php } ?>
 	</header><!-- .entry-header -->
 	<div class="entry-content">
 		<?php
