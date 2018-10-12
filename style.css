@@ -11,11 +11,11 @@ Version: 0.1.0
 						Home page
 ------------------------------------------------------------*/
 
-
 /* --------------- Slideshow ------------*/
 
 #n2-ss-3-align{
 	box-shadow: 0px 4px 4px rgba(34, 66, 124, 0.25);
+	margin-top:75px;
 }
 
 #n2-ss-3 a{
@@ -46,7 +46,8 @@ Version: 0.1.0
 	.row-two-columns .n2-ss-layer.n2-ow,
 	.row-two-columns .n2-ss-layer.n2-ow.n2-ss-last-in-row{
 		width:100% !important;
-		margin-top:2px !important;
+		margin-top:1px !important;
+		max-width:100% !important;
 	}
 
 	.row-two-columns .n2-ss-layer.n2-ow{
