@@ -7,7 +7,6 @@ Author URI: https://www.carolinehugues.ovh/
 Version: 0.1.0
 */
 
-
 /*-----------------------------------------------------------
 					Text : fonts and sizes 
 ------------------------------------------------------------*/
@@ -79,7 +78,8 @@ h6{
 #top-mobile-menu,
 #top-social-menu,
 footer,
-.entry-header::before{
+.has-post-thumbnail .entry-header::before,
+.document-icon-row::after{
 	background-color: #22427C !important;
 }
 
