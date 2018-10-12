@@ -1,0 +1,77 @@
+/*
+Theme Name: twentyseventeen-child
+Template: twentyseventeen
+Description: Theme enfant du site web du BDE ENSICAEN
+Author: Caroline Hugues
+Author URI: https://www.carolinehugues.ovh/
+Version: 0.1.0
+*/
+
+/*-----------------------------------------------------------
+					Page upload documents
+------------------------------------------------------------*/
+
+.page-id-102 .entry-content{
+	width:80% !important;
+}
+
+.page-id-102 .entry-content a{
+	box-shadow: none !important;
+}
+
+.document-icon{
+	margin-bottom:15px !important;
+}
+
+.document-icon img{
+	width:140px !important;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+}
+
+.document-icon .title{
+	font-size:1.5vw !important;
+	margin-top:10px;
+	margin-bottom:5px;
+	line-height: 1.3;
+}
+
+.document-icon-row{
+	margin-bottom:40px;
+	position:relative;
+}
+
+.document-icon-row::after{
+	content:"";
+	height:4px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	position:absolute;
+	left:0;
+	right:0;
+	width:100%;
+	bottom:0;
+}
+
+
+/*-----------------------------------------------------------
+						Media queries
+------------------------------------------------------------*/
+
+@media screen and (max-width: 600px) 
+{
+/*-----------------------------------------------------------
+					Page upload documents
+------------------------------------------------------------*/
+	.document-icon-row{
+		display:flex;
+		flex-direction: column;
+		margin-bottom:0 !important;
+	}
+
+	.document-icon{
+		width:100% !important;
+	}
+
+	.document-icon-row::after{
+		display:none;
+	}
+}
