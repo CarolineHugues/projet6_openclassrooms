@@ -42,28 +42,28 @@ h6,
 }
 
 h1{
-	font-size:55px !important;
+	font-size:45px !important;
 }
 
 h2{
-	font-size:41px !important;
+	font-size:35px !important;
 	margin-left:20px;
 }
 
 h3{
-	font-size:38px !important;
+	font-size:30px !important;
 }
 
 h4{
-	font-size:35px !important;
+	font-size:28px !important;
 }
 
 h5{
-	font-size:32px !important;
+	font-size:26px !important;
 }
 
 h6{
-	font-size:30px !important;
+	font-size:24px !important;
 }
 
 p{
@@ -170,34 +170,6 @@ legend{
 {
 
 /*-----------------------------------------------------------
-						Text
-------------------------------------------------------------*/
-
-	h1{
-		font-size:45px !important;
-	}
-
-	h2{
-		font-size:35px !important;
-	}
-
-	h3{
-		font-size:30px !important;
-	}
-
-	h4{
-		font-size:25px !important;
-	}
-
-	h5{
-		font-size:22px !important;
-	}
-
-	h6{
-		font-size:20px !important;
-	}
-
-/*-----------------------------------------------------------
 						Fieldset
 ------------------------------------------------------------*/
 
@@ -224,7 +196,7 @@ legend{
 	}
 
 	h3{
-		font-size:26px !important;
+		font-size:24px !important;
 	}
 
 	h4{
@@ -301,10 +273,6 @@ legend{
 
 	h6{
 		font-size:16px !important;
-	}
-
-	p{
-		font-size: 15px !important;
 	}
 }
 
