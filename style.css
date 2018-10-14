@@ -18,3 +18,7 @@ Version: 0.1.0
 .page-id-19 .entry-header{
 	display:none;
 }
+
+.page-id-19 .entry-content{
+	padding-bottom:10px;
+}
