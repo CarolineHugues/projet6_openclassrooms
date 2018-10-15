@@ -6,6 +6,7 @@ Author: Caroline Hugues
 Author URI: https://www.carolinehugues.ovh/
 Version: 0.1.0
 */
+
 /*-----------------------------------------------------------
 					Text : fonts and sizes 
 ------------------------------------------------------------*/
@@ -35,7 +36,8 @@ h3,
 h4,
 h5,
 h6,
-#n2-ss-3 h2{
+#n2-ss-3 h2,
+#around-caen-section .csColumn p:first-child {
 	font-family: 'Source Sans Pro Bold', arial !important;
 	text-transform: none !important;
 }
@@ -49,7 +51,8 @@ h2{
 	margin-left:20px;
 }
 
-h3{
+h3,
+#around-caen-section .csColumn p:first-child {
 	font-size:30px !important;
 }
 
@@ -72,9 +75,11 @@ p{
 }
 
 #top-menu a, 
-#top-mobile-menu a{
+#top-mobile-menu a,
+#useful-links-section a {
 	font-family: 'Source Sans Pro Regular', arial;
 	font-size:16px; 
+	font-weight: bold;
 }
 
 /*-----------------------------------------------------------
@@ -98,7 +103,9 @@ h6{
 footer,
 .has-post-thumbnail .entry-header::before,
 .document-icon-row::after,
-button{
+button,
+#around-caen-section .csColumn p:first-child,
+#around-caen-section .csColumn::after {
 	background-color: #22427C !important;
 }
 
@@ -119,7 +126,8 @@ a{
 .navigation-top .current-menu-item a, 
 .navigation-top .current_page_item a,
 footer p,
-#n2-ss-3 h2{
+#n2-ss-3 h2,
+#around-caen-section .csColumn p:first-child {
 	color:#FFFFFF !important;
 }
 
@@ -210,7 +218,8 @@ fieldset legend header h2{
 		font-size:30px !important;
 	}
 
-	h3{
+	h3,
+	#around-caen-section .csColumn p:first-child {
 		font-size:24px !important;
 	}
 
@@ -242,7 +251,8 @@ fieldset legend header h2{
 		font-size:25px !important;
 	}
 
-	h3{
+	h3,
+	#around-caen-section .csColumn p:first-child {
 		font-size:22px !important;
 	}
 
@@ -274,7 +284,8 @@ fieldset legend header h2{
 		font-size:20px !important;
 	}
 
-	h3{
+	h3,
+	#around-caen-section .csColumn p:first-child {
 		font-size:19px !important;
 	}
 
