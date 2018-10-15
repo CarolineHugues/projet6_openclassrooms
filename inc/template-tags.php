@@ -27,7 +27,7 @@ function twentyseventeen_child_front_page_section( $partial = null, $id = 0 ) {
 		$post_panel_id = get_the_ID();
 		if ($post_panel_id == 109)
 		{
-			get_template_part( 'template-parts/page/content', 'section-upload-documents' );
+			get_template_part( 'template-parts/page/content', 'upload-documents-section' );
 		}
 		else
 		{
