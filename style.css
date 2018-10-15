@@ -29,7 +29,8 @@ Version: 0.1.0
 					Structure
 ------------------------------------------------------------*/
 
-	.page-template-default.page .site-content{
+	.page-template-default.page .site-content,
+	.page-template-template-page-caen .site-content{
 		padding-top:5.5em;
 	}
 
