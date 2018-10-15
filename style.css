@@ -20,11 +20,15 @@ Version: 0.1.0
 	max-width:100% !important;
 }
 
-.post-109 .entry-content{
-	width:80% !important;
+.post-109 fieldset{
+	width:80%;
+	margin:auto;
 }
 
-.post-109 .entry-content h2,
+.post-109 .entry-content{
+	width:100% !important;
+}
+
 .post-109 .document-icon-row{
 	margin:0 !important;
 }
@@ -52,7 +56,7 @@ Version: 0.1.0
 				Home section upload documents
 ------------------------------------------------------------*/
 
-	.post-109 .entry-content{
+	.post-109 fieldset{
 		width:90% !important;
 	}
 }
@@ -63,7 +67,7 @@ Version: 0.1.0
 				Home section upload documents
 ------------------------------------------------------------*/
 
-	.post-109 .entry-content{
+	.post-109 fieldset{
 		width:98% !important;
 	}
 }
