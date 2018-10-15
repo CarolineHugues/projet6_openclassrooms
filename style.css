@@ -1,0 +1,87 @@
+/*
+Theme Name: twentyseventeen-child
+Template: twentyseventeen
+Description: Theme enfant du site web du BDE ENSICAEN
+Author: Caroline Hugues
+Author URI: https://www.carolinehugues.ovh/
+Version: 0.1.0
+*/
+
+/*-----------------------------------------------------------
+				Caen page - around Caen section
+------------------------------------------------------------*/
+
+#around-caen-section{
+	margin-top:100px;
+}
+
+#around-caen-section .entry-header{
+	margin-bottom:30px;
+}
+
+#around-caen-section .entry-content{
+	width:100%;
+}
+
+#around-caen-section .csColumn p:first-child {
+	text-align: center;
+	margin-bottom: 0;
+}
+
+#around-caen-section .csColumn p:last-child{
+	padding-left:20px;
+	padding-right: 20px;
+}
+
+#around-caen-section .csColumn{
+	position:relative;
+}
+
+#around-caen-section .csColumn::after{
+	content:"";
+	height:4px;
+	position:absolute;
+	left:0;
+	right:0;
+	width:100%;
+	bottom:0;
+}
+
+
+/*-----------------------------------------------------------
+						Media queries
+------------------------------------------------------------*/
+
+@media screen and (max-width: 1200px) 
+{
+
+/*-----------------------------------------------------------
+				Caen page - around Caen section
+------------------------------------------------------------*/
+
+	#around-caen-section .csColumn p:last-child{
+		padding-bottom:20px;
+	}
+
+	#around-caen-section .csColumn img{
+		width:100% !important;
+	}
+}
+
+@media screen and (max-width: 480px) 
+{
+
+/*-----------------------------------------------------------
+				Caen page - around Caen section
+------------------------------------------------------------*/
+
+	#around-caen-section .csColumn {
+		width:100% !important;
+		margin:0 !important;
+	}
+
+	#around-caen-section .csColumn::after{
+		width:96%;
+		margin:auto;
+	}
+}
