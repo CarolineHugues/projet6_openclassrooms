@@ -71,4 +71,8 @@ Version: 0.1.0
 	#n2-ss-3 p{
 		font-size:12px !important;
 	}
+
+	#n2-ss-3 .n2-ss-button-container a{
+		font-size:10px !important;
+	}
 }
