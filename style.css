@@ -1,0 +1,128 @@
+/*
+Theme Name: twentyseventeen-child
+Template: twentyseventeen
+Description: Theme enfant du site web du BDE ENSICAEN
+Author: Caroline Hugues
+Author URI: https://www.carolinehugues.ovh/
+Version: 0.1.0
+*/
+
+
+/*-----------------------------------------------------------
+				Home page widgets
+------------------------------------------------------------*/
+
+#section-home-widgets{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap:wrap; 
+}
+
+#section-download-app,
+#section-page-partnership{
+	width:33%;
+	position:relative;
+	display:flex;
+	align-items: flex-end;
+}
+
+#section-download-app h2,
+#section-page-partnership h2{
+	margin-left:0 !important;
+	margin-top:0;
+	margin-bottom:20px !important;
+}
+
+#section-download-app h2{
+	text-align: left;
+}
+
+#section-page-partnership h2{
+	text-align: center;
+}
+
+#section-download-app p,
+#section-page-partnership p{
+	text-align: center;
+	margin-bottom: 40px !important;
+}
+
+#section-download-app p{
+	margin-top: 80px !important;
+}
+
+#section-page-partnership p{
+	margin-top: 60px !important;
+}
+
+#section-download-app section,
+#section-page-partnership section{
+	padding-bottom: 0 !important;
+}
+
+#section-download-app section{
+	width:50%;
+}
+
+#section-download-app img{
+	margin-bottom:10px;
+}
+
+
+/*-----------------------------------------------------------
+						Media queries
+------------------------------------------------------------*/
+
+@media screen and (max-width: 1200px) 
+{
+
+/*-----------------------------------------------------------
+			Home page widgets
+------------------------------------------------------------*/
+
+	#section-page-partnership h2,
+	#section-download-app h2{
+		font-size:20px !important;
+	}
+}
+
+@media screen and (max-width: 959px) 
+{
+/*-----------------------------------------------------------
+				Home page widgets
+------------------------------------------------------------*/
+
+	#section-download-app,
+	#section-page-partnership{
+		width:50% !important;
+	}
+}
+
+
+@media screen and (max-width: 600px) 
+{
+/*-----------------------------------------------------------
+				Home page widgets
+------------------------------------------------------------*/
+
+	#section-download-app,
+	#section-page-partnership{
+		width:100% !important;
+		padding-left: 15%;
+		padding-right: 15%;
+	}
+}
+
+@media screen and (max-width: 600px) 
+{
+/*-----------------------------------------------------------
+				Home page widgets
+------------------------------------------------------------*/
+
+	#section-download-app,
+	#section-page-partnership{
+		width:100% !important;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}
