@@ -6,6 +6,7 @@ Author: Caroline Hugues
 Author URI: https://www.carolinehugues.ovh/
 Version: 0.1.0
 */
+
 /*-----------------------------------------------------------
 					Text : fonts and sizes 
 ------------------------------------------------------------*/
@@ -69,7 +70,8 @@ h6{
 	font-size:24px !important;
 }
 
-p{
+p,
+.jt__member{
 	font-family: 'Roboto', sans-serif;
 	text-align:justify;
 	font-size: 15px !important;
@@ -108,7 +110,9 @@ button,
 #around-caen-section .csColumn p:first-child,
 #around-caen-section .csColumn::after,
 #section-page-partnership::after,
-#section-download-app::after {
+#section-download-app::after,
+.jt__member::after,
+.jt__member-position{
 	background-color: #22427C !important;
 }
 
@@ -131,7 +135,8 @@ a{
 footer p,
 #n2-ss-3 h2,
 #n2-ss-3 p,
-#around-caen-section .csColumn p:first-child {
+#around-caen-section .csColumn p:first-child,
+.jt__member-position {
 	color:#FFFFFF !important;
 }
 
@@ -141,7 +146,8 @@ footer p,
 
 p,
 #section-page-partnership h2,
-#section-download-app h2{
+#section-download-app h2,
+.jt__member-name h2{
 	color:#000000 !important;
 }
 
@@ -199,7 +205,8 @@ fieldset legend header h2{
 .document-icon-row::after,
 #around-caen-section .csColumn::after,
 #section-page-partnership::after,
-#section-download-app::after{
+#section-download-app::after,
+.jt__member::after{
 	content:"";
 	height:4px;
 	position:absolute;
@@ -218,9 +225,11 @@ fieldset legend header h2{
 /* ------------ Line with shadow -------------- */
 .document-icon-row::after,
 #section-page-partnership::after,
-#section-download-app::after{
+#section-download-app::after,
+.jt__member::after{
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
 
 /*-----------------------------------------------------------
 						Media queries
