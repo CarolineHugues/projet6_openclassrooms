@@ -1,0 +1,65 @@
+/*
+Theme Name: twentyseventeen-child
+Template: twentyseventeen
+Description: Theme enfant du site web du BDE ENSICAEN
+Author: Caroline Hugues
+Author URI: https://www.carolinehugues.ovh/
+Version: 0.1.0
+*/
+
+/*-----------------------------------------------------------
+				Page BDE - widgets
+------------------------------------------------------------*/
+
+#section-page-bde-widgets{
+	padding-right:5%;
+	padding-left:5%;
+}
+
+#section-page-bde-widgets,
+#section-page-bde-widgets p{
+	text-align:center;
+}
+
+#section-page-bde-widgets section{
+	padding-bottom: 0 !important;
+}
+
+#section-contact-bde section:last-child,
+#section-social-networks section:last-child{
+	margin-bottom:20px;
+}
+
+#section-social-networks #menu-menu-des-liens-de-reseaux-sociaux{
+	display:flex !important;
+	justify-content: center;
+}
+
+#section-social-networks #menu-menu-des-liens-de-reseaux-sociaux li{
+	margin-right:20px;
+	margin-left:20px;
+}
+
+#section-social-networks .menu-item{
+	border:none;
+}
+
+#section-social-networks .menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-74{
+	display:none;
+}
+
+#section-social-networks #menu-menu-des-liens-de-reseaux-sociaux img:hover{
+	-webkit-transform:rotate(540deg); 
+    -moz-transform:rotate(540deg);
+    -o-transform:rotate(540deg); 
+    -ms-transform:rotate(540deg); 
+    transform:rotate(540deg);
+}
+
+#section-social-networks #menu-menu-des-liens-de-reseaux-sociaux img{
+  -webkit-transition:-webkit-transform .9s; 
+  -moz-transition:-moz-transform .9s;       
+  -o-transition:-o-transform .9s;          
+  -ms-transition:-ms-transform .9s;         
+  transition:transform .9s;
+}
