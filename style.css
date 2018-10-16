@@ -7,6 +7,7 @@ Author URI: https://www.carolinehugues.ovh/
 Version: 0.1.0
 */
 
+
 /*-----------------------------------------------------------
 					Text : fonts and sizes 
 ------------------------------------------------------------*/
@@ -37,7 +38,8 @@ h4,
 h5,
 h6,
 #n2-ss-3 h2,
-#around-caen-section .csColumn p:first-child {
+#around-caen-section .csColumn p:first-child,
+.jt__member-position {
 	font-family: 'Source Sans Pro Bold', arial !important;
 	text-transform: none !important;
 }
@@ -147,7 +149,8 @@ footer p,
 p,
 #section-page-partnership h2,
 #section-download-app h2,
-.jt__member-name h2{
+.jt__member-name h2,
+.jt__member-email{
 	color:#000000 !important;
 }
 
