@@ -1,0 +1,112 @@
+/*
+Theme Name: twentyseventeen-child
+Template: twentyseventeen
+Description: Theme enfant du site web du BDE ENSICAEN
+Author: Caroline Hugues
+Author URI: https://www.carolinehugues.ovh/
+Version: 0.1.0
+*/
+
+
+/*-----------------------------------------------------------
+			BDE page - team section
+------------------------------------------------------------*/
+
+.jt__wrapper{
+	margin-left:-25% !important;
+	margin-right:-25% !important;
+}
+
+.jt__member{
+	display: flex !important;
+	flex-direction: column;
+	padding-bottom: 10px !important;
+	margin-right:15% !important;
+	margin-left:15% !important;
+}
+
+.jt__member li:nth-child(3)
+{
+	order: 1;
+}
+
+.jt__member li:nth-child(1){
+	order:2;
+}
+
+.jt__member li:nth-child(2){
+	order:3;
+}
+
+.jt__member li:nth-child(4){
+	order:4;
+}
+
+.jt__member li:nth-child(5){
+	order:5;
+}
+
+.jt__member li:nth-child(6){
+	order:6;
+}
+
+.jt__member li:nth-child(7){
+	order:7;
+}
+
+.jt__member-position{
+	font-size:22px !important;
+}
+
+.jt__member-img{
+	margin-bottom:1em !important;
+}
+
+.jt__member img{
+	border:solid 1.5px #22427C !important;
+	width:100%;
+}
+
+.jt__member-name h2{
+	font-size:20px !important;
+}
+
+
+
+/*-----------------------------------------------------------
+						Media queries
+------------------------------------------------------------*/
+
+@media screen and (max-width: 1200px) 
+{
+/*-----------------------------------------------------------
+			BDE page - team section
+------------------------------------------------------------*/
+
+	.jt__wrapper{
+		margin-right:-15% !important;
+		margin-left:-15% !important;
+	}
+
+	.jt__member{
+		margin-right:0 !important;
+		margin-left:0 !important;
+	}
+}
+
+@media screen and (max-width: 768px) 
+{
+/*-----------------------------------------------------------
+				BDE page - team section
+------------------------------------------------------------*/
+
+	.jt__wrapper{
+		margin-left:0% !important;
+		margin-right:0% !important;
+	}
+
+	.jt__member{
+		margin-right:15% !important;
+		margin-left:15% !important;
+	}
+}
