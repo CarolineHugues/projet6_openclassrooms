@@ -35,7 +35,8 @@ Version: 0.1.0
 ------------------------------------------------------------*/
 
 	.page-template-default.page .site-content,
-	.page-template-template-page-caen .site-content{
+	.page-template-template-page-caen .site-content,
+	.page-template-template-page-bde .site-content{
 		padding-top:5.5em;
 	}
 
