@@ -19,7 +19,7 @@ $content = apply_filters('the_content', $included_page->post_content);
     		<?php twentyseventeen_edit_link( get_the_ID() ); ?>
     	</header><!-- .entry-header -->
 
-    	<div class="entry-content">
+    	<div class="entry-content-wide">
         	<?php echo $content; ?>
     	</div><!-- .entry-content -->	
 	</div><!-- .wrap -->
