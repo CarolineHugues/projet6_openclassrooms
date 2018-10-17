@@ -19,16 +19,21 @@ Version: 0.1.0
 }
 
 #section-download-app,
-#section-page-partnership{
-	width:33%;
+#section-page-partnership,
+#section-calendar{
+	width:30%;
 	position:relative;
 	display:flex;
 	align-items: flex-end;
 }
 
+#section-calendar{
+	width:34% !important;
+}
+
 #section-download-app h2,
 #section-page-partnership h2{
-	margin-left:0 !important;
+	padding-left:0 !important;
 	margin-top:0;
 	margin-bottom:20px !important;
 }
@@ -60,12 +65,29 @@ Version: 0.1.0
 	padding-bottom: 0 !important;
 }
 
-#section-download-app section{
-	width:50%;
+#section-download-app section:first-child{
+	width:60%;
+}
+
+#section-download-app section:last-child{
+	width:60%;
 }
 
 #section-download-app img{
 	margin-bottom:10px;
+}
+
+/* ----------- Calendar --------- */
+
+.widget.widget_em_calendar{
+	padding-bottom:0;
+}
+
+#section-calendar h2{
+	margin-bottom:30px !important;
+	padding-left:0 !important;
+	text-align:center;
+	font-size:30px;
 }
 
 
@@ -80,6 +102,7 @@ Version: 0.1.0
 			Home page widgets
 ------------------------------------------------------------*/
 
+	#section-calendar h2,
 	#section-page-partnership h2,
 	#section-download-app h2{
 		font-size:20px !important;
@@ -94,7 +117,31 @@ Version: 0.1.0
 
 	#section-download-app,
 	#section-page-partnership{
-		width:50% !important;
+		width:45% !important;
+	}
+
+	#section-calendar{
+		width:100% !important;
+		margin-top: 50px;
+	}
+
+	.widget.widget_em_calendar{
+		margin:auto;
+	}
+
+	#section-page-partnership:nth-child(1)
+	{
+		order: 1;
+	}
+
+	#section-calendar:nth-child(2)
+	{
+		order: 3;
+	}
+
+	#section-download-app:nth-child(3)
+	{
+		order: 2;
 	}
 }
 
@@ -119,10 +166,25 @@ Version: 0.1.0
 				Home page widgets
 ------------------------------------------------------------*/
 
+	#section-page-partnership,
 	#section-download-app,
 	#section-page-partnership{
-		width:100% !important;
 		padding-left: 5%;
 		padding-right: 5%;
+	}
+
+	#section-page-partnership:nth-child(1)
+	{
+		order: 1;
+	}
+
+	#section-calendar:nth-child(2)
+	{
+		order: 2;
+	}
+
+	#section-download-app:nth-child(3)
+	{
+		order: 3;
 	}
 }
