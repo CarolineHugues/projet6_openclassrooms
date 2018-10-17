@@ -36,9 +36,20 @@ Version: 0.1.0
 	margin-top:70px;
 }
 
-.entry-content{
-	width:60%;
+.entry-content {
+	width:75%;
 	margin:auto;
+}
+
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6,
+.entry-content p{
+	width:80% !important;
+	margin-right:auto;
+	margin-left:auto;
 }
 
 /*-----------------------------------------------------------
@@ -61,6 +72,16 @@ Version: 0.1.0
 	}
 
 	.entry-content{
-		width:80%;
+		width:100% !important;
+	}
+
+	.post-81 .entry-content h2,
+	.post-81 .entry-content h3,
+	.post-81 .entry-content h4,
+	.post-81 .entry-content h5,
+	.post-81 .entry-content h6,
+	.post-81 .entry-content p
+	{
+		width:80% !important;
 	}
 }
