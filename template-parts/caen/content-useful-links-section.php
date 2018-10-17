@@ -22,7 +22,7 @@ $content = apply_filters('the_content', $included_page->post_content);
     			</header><!-- .entry-header -->
     		</legend>
 
-    		<div class="entry-content">
+    		<div class="entry-content-wide">
         		<?php echo $content; ?>
     		</div><!-- .entry-content -->
     	</fieldset>	
