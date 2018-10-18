@@ -48,7 +48,7 @@ get_header(); ?>
 
 	</header>
 
-	<?php eo_get_template_part( 'eo-loop-events' ); //Lists the events ?>
+	<?php eo_get_template_part( 'template-parts/page/events/eo', 'loop-events' ); //Lists the events ?>
 
 </div><!-- #primary -->
 
