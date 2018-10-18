@@ -30,9 +30,12 @@
 			<span itemprop="summary"><?php the_title() ?></span>
 		</h2>
 
-		<?php if ( get_the_terms( get_the_ID(), 'event-category' ) && ! is_wp_error( get_the_terms( get_the_ID(), 'event-category' ) ) ) { ?>
-			<p><?php echo get_the_term_list( get_the_ID(),'event-category', '', ', ', '' ); ?></p>
-		<?php } ?>
+		<?php
+		if ( eo_is_event_archive() ) {
+			if ( get_the_terms( get_the_ID(), 'event-category' ) && ! is_wp_error( get_the_terms( get_the_ID(), 'event-category' ) ) ) { ?>
+				<p><?php echo get_the_term_list( get_the_ID(),'event-category', '', ', ', '' ); ?></p>
+			<?php } 
+		} ?>
 
 	</div><!-- .event-entry-meta -->
 
