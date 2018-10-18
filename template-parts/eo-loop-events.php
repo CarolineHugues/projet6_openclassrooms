@@ -1,35 +1,76 @@
 <?php
 /**
- * The events loop customized. Used by archive-events.php, taxonomy-event-venue.php,
- * taxonomy-event-category.php and taxonomy-event-tag.php
+ * The template for displaying a single event customized
  *
  * @package Event Organiser (plug-in)
- * @since 3.0.0
+ * @since 1.0.0
  */
-?>
-<?php if ( have_posts() ) { ?>
 
-	<?php eo_get_template_part( 'eo-events-nav' ); //Events navigation ?>
+//Call the template header
+get_header(); ?>
 
-	<?php
-	while ( have_posts() ) : the_post();
-		eo_get_template_part( 'template-parts/page/events/eo', 'loop-single-event' );
-	endwhile;
-	?>
+<div id="primary">
+	<div id="content" role="main">
 
-	<?php eo_get_template_part( 'eo-events-nav' ); //Events navigation ?>
+		<?php while ( have_posts() ) : the_post(); ?>
 
-<?php } else { ?>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<!-- If there are no events -->
-	<article id="post-0" class="post no-results not-found">
-		<header class="entry-header">
-			<h2 class="entry-title"><?php _e( 'Nothing Found', 'eventorganiser' ); ?></h2>
-		</header><!-- .entry-header -->
+			<header class="entry-header">
+				
+				<?php if ( get_the_terms( get_the_ID(), 'event-category' ) && ! is_wp_error( get_the_terms( get_the_ID(), 'event-category' ) ) ) { ?>
+						<p> <?php echo get_the_term_list( get_the_ID(),'event-category', '', ', ', '' ); ?></p>
+					<?php } ?>
 
-		<div class="entry-content">
-			<p><?php _e( 'Apologies, but no results were found for the requested archive. ', 'eventorganiser' ); ?></p>
-		</div><!-- .entry-content -->
-	</article><!-- #post-0 -->
+				<?php
+					//If it has one, display the thumbnail
+					if ( has_post_thumbnail() ) {
+						the_post_thumbnail( 'thumbnail', array( 'class' => 'attachment-thumbnail eo-event-thumbnail' ) );
+					} ?>
+			
+			</header><!-- .entry-header -->
+	
+			<div class="entry-content">
+				<h1 class="entry-title"><?php the_title(); ?></h1>
 
-<?php };
+				<!-- Get event information, see template: event-meta-event-single.php -->
+				<?php eo_get_template_part( 'template-parts/page/events/event-meta', 'event-single' ); ?>
+
+				<!-- The content or the description of the event-->
+				<?php the_content(); ?>
+			</div><!-- .entry-content -->
+
+			<footer class="entry-meta">
+			<?php
+			//Events have their own 'event-category' taxonomy. Get list of categories this event is in.
+			$categories_list = get_the_term_list( get_the_ID(), 'event-category', '', ', ','' );
+
+			if ( '' != $categories_list ) {
+				$utility_text = __( 'This event was posted in %1$s by <a href="%3$s">%2$s</a>.', 'eventorganiser' );
+			} else {
+				$utility_text = __( 'This event was posted by <a href="%3$s">%2$s</a>.', 'eventorganiser' );
+			}
+			printf($utility_text,
+				$categories_list,
+				get_the_author(),
+				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) )
+			);
+			?>
+
+			<?php edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
+			</footer><!-- .entry-meta -->
+
+			</article><!-- #post-<?php the_ID(); ?> -->
+
+			<!-- If comments are enabled, show them -->
+			<div class="comments-template">
+				<?php comments_template(); ?>
+			</div>				
+
+		<?php endwhile; // end of the loop. ?>
+
+	</div><!-- #content -->
+</div><!-- #primary -->
+
+<!-- Call template footer -->
+<?php get_footer();
