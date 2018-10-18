@@ -32,15 +32,15 @@ get_header(); ?>
 				echo eo_get_event_archive_date( 'j F Y' );
 			} elseif ( eo_is_event_archive( 'month' ) ) {
 				//Viewing month archive ?>
-				<a href="/evenements/en/<?php echo get_previousYear_monthly_archive(); ?>/<?php echo get_previousMonth(); ?>"> < </a>
+				<a href="<?php echo eo_get_event_archive_link(get_previousYear_monthly_archive()); ?>/<?php echo get_previousMonth(); ?>"> < </a>
 				<?php echo eo_get_event_archive_date( 'F Y' ); ?>
-				<a href="/evenements/en/<?php echo get_nextYear_monthly_archive(); ?>/<?php echo get_nextMonth(); ?>"> ></a>
+				<a href="<?php echo eo_get_event_archive_link(get_nextYear_monthly_archive()); ?>/<?php echo get_nextMonth(); ?>"> ></a>
 			<?php
 			} elseif ( eo_is_event_archive( 'year' ) ) {
 				//Viewing year archive ?>
-				<a href="/evenements/en/<?php echo get_previousYear_annual_archive(); ?>/"> < </a>
+				<a href="<?php echo eo_get_event_archive_link(get_previousYear_annual_archive()); ?>/"> < </a>
 				<?php echo ' ' . eo_get_event_archive_date( 'Y' ) . ' '; ?>
-				<a href="/evenements/en/<?php echo get_nextYear_annual_archive(); ?>/"> ></a>
+				<a href="<?php echo eo_get_event_archive_link(get_nextYear_annual_archive()); ?>/"> ></a>
 			<?php
 			} 
 			?>
