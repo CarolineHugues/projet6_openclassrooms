@@ -79,15 +79,23 @@ Version: 0.1.0
 
 /* ----------- Calendar --------- */
 
-.widget.widget_em_calendar{
+.widget.widget_calendar{
 	padding-bottom:0;
 }
 
+#wp-calendar{
+	margin-bottom:0;
+}
+
 #section-calendar h2{
-	margin-bottom:30px !important;
+	margin-bottom:20px !important;
 	padding-left:0 !important;
 	text-align:center;
-	font-size:30px;
+}
+
+#wp-calendar thead th{
+	border-bottom: solid 1.5px #22427C !important;
+	border-top:solid 5px #22427C;
 }
 
 
@@ -102,7 +110,14 @@ Version: 0.1.0
 			Home page widgets
 ------------------------------------------------------------*/
 
-	#section-calendar h2,
+	#section-calendar h2{
+		font-size:22px !important;
+	}
+
+	#section-calendar caption{
+		font-size:21px !important;
+	}
+
 	#section-page-partnership h2,
 	#section-download-app h2{
 		font-size:20px !important;
@@ -125,7 +140,7 @@ Version: 0.1.0
 		margin-top: 50px;
 	}
 
-	.widget.widget_em_calendar{
+	.widget.widget_calendar{
 		margin:auto;
 	}
 
@@ -158,9 +173,13 @@ Version: 0.1.0
 		padding-left: 15%;
 		padding-right: 15%;
 	}
+
+	#wp-calendar{
+		margin-bottom:50px;
+	}
 }
 
-@media screen and (max-width: 600px) 
+@media screen and (max-width: 480px) 
 {
 /*-----------------------------------------------------------
 				Home page widgets
