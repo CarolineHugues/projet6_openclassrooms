@@ -175,3 +175,12 @@ function get_current_month_events(){
         'showpastevents'=>true,
     ));
 }
+
+function get_upcomming_event(){
+	return $event = eo_get_events(array(
+        'numberposts'=>1,
+        'orderby'=> 'eventstart',
+		'order'=> 'ASC',
+        'event_start_after'=> 'now',
+    ));
+}
