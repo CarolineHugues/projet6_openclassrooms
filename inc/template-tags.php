@@ -151,3 +151,27 @@ function get_previousMonth(){
 	}
 	return $previousmonth;
 }
+
+function get_nextMonth_page_currentmonth(){
+	return $nextmonth = date("Y/m",strtotime("now + 1 month"));
+}
+
+function get_previousMonth_page_currentmonth(){
+	return $previousmonth = date("Y/m",strtotime("now - 1 month"));
+}
+
+function get_french_current_month_and_year(){
+	setlocale(LC_TIME, "fr_FR");
+	return $date = strftime("%B %Y"); 
+}
+
+function get_current_month_events(){
+	return $events = eo_get_events(array(
+        'numberposts'=>-1,
+        'orderby'=> 'eventstart',
+		'order'=> 'ASC',
+        'event_start_after'=> 'first day of this month',
+        'event_end_before'=> 'first day of next month',
+        'showpastevents'=>true,
+    ));
+}
