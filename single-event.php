@@ -19,7 +19,7 @@ get_header(); ?>
 			<header class="entry-header">
 				
 				<?php if ( get_the_terms( get_the_ID(), 'event-category' ) && ! is_wp_error( get_the_terms( get_the_ID(), 'event-category' ) ) ) { ?>
-						<p> <?php echo get_the_term_list( get_the_ID(),'event-category', '', ', ', '' ); ?></p>
+						<p> <?php echo $categories = get_the_term_list( get_the_ID(),'event-category', '', ', ', '' ); ?></p>
 					<?php } ?>
 
 				<?php
@@ -40,27 +40,20 @@ get_header(); ?>
 				<?php the_content(); ?>
 			</div><!-- .entry-content -->
 
-			<footer class="entry-meta">
-			<?php
-			//Events have their own 'event-category' taxonomy. Get list of categories this event is in.
-			$categories_list = get_the_term_list( get_the_ID(), 'event-category', '', ', ','' );
-
-			if ( '' != $categories_list ) {
-				$utility_text = __( 'This event was posted in %1$s by <a href="%3$s">%2$s</a>.', 'eventorganiser' );
-			} else {
-				$utility_text = __( 'This event was posted by <a href="%3$s">%2$s</a>.', 'eventorganiser' );
-			}
-			printf($utility_text,
-				$categories_list,
-				get_the_author(),
-				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) )
-			);
-			?>
-
-			<?php edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
-			</footer><!-- .entry-meta -->
-
 			</article><!-- #post-<?php the_ID(); ?> -->
+
+			<section id="similar-events">
+
+				<?php $similarevents = get_similar_events($categories);
+
+				if($similarevents): ?>
+					<h2>Evènements similaires</h2>
+		     		<?php foreach ($similarevents as $event):
+		     			set_query_var( 'event', $event );
+						get_template_part( 'template-parts/page/events/eo', 'loop-similar-event', 'event' );
+		        	endforeach;
+		        endif;?>
+			</section>
 
 			<!-- If comments are enabled, show them -->
 			<div class="comments-template">
