@@ -27,7 +27,7 @@
     if($events):
         foreach ($events as $event):
            	set_query_var( 'event', $event );
-     		eo_get_template_part( 'template-parts/page/events/eo', 'loop-single-event-current-month', 'event' );
+     		eo_get_template_part( 'template-parts/page/events/eo', 'loop-single-event-querry', 'event' );
         endforeach;
 
     else : ?>
