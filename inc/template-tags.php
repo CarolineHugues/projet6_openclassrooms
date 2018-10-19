@@ -168,6 +168,7 @@ function get_french_current_month_and_year(){
 function get_current_month_events(){
 	return $events = eo_get_events(array(
         'numberposts'=>-1,
+        'post_type' =>  'event',
         'orderby'=> 'eventstart',
 		'order'=> 'ASC',
         'event_start_after'=> 'first day of this month',
@@ -179,8 +180,26 @@ function get_current_month_events(){
 function get_upcomming_event(){
 	return $event = eo_get_events(array(
         'numberposts'=>1,
+        'post_type' =>  'event',
         'orderby'=> 'eventstart',
 		'order'=> 'ASC',
         'event_start_after'=> 'now',
     ));
+}
+
+function get_similar_events($categories){
+	return $similarevents = eo_get_events( array(
+		'numberposts' => 3,
+		'post_type' =>  'event',
+		'event_start_after'=> 'now',
+		'tax_query'=>array( 
+			array(
+	            'taxonomy'=>'event-category',
+	            'operator' => 'IN',
+	            'field'=>'slug',
+	            'terms'=>array($categories)
+	        )
+        ),
+        'exclude' => array(get_the_ID()), 
+	));
 }
