@@ -165,7 +165,7 @@ function get_french_current_month_and_year(){
 	return $date = strftime("%B %Y"); 
 }
 
-function get_current_month_events(){
+function get_current_month_events($category){
 	return $events = eo_get_events(array(
         'numberposts'=>-1,
         'post_type' =>  'event',
@@ -174,6 +174,14 @@ function get_current_month_events(){
         'event_start_after'=> 'first day of this month',
         'event_end_before'=> 'first day of next month',
         'showpastevents'=>true,
+        'tax_query'=>array( 
+			array(
+	            'taxonomy'=>'event-category',
+	            'operator' => 'IN',
+	            'field'=>'id',
+	            'terms'=>array($category)
+	        )
+        ),
     ));
 }
 
