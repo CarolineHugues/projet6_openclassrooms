@@ -152,17 +152,78 @@ function get_previousMonth(){
 	return $previousmonth;
 }
 
-function get_nextMonth_page_currentmonth(){
-	return $nextmonth = date("Y/m",strtotime("now + 1 month"));
+function get_nextMonth_page_current_or_sorting_month(){
+	if(empty($_POST['month']))
+	{
+		return $nextmonth = date("Y/m",strtotime("now + 1 month"));
+	}
+	else{
+		$month = $_POST['month'];
+		$year = get_year_page_events($_POST['month']);
+		return $nextmonth = date("Y/m",strtotime("$year/$month/01 + 1 month"));
+	}
 }
 
-function get_previousMonth_page_currentmonth(){
-	return $previousmonth = date("Y/m",strtotime("now - 1 month"));
+function get_previousMonth_page_current_or_sorting_month(){
+	if(empty($_POST['month']))
+	{
+		return $previousmonth = date("Y/m",strtotime("now - 1 month"));
+	}
+	else{
+		$month = $_POST['month'];
+		$year = get_year_page_events($_POST['month']);
+		return $previousmonth = date("Y/m",strtotime("$year/$month/01 - 1 month"));
+	}
 }
 
-function get_french_current_month_and_year(){
-	setlocale(LC_TIME, "fr_FR");
-	return $date = strftime("%B %Y"); 
+function get_french_current_or_sorting_month(){
+	if(empty($_POST['month']))
+	{
+		setlocale(LC_TIME, "fr_FR");
+		return $date = strftime("%B"); 
+	}
+	else{
+		return $month = get_french_month($_POST['month']);
+	}
+}
+
+function get_french_current_or_sorting_year(){
+	if(empty($_POST['month']))
+	{
+		return $year = date('Y'); 
+	}
+	else{
+		return $year = get_year_page_events($_POST['month']);
+	}
+}
+
+function get_year_page_events($monthnumber){
+	if(date('m') > 8)
+	{
+		if($monthnumber > 8)
+		{
+			$year = date('Y');
+		}
+		else {
+			$year = date('Y') +1;
+		}
+	}
+	elseif (date('m') < 9){
+		if($monthnumber < 9)
+		{
+			$year = date('Y');
+		}
+		else {
+			$year = date('Y') -1;
+		}
+	}
+	return $year;
+}
+
+function get_french_month($monthnumber){
+	$array = array('janvier', 'fébrier', 'mars', 'avril', 'mai', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'décembre');
+	$number = $monthnumber -1;
+	return $month = $array[$number];
 }
 
 function get_english_month($monthnumber){
@@ -171,7 +232,7 @@ function get_english_month($monthnumber){
 	return $month = $array[$number];
 }
 
-function get_current_month_events(){
+function get_current_month_or_sorting_events(){
 	$category = $_POST['cat']; 
 	if (empty($category)){
 		$category = 'all';
@@ -185,26 +246,7 @@ function get_current_month_events(){
 	else
 	{
 		$month = get_english_month($monthnumber);
-
-		if(date('m') > 8)
-		{
-			if($monthnumber > 8)
-			{
-				$year = date('Y');
-			}
-			else {
-				$year = date('Y') +1;
-			}
-		}
-		elseif (date('m') < 9){
-			if($monthnumber < 9)
-			{
-				$year = date('Y');
-			}
-			else {
-				$year = date('Y') -1;
-			}
-		}
+		$year = get_year_page_events($monthnumber);
 	}
 
 	return $events = eo_get_events(array(
