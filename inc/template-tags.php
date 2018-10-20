@@ -86,30 +86,16 @@ function get_content_section($id){
 				Events - function for the plugin Event organiser
 ---------------------------------------------------------------------------*/
 
-function get_nextYear_monthly_archive(){
+function get_nextYear_month_monthly_archive(){
 	$year = eo_get_event_archive_date( 'Y' );
 	$month = eo_get_event_archive_date( 'm' );
-	if($month == 12)
-	{
-		return $nextyear = $year + 1;
-	}
-	else
-	{
-		return $year;
-	}
+	return $nextyear = date("Y/m",strtotime("$year/$month/01 + 1 month"));
 }
 		
-function get_previousYear_monthly_archive(){
+function get_previousYear_month_monthly_archive(){
 	$year = eo_get_event_archive_date( 'Y' );
 	$month = eo_get_event_archive_date( 'm' );
-	if($month == 01)
-	{
-		return $previousyear = $year - 1;
-	}
-	else
-	{
-		return $year;
-	}
+	return $previousyear = date("Y/m",strtotime("$year/$month/01 - 1 month"));
 }
 		
 function get_nextYear_annual_archive(){
@@ -120,36 +106,6 @@ function get_nextYear_annual_archive(){
 function get_previousYear_annual_archive(){
 	$year = eo_get_event_archive_date( 'Y' );
 	return $previousyear = $year - 1;
-}
-		
-function get_nextMonth(){
-	$month = eo_get_event_archive_date( 'm' );
-	if ($month == 12){
-		$nextmonth = "01";
-	}
-	else if ($month < 9)
-	{
-		$nextmonth = "0" . ($month + 1);
-	}
-	else{
-			$nextmonth = $month + 1;
-	}
-		return $nextmonth;
-}
-			
-function get_previousMonth(){
-	$month = eo_get_event_archive_date( 'm' );
-	if ($month == 01){
-		$previousmonth = "12";
-	}
-	else if ($month < 11)
-	{
-		$previousmonth = "0" . ($month - 1);
-	}
-	else{
-		$previousmonth = $month - 1;
-	}
-	return $previousmonth;
 }
 
 function get_nextMonth_page_current_or_sorting_month(){
