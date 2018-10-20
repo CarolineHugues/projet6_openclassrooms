@@ -165,14 +165,55 @@ function get_french_current_month_and_year(){
 	return $date = strftime("%B %Y"); 
 }
 
-function get_current_month_events($category){
+function get_english_month($monthnumber){
+	$array = array('jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec');
+	$number = $monthnumber -1;
+	return $month = $array[$number];
+}
+
+function get_current_month_events(){
+	$category = $_POST['cat']; 
+	if (empty($category)){
+		$category = 'all';
+	}
+
+	$monthnumber = $_POST['month']; 
+	if (empty($monthnumber)){ 
+		$month = date('M'); 
+		$year = date('Y');
+	}
+	else
+	{
+		$month = get_english_month($monthnumber);
+
+		if(date('m') > 8)
+		{
+			if($monthnumber > 8)
+			{
+				$year = date('Y');
+			}
+			else {
+				$year = date('Y') +1;
+			}
+		}
+		elseif (date('m') < 9){
+			if($monthnumber < 9)
+			{
+				$year = date('Y');
+			}
+			else {
+				$year = date('Y') -1;
+			}
+		}
+	}
+
 	return $events = eo_get_events(array(
         'numberposts'=>-1,
         'post_type' =>  'event',
         'orderby'=> 'eventstart',
 		'order'=> 'ASC',
-        'event_start_after'=> 'first day of this month',
-        'event_end_before'=> 'first day of next month',
+        'event_start_after'=> 'first day of ' . $month . ' ' . $year,
+        'event_end_before'=> 'last day of ' . $month . ' ' . $year,
         'showpastevents'=>true,
         'tax_query'=>array( 
 			array(
@@ -183,6 +224,16 @@ function get_current_month_events($category){
 	        )
         ),
     ));
+}
+
+function get_args_sorting_categories(){
+	return $cat_args = array(
+		'show_option_none' => __( 'Toutes catégories' ),
+		'option_none_value'  => 'all',
+		'orderby'      => 'name',
+		'taxonomy'     => 'event-category',
+		'id'           => 'eo-event-cat',		
+	); 
 }
 
 function get_upcomming_event(){
