@@ -109,47 +109,63 @@ function get_previousYear_annual_archive(){
 }
 
 function get_nextMonth_page_current_or_sorting_month(){
-	if(empty($_POST['month']))
-	{
-		return $nextmonth = date("Y/m",strtotime("now + 1 month"));
-	}
-	else{
+	if(!empty($_POST['month'])){
 		$month = $_POST['month'];
 		$year = get_year_page_events($_POST['month']);
 		return $nextmonth = date("Y/m",strtotime("$year/$month/01 + 1 month"));
 	}
+	elseif(!empty($_SESSION['archivemonth'])){
+		$month = $_SESSION['archivemonth'];
+		$year = $_SESSION['archiveyear'];
+		return $nextmonth = date("Y/m",strtotime("$year/$month/01 + 1 month"));
+	}
+	else{
+		return $nextmonth = date("Y/m",strtotime("now + 1 month"));
+	}
 }
 
 function get_previousMonth_page_current_or_sorting_month(){
-	if(empty($_POST['month']))
-	{
-		return $previousmonth = date("Y/m",strtotime("now - 1 month"));
-	}
-	else{
+	if(!empty($_POST['month'])){
 		$month = $_POST['month'];
 		$year = get_year_page_events($_POST['month']);
 		return $previousmonth = date("Y/m",strtotime("$year/$month/01 - 1 month"));
 	}
+	elseif(!empty($_SESSION['archivemonth'])){
+		$month = $_SESSION['archivemonth'];
+		$year = $_SESSION['archiveyear'];
+		return $previousmonth = date("Y/m",strtotime("$year/$month/01 - 1 month"));
+	}
+	else{
+		return $previousmonth = date("Y/m",strtotime("now - 1 month"));
+	}
 }
 
 function get_french_current_or_sorting_month(){
-	if(empty($_POST['month']))
-	{
+
+	if(!empty($_POST['month'])){
+		return $month = get_french_month($_POST['month']);
+	}
+	elseif(!empty($_SESSION['archivemonth'])){
+		return $month = get_french_month($_SESSION['archivemonth']);
+	}
+	else{
 		setlocale(LC_TIME, "fr_FR");
 		return $date = strftime("%B"); 
 	}
-	else{
-		return $month = get_french_month($_POST['month']);
-	}
 }
 
-function get_french_current_or_sorting_year(){
-	if(empty($_POST['month']))
+function get_current_or_sorting_year(){
+	if(!empty($_POST['month']))
+	{
+		return $year = get_year_page_events($_POST['month']);	
+	}
+	elseif(!empty($_SESSION['archiveyear']))
+	{
+		return $year = $_SESSION['archiveyear'];
+	}
+	else
 	{
 		return $year = date('Y'); 
-	}
-	else{
-		return $year = get_year_page_events($_POST['month']);
 	}
 }
 
@@ -194,15 +210,19 @@ function get_current_month_or_sorting_events(){
 		$category = 'all';
 	}
 
-	$monthnumber = $_POST['month']; 
-	if (empty($monthnumber)){ 
-		$month = date('M'); 
-		$year = date('Y');
-	}
-	else
-	{
+	$monthnumber = $_POST['month'];
+	if(!empty($monthnumber)) {
 		$month = get_english_month($monthnumber);
 		$year = get_year_page_events($monthnumber);
+	}
+	elseif(!empty($_SESSION['archivemonth'])){
+		$monthnumber = $_SESSION['archivemonth'];
+		$month = get_english_month($monthnumber);
+		$year = $_SESSION['archiveyear'];
+	}
+	else { 
+		$month = date('M'); 
+		$year = date('Y');
 	}
 
 	return $events = eo_get_events(array(

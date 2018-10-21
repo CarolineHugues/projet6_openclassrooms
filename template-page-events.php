@@ -4,6 +4,7 @@
  */
 
 ?>
+<?php session_start(); ?>
 
 <?php get_header(); ?>
 
@@ -17,32 +18,11 @@
 
 		<p>
 			<a href="<?php echo eo_get_event_archive_link(get_previousMonth_page_current_or_sorting_month()); ?>"> < </a>
-				<?php echo get_french_current_or_sorting_month() . ' ' . get_french_current_or_sorting_year(); ?>
+				<?php echo get_french_current_or_sorting_month() . ' ' . get_current_or_sorting_year(); ?>
 			<a href="<?php echo eo_get_event_archive_link(get_nextMonth_page_current_or_sorting_month()); ?>"> ></a>
 		</p>
 
-		<div id="categories">
-			<form id="category-select" class="category-select" action="<?php echo home_url( '/evenements-organises-par-le-bde/' ) ; ?>" method="post">
-				<?php wp_dropdown_categories( get_args_sorting_categories() ); ?>
-				<select name="month">
-					<option value="<?php echo $_POST['month']; ?>">Mois</option>
-					<option value="9">septembre</option>
-					<option value="10">octobre</option>
-					<option value="11">novembre</option>
-					<option value="12">decembre</option>
-					<option value="1">janvier</option>
-					<option value="2">février</option>
-					<option value="3">mars</option>
-					<option value="4">avril</option>
-					<option value="5">mail</option>
-					<option value="6">juin</option>
-					<option value="7">juillet</option>
-					<option value="8">aout</option>
-				</select>
-				<input type="submit" name="submit" value="Rechercher" />
-			</form>
-		</div>
-
+		<?php get_template_part( 'template-parts/page/events/events', 'sorting-form-category-month' ); ?>
 	</header>
 
 	<?php $events = get_current_month_or_sorting_events();
@@ -56,11 +36,11 @@
 		<!-- If there are no events -->
 		<article id="post-0" class="post no-results not-found">
 			<header class="entry-header">
-				<h2 class="entry-title">Aucun évènement organisé ce mois-ci</h2>
+				<h2 class="entry-title">Aucun évènement organisé</h2>
 			</header><!-- .entry-header -->
 
 			<div class="entry-content">
-				<p>Consultez les mois suivants !</p>
+				<p>Consultez un autre mois !</p>
 			</div><!-- .entry-content -->
 		</article><!-- #post-0 -->
 
