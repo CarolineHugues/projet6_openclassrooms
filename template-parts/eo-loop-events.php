@@ -7,6 +7,8 @@
  * @since 3.0.0
  */
 ?>
+
+
 <?php if ( have_posts() ) { ?>
 
 	<?php eo_get_template_part( 'eo-events-nav' ); //Events navigation ?>
@@ -24,11 +26,21 @@
 	<!-- If there are no events -->
 	<article id="post-0" class="post no-results not-found">
 		<header class="entry-header">
-			<h2 class="entry-title">Aucun évènement organisé ce mois-ci</h2>
+			<h2 class="entry-title">Aucun évènement organisé</h2>
 		</header><!-- .entry-header -->
 
 		<div class="entry-content">
-			<p>Consultez les mois suivants !</p>
+			<?php
+			if ( eo_is_event_archive( 'day' ) ) { ?>
+				<p>Consultez un autre jour !</p>
+			<?php } elseif ( eo_is_event_archive( 'month' ) ) { ?>
+				<p>Consultez un autre mois !</p>
+			<?php
+			} elseif ( eo_is_event_archive( 'year' ) ) { ?>
+				<p>Consultez une autre année !</p>
+			<?php
+			} 
+			?>
 		</div><!-- .entry-content -->
 	</article><!-- #post-0 -->
 
