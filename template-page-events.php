@@ -22,17 +22,33 @@
 			<a href="<?php echo eo_get_event_archive_link(get_nextMonth_page_current_or_sorting_month()); ?>"> ></a>
 		</p>
 
-		<?php get_template_part( 'template-parts/page/events/events', 'sorting-form-category-month' ); ?>
+		<?php get_template_part( 'template-parts/page/events/events', 'sorting-form-category-month' ); 
+		?>
 	</header>
 
-	<?php $events = get_current_month_or_sorting_events();
-    if($events):
-        foreach ($events as $event):
-           	set_query_var( 'event', $event );
-     		eo_get_template_part( 'template-parts/page/events/eo', 'loop-single-event-querry', 'event' );
-        endforeach;
+	<?php $the_query = new WP_Query( get_current_month_or_sorting_events() ); 
 
-    else : ?>
+	global $wp_query;
+	// Put default query object in a temp variable
+	$tmp_query = $wp_query;
+	// Now wipe it out completely
+	$wp_query = null;
+	// Re-populate the global with our custom query
+	$wp_query = $the_query; ?>
+
+	<?php if ( $the_query->have_posts() ) { ?>
+
+	<?php
+	while ( $the_query->have_posts() ) : $the_query->the_post();
+		eo_get_template_part( 'template-parts/page/events/eo', 'loop-single-event' );
+	endwhile;
+	
+
+
+    if (function_exists('numbered_pagination')) numbered_pagination();
+	}
+
+    else {?>
 		<!-- If there are no events -->
 		<article id="post-0" class="post no-results not-found">
 			<header class="entry-header">
@@ -44,7 +60,7 @@
 			</div><!-- .entry-content -->
 		</article><!-- #post-0 -->
 
-	<?php endif;?>
+	<?php }?>
 
 </div><!-- #primary -->
 

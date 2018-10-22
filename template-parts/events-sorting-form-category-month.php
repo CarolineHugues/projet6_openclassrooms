@@ -6,10 +6,14 @@
 ?>
 
 <div id="categories">
-	<form id="category-select" class="category-select" action="<?php echo home_url( '/evenements-organises-par-le-bde/' ) ; ?>" method="post">
+	<form id="category-select" class="category-select" action="<?php echo home_url( '/evenements-organises-par-le-bde/' ) ; ?>" method="get">
 		<?php wp_dropdown_categories( get_args_sorting_categories() ); ?>
 		<select name="month">
-			<option value="<?php echo $_POST['month']; ?>">Mois</option>
+			<option value="<?php if (!empty($_GET['month'])) 
+				{echo $_GET['month']; } 
+				else{ echo $_SESSION['archivemonth']; } ?>"> 
+				Mois
+			</option>
 			<option value="9">septembre</option>
 			<option value="10">octobre</option>
 			<option value="11">novembre</option>
@@ -23,6 +27,6 @@
 			<option value="7">juillet</option>
 			<option value="8">aout</option>
 		</select>
-		<input type="submit" name="submit" value="Rechercher" />
+		<input type="submit" value="Rechercher"/>
 	</form>
 </div>

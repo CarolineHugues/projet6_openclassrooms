@@ -11,15 +11,13 @@
 
 <?php if ( have_posts() ) { ?>
 
-	<?php eo_get_template_part( 'eo-events-nav' ); //Events navigation ?>
-
 	<?php
 	while ( have_posts() ) : the_post();
 		eo_get_template_part( 'template-parts/page/events/eo', 'loop-single-event' );
 	endwhile;
 	?>
 
-	<?php eo_get_template_part( 'eo-events-nav' ); //Events navigation ?>
+	<?php if (function_exists('numbered_pagination')) numbered_pagination(); ?>
 
 <?php } else { ?>
 
