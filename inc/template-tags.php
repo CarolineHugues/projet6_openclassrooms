@@ -110,7 +110,7 @@ function get_previousYear_annual_archive(){
 
 function get_nextMonth_page_current_or_sorting_month(){
 	if(!empty($_GET['month'])) {
-		$month = $_GET['month'];
+		$month =  get_month_number($_GET['month']);
 		if (empty($_GET['year']))
 		{
 			$year = get_year_page_events($_GET['month']);
@@ -128,7 +128,7 @@ function get_nextMonth_page_current_or_sorting_month(){
 
 function get_previousMonth_page_current_or_sorting_month(){
 	if(!empty($_GET['month'])) {
-		$month = $_GET['month'];
+		$month = get_month_number($_GET['month']);
 		if (empty($_GET['year']))
 		{
 			$year = get_year_page_events($_GET['month']);
@@ -146,7 +146,13 @@ function get_previousMonth_page_current_or_sorting_month(){
 function get_french_current_or_sorting_month(){
 
 	if(!empty($_GET['month'])){
-		return $month = get_french_month($_GET['month']);
+		if ($_GET['month'] == 'fevrier'){
+			return $month = 'février';
+		}
+		else
+		{
+		return $month = $_GET['month'];
+		}
 	}
 	else{
 		setlocale(LC_TIME, "fr_FR");
@@ -170,7 +176,8 @@ function get_current_or_sorting_year(){
 	}
 }
 
-function get_year_page_events($monthnumber){
+function get_year_page_events($month){
+	$monthnumber = get_month_number($month);
 	if(date('m') > 8)
 	{
 		if($monthnumber > 8)
@@ -193,13 +200,13 @@ function get_year_page_events($monthnumber){
 	return $year;
 }
 
-function get_french_month($monthnumber){
-	$array = array('janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'décembre');
-	$number = $monthnumber -1;
-	return $month = $array[$number];
+function get_month_number($month){
+	$array = array(1 => 'janvier', 2 =>  'fevrier', 3 => 'mars', 4 => 'avril', 5 => 'mai', 6 => 'juin', 7 => 'juillet', 8 => 'aout', 9 => 'septembre', 10 => 'octobre', 11 => 'novembre', 12 => 'decembre');
+	return $monthnumber = array_search($month, $array);
 }
 
-function get_english_month($monthnumber){
+function get_english_month($month){
+	$monthnumber =  get_month_number($month);
 	$array = array('jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec');
 	$number = $monthnumber -1;
 	return $month = $array[$number];
