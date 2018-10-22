@@ -8,7 +8,6 @@
  * @since 1.0.0
  */
 
-session_start(); 
 //Call the template header
 get_header(); ?>
 
@@ -38,10 +37,6 @@ get_header(); ?>
 				<a href="<?php echo eo_get_event_archive_link(get_nextYear_month_monthly_archive()); ?>"> ></a>
 				
 				<?php get_template_part( 'template-parts/page/events/events', 'sorting-form-category-month' );
-				
-				$_SESSION['archivemonth'] = eo_get_event_archive_date( 'm' );
-				$_SESSION['archiveyear'] = eo_get_event_archive_date( 'Y' );
-				
 			} elseif ( eo_is_event_archive( 'year' ) ) {
 				//Viewing year archive ?>
 				<a href="<?php echo eo_get_event_archive_link(get_previousYear_annual_archive()); ?>/"> < </a>

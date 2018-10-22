@@ -4,7 +4,6 @@
  */
 
 ?>
-<?php session_start(); ?>
 
 <?php get_header(); ?>
 
@@ -22,8 +21,7 @@
 			<a href="<?php echo eo_get_event_archive_link(get_nextMonth_page_current_or_sorting_month()); ?>"> ></a>
 		</p>
 
-		<?php get_template_part( 'template-parts/page/events/events', 'sorting-form-category-month' ); 
-		?>
+		<?php get_template_part( 'template-parts/page/events/events', 'sorting-form-category-month' ); ?>
 	</header>
 
 	<?php $the_query = new WP_Query( get_current_month_or_sorting_events() ); 

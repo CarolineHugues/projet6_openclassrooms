@@ -8,10 +8,12 @@
 <div id="categories">
 	<form id="category-select" class="category-select" action="<?php echo home_url( '/evenements-organises-par-le-bde/' ) ; ?>" method="get">
 		<?php wp_dropdown_categories( get_args_sorting_categories() ); ?>
+		<input type="hidden" value="<?php if (eo_is_event_archive( 'month' ) ) 
+				{echo eo_get_event_archive_date( 'Y' ); } ?>"/>
 		<select name="month">
-			<option value="<?php if (!empty($_GET['month'])) 
-				{echo $_GET['month']; } 
-				else{ echo $_SESSION['archivemonth']; } ?>"> 
+			<option value="<?php if (eo_is_event_archive( 'month' ) ) 
+				{echo eo_get_event_archive_date( 'm' ); } 
+				else{ echo $_GET['month']; } ?>"> 
 				Mois
 			</option>
 			<option value="9">septembre</option>

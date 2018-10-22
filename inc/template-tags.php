@@ -109,14 +109,16 @@ function get_previousYear_annual_archive(){
 }
 
 function get_nextMonth_page_current_or_sorting_month(){
-	if(!empty($_GET['month'])){
+	if(!empty($_GET['month'])) {
 		$month = $_GET['month'];
-		$year = get_year_page_events($_GET['month']);
-		return $nextmonth = date("Y/m",strtotime("$year/$month/01 + 1 month"));
-	}
-	elseif(!empty($_SESSION['archivemonth'])){
-		$month = $_SESSION['archivemonth'];
-		$year = $_SESSION['archiveyear'];
+		if (empty($_GET['year']))
+		{
+			$year = get_year_page_events($_GET['month']);
+		}
+		else 
+		{
+			$year = $_GET['year'];
+		}
 		return $nextmonth = date("Y/m",strtotime("$year/$month/01 + 1 month"));
 	}
 	else{
@@ -125,14 +127,15 @@ function get_nextMonth_page_current_or_sorting_month(){
 }
 
 function get_previousMonth_page_current_or_sorting_month(){
-	if(!empty($_GET['month'])){
+	if(!empty($_GET['month'])) {
 		$month = $_GET['month'];
-		$year = get_year_page_events($_GET['month']);
-		return $previousmonth = date("Y/m",strtotime("$year/$month/01 - 1 month"));
-	}
-	elseif(!empty($_SESSION['archivemonth'])){
-		$month = $_SESSION['archivemonth'];
-		$year = $_SESSION['archiveyear'];
+		if (empty($_GET['year']))
+		{
+			$year = get_year_page_events($_GET['month']);
+		}
+		else {
+			$year = $_GET['year'];
+		}
 		return $previousmonth = date("Y/m",strtotime("$year/$month/01 - 1 month"));
 	}
 	else{
@@ -145,9 +148,6 @@ function get_french_current_or_sorting_month(){
 	if(!empty($_GET['month'])){
 		return $month = get_french_month($_GET['month']);
 	}
-	elseif(!empty($_SESSION['archivemonth'])){
-		return $month = get_french_month($_SESSION['archivemonth']);
-	}
 	else{
 		setlocale(LC_TIME, "fr_FR");
 		return $date = strftime("%B"); 
@@ -155,13 +155,14 @@ function get_french_current_or_sorting_month(){
 }
 
 function get_current_or_sorting_year(){
-	if(!empty($_GET['month']))
-	{
-		return $year = get_year_page_events($_GET['month']);	
-	}
-	elseif(!empty($_SESSION['archiveyear']))
-	{
-		return $year = $_SESSION['archiveyear'];
+	if(!empty($_GET['month'])) {
+		if (empty($_GET['year']))
+		{
+			return $year = get_year_page_events($_GET['month']);
+		}
+		else {
+			return $year = $_GET['year'];
+		}
 	}
 	else
 	{
@@ -193,7 +194,7 @@ function get_year_page_events($monthnumber){
 }
 
 function get_french_month($monthnumber){
-	$array = array('janvier', 'fébrier', 'mars', 'avril', 'mai', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'décembre');
+	$array = array('janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'décembre');
 	$number = $monthnumber -1;
 	return $month = $array[$number];
 }
@@ -206,19 +207,19 @@ function get_english_month($monthnumber){
 
 function get_current_month_or_sorting_events(){
 	$category = $_GET['cat']; 
-	if (empty($category) || $_GET['cat'] == 'tout'){
+	if (empty($category) || $_GET['cat'] == 'tous'){
 		$category = 'all';
 	}
 
-	$monthnumber = $_GET['month'];
-	if(!empty($monthnumber)) {
-		$month = get_english_month($monthnumber);
-		$year = get_year_page_events($monthnumber);
-	}
-	elseif(!empty($_SESSION['archivemonth'])){
-		$monthnumber = $_SESSION['archivemonth'];
-		$month = get_english_month($monthnumber);
-		$year = $_SESSION['archiveyear'];
+	if(!empty($_GET['month'])) {
+		$month = get_english_month($_GET['month']);
+		if (empty($_GET['year']))
+		{
+			$year = get_year_page_events($_GET['month']);
+		}
+		else {
+			$year = $_GET['year'];
+		}
 	}
 	else { 
 		$month = date('M'); 
@@ -235,7 +236,7 @@ function get_current_month_or_sorting_events(){
 		$valuefield = 'slug';
 	}
 
-	return $events = /*eo_get_events(*/array(
+	return $events = array(
 	    'posts_per_page' => 4,
 	    'paged'         => $paged,
         'post_type' =>  'event', 
@@ -252,13 +253,13 @@ function get_current_month_or_sorting_events(){
 	            'terms'=>array($category)
 	        )
         ),
-    )/*)*/;
+    );
 }
 
 function get_args_sorting_categories(){
 	return $cat_args = array(
 		'show_option_none' => __( 'Toutes catégories' ),
-		'option_none_value'  => 'tout',
+		'option_none_value'  => 'tous',
 		'orderby'      => 'name',
 		'taxonomy'     => 'event-category',
 		'id'           => 'eo-event-cat',
