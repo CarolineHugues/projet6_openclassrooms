@@ -11,6 +11,216 @@ Version: 0.1.0
 						Events
 ------------------------------------------------------------*/
 
-.event.type-event.has-post-thumbnail .entry-header::before{
-	display:none;
+#section-upcoming-event{
+	margin-top:50px;
+	margin-bottom:50px;
+}
+
+#section-upcoming-event h1{
+	text-align: center;
+}
+
+#section-upcoming-event img, .event-template-default.single.single-event .entry-header.large img{
+	width:75%;
+}
+
+#section-upcoming-event .eo-event-header.entry-header{
+	text-align:center;
+	position:relative;
+	margin-bottom:10px !important;
+}
+
+#section-upcoming-event .eo-event-header.entry-header::before{
+	content:"";
+	height:480px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	margin-top:0px !important;
+	z-index:-10;
+}
+
+.eo-event-date{
+	text-align: center;
+	font-weight: bold;
+	padding-top:30px;
+}
+
+.eo-event-details.event-entry-meta, .eo-event-content{
+	width:80%;
+	margin:auto;
+}
+
+.event-presentation{
+	width:75%;
+	margin:auto;
+	margin-bottom:10px;
+	position:relative;
+}
+
+.event-category{
+	text-align:center;
+	font-weight:bold;
+	text-transform: uppercase;
+}
+
+.eo-event-content{
+	padding-bottom:2px;
+}
+
+.button-more-informations{
+	text-align:center;
+	margin-top:20px;
+}
+
+.event-template-default.single.single-event .entry-header.large{
+	text-align:center;
+}
+
+.event-template-default.single.single-event .entry-header.large::before{
+	margin-top:40px !important;
+	height:525px !important;
+}
+
+.event-template-default.single.single-event .event-category{
+	margin-top:5px;
+}
+
+.event-template-default.single.single-event .entry-header.large img{
+	margin-top:50px;
+}
+
+.event-navigation{
+	display: flex;
+	justify-content: center;
+}
+
+.event-navigation p{
+	margin-top: 9px;
+	margin-bottom: 13.5px;
+}
+
+.archive .page-header{
+	max-width:100% !important;
+	margin-bottom:0 !important;
+}
+
+.archive .page-header h1{
+	text-align: center;
+}
+
+.events-sorting-navigation{
+	padding-right: 5%;
+	padding-left: 10%;
+}
+
+.archive-navigation{
+	font-weight: bold;
+}
+
+.archive-navigation a{
+	margin-left: 12px;
+	margin-right: 12px;
+}
+
+/*-----------------------------------------------------------
+			Events and partners resume
+------------------------------------------------------------*/
+
+.events-sorting-navigation{
+	display: flex;
+	justify-content: space-between;
+}
+
+.events-sorting-navigation p{
+	margin-top: 11px;
+	margin-bottom: 11px;
+}
+
+.page-template-template-page-events h1{
+	text-align: center;
+}
+
+.articles-resume{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content: space-between;
+}
+
+.articles-resume article{
+ 	width:40%;
+ 	margin-bottom:20px;
+ 	margin-right: 5% !important;
+ 	margin-left: 5% !important;
+}
+
+.articles-resume .entry-header{
+	margin-bottom:0 !important;
+}
+
+.articles-resume .entry-header::before{
+	display:none !important;
+}
+
+.articles-resume .eo-event-date{
+	margin-bottom:0;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+
+.articles-resume .event-presentation{
+	width:100%;
+}
+
+/*-----------------------------------------------------------
+						Media queries
+------------------------------------------------------------*/
+
+@media screen and (max-width: 768px) 
+{
+/*-----------------------------------------------------------
+						Events
+------------------------------------------------------------*/
+
+	#section-upcoming-event{
+		margin-top:20px;
+	}
+
+	#section-upcoming-event img{
+		width:100%;
+	}
+
+	#section-upcoming-event .eo-event-date{
+		background-color:#22427C;
+		margin-bottom:0;
+		padding-top:5px;
+		padding-bottom:5px;
+		font-size:16px !important;
+	}
+
+	.event-category{
+		font-size:14px !important;
+	}
+
+	.event-presentation{
+		width:96%;
+	}
+
+	.eo-event-details.event-entry-meta, .eo-event-content{
+	width:90%;
+}
+
+/*-----------------------------------------------------------
+			Events and partners resume
+------------------------------------------------------------*/
+
+	.articles-resume article{
+	 	width:100%;
+	 	margin-left: 0 !important;
+	 	margin-right: 0 !important;
+	}
+
+	.articles-resume .event-presentation{
+		width:96%;
+	}
 }
