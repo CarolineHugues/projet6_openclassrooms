@@ -86,18 +86,22 @@ function get_content_section($id){
 				Events - function for the plugin Event organiser
 ---------------------------------------------------------------------------*/
 
+/* Monthly navigation on monthly events archive - links for next and previous month */
+
 function get_nextYear_month_monthly_archive(){
 	$year = eo_get_event_archive_date( 'Y' );
 	$month = eo_get_event_archive_date( 'm' );
-	return $nextyear = date("Y/m",strtotime("$year/$month/01 + 1 month"));
+	return $nextmonth = date("Y/m",strtotime("$year/$month/01 + 1 month"));
 }
 		
 function get_previousYear_month_monthly_archive(){
 	$year = eo_get_event_archive_date( 'Y' );
 	$month = eo_get_event_archive_date( 'm' );
-	return $previousyear = date("Y/m",strtotime("$year/$month/01 - 1 month"));
+	return $previousmonth = date("Y/m",strtotime("$year/$month/01 - 1 month"));
 }
-		
+
+/* Annual navigation on annual events archive - links for next and previous year */
+
 function get_nextYear_annual_archive(){
 	$year = eo_get_event_archive_date( 'Y' );
 	return $nextyear = $year + 1;
@@ -107,6 +111,8 @@ function get_previousYear_annual_archive(){
 	$year = eo_get_event_archive_date( 'Y' );
 	return $previousyear = $year - 1;
 }
+
+/* Monthly navigation on current month/sorting events page - links for next and previous month*/
 
 function get_nextMonth_page_current_or_sorting_month(){
 	if(!empty($_GET['month'])) {
@@ -143,6 +149,8 @@ function get_previousMonth_page_current_or_sorting_month(){
 	}
 }
 
+/* Display month in french and year on current month/sorting events page */
+
 function get_french_current_or_sorting_month(){
 
 	if(!empty($_GET['month'])){
@@ -176,6 +184,37 @@ function get_current_or_sorting_year(){
 	}
 }
 
+/* Display french next month for monthly navigation */
+
+function get_french_nextMonth(){
+	if (eo_is_event_archive( 'month' ) )
+	{
+		$year = eo_get_event_archive_date( 'Y' );
+		$month = eo_get_event_archive_date( 'm' );
+		$nextmonth = date("m",strtotime("$year/$month/01 + 1 month"));
+		return get_french_month($nextmonth);
+	}
+	elseif(!empty($_GET['month'])) {
+		$month =  get_month_number($_GET['month']);
+		if (empty($_GET['year']))
+		{
+			$year = get_year_page_events($_GET['month']);
+		}
+		else 
+		{
+			$year = $_GET['year'];
+		}
+		$nextmonth = date("m",strtotime("$year/$month/01 + 1 month"));
+		return get_french_month($nextmonth);
+	}
+	else{
+		$nextmonth = date("m",strtotime("now + 1 month"));
+		return get_french_month($nextmonth);
+	}
+}
+
+/* Calculate the years of the months' current school year in the dropdown list */
+
 function get_year_page_events($month){
 	$monthnumber = get_month_number($month);
 	if(date('m') > 8)
@@ -200,10 +239,21 @@ function get_year_page_events($month){
 	return $year;
 }
 
+/* Get month number from month in french */
+
 function get_month_number($month){
 	$array = array(1 => 'janvier', 2 =>  'fevrier', 3 => 'mars', 4 => 'avril', 5 => 'mai', 6 => 'juin', 7 => 'juillet', 8 => 'aout', 9 => 'septembre', 10 => 'octobre', 11 => 'novembre', 12 => 'decembre');
 	return $monthnumber = array_search($month, $array);
 }
+
+/* Get french month from monthnumber */
+
+function get_french_month($monthnumber){
+	$array = array('janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'decembre');
+	return $monthnumber = $array[$monthnumber-1];
+}
+
+/* Get english month */
 
 function get_english_month($month){
 	$monthnumber =  get_month_number($month);
@@ -211,6 +261,8 @@ function get_english_month($month){
 	$number = $monthnumber -1;
 	return $month = $array[$number];
 }
+
+/* Get events of current month or events of sorting by category and month */
 
 function get_current_month_or_sorting_events(){
 	$category = $_GET['cat']; 
@@ -263,6 +315,8 @@ function get_current_month_or_sorting_events(){
     );
 }
 
+/* Arguments for the categories dropdown list */
+
 function get_args_sorting_categories(){
 	return $cat_args = array(
 		'show_option_none' => __( 'Toutes catégories' ),
@@ -270,19 +324,23 @@ function get_args_sorting_categories(){
 		'orderby'      => 'name',
 		'taxonomy'     => 'event-category',
 		'id'           => 'eo-event-cat',
-		'value_field'	     => 'slug',
+		'value_field'  => 'slug',
 	); 
 }
 
+/* Get the upcomming event */
+
 function get_upcomming_event(){
-	return $event = eo_get_events(array(
-        'numberposts'=>1,
+	return $event = array(
+        'posts_per_page' => 1,
         'post_type' =>  'event',
         'orderby'=> 'eventstart',
 		'order'=> 'ASC',
         'event_start_after'=> 'now',
-    ));
+    );
 }
+
+/* Get the similar events based on the same category */
 
 function get_similar_events($categories){
 	return $similarevents = eo_get_events( array(
@@ -300,6 +358,12 @@ function get_similar_events($categories){
         'exclude' => array(get_the_ID()), 
 	));
 }
+
+/* ------------------------------------------------------------------------
+							Numbered pagination
+---------------------------------------------------------------------------*/
+
+/* Display a numbered pagination */
 
 function numbered_pagination() {
 	global $wp_query, $wp_rewrite;

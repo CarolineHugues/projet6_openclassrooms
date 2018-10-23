@@ -17,7 +17,7 @@
 
 		<?php if ( $next ) : ?>
 			<!-- If the event is occurring again in the future, display the date -->
-			<?php printf( '<p>' . __( 'This event is running from %1$s until %2$s. It is next occurring on %3$s', 'eventorganiser' ) . '</p>', eo_get_schedule_start( 'j F Y' ), eo_get_schedule_last( 'j F Y' ), $next );?>
+			<?php printf( '<p>' . __( 'Cet événement se déroule du %1$s au %2$s. La prochaine date est le %3$s', 'eventorganiser' ) . '</p>', eo_get_schedule_start( 'j F Y' ), eo_get_schedule_last( 'j F Y' ), $next );?>
 
 		<?php else : ?>
 			<!-- Otherwise the event has finished (no more occurrences) -->
@@ -28,12 +28,8 @@
 	<ul class="eo-event-meta">
 
 		<?php if ( ! eo_recurs() ) { 
-			echo eo_get_the_start( 'l j F Y' ) . ' - ' . eo_get_the_start( 'H' ) . ' h ' . eo_get_the_start( 'i' ); 
+			echo eo_get_the_start( 'l j F Y' ) . ' ' . eo_get_the_start( 'H' ) . ' h ' . eo_get_the_start( 'i' ) . ' - ' . eo_get_the_end( 'H' ) . ' h ' . eo_get_the_end( 'i' ); 
 		} ?>
-
-		<?php if ( get_the_terms( get_the_ID(), 'event-tag' ) && ! is_wp_error( get_the_terms( get_the_ID(), 'event-tag' ) ) ) { ?>
-			<li><strong><?php esc_html_e( 'Tags', 'eventorganiser' ); ?>:</strong> <?php echo get_the_term_list( get_the_ID(), 'event-tag', '', ', ', '' ); ?></li>
-		<?php } ?>
 
 		<?php if ( eo_recurs() ) {
 				//Event recurs - display dates.
@@ -47,7 +43,7 @@
 
 				if ( $upcoming->have_posts() ) : ?>
 
-					<li><strong><?php _e( 'Upcoming Dates', 'eventorganiser' ); ?>:</strong>
+					<li><strong><?php _e( 'Upcoming Dates', 'eventorganiser' ); ?> : </strong>
 						<ul class="eo-upcoming-dates">
 							<?php
 							while ( $upcoming->have_posts() ) {
@@ -64,6 +60,10 @@
 					wp_enqueue_script( 'eo_front' );
 					?>
 				<?php endif; ?>
+		<?php } ?>
+
+		<?php if ( get_the_terms( get_the_ID(), 'event-tag' ) && ! is_wp_error( get_the_terms( get_the_ID(), 'event-tag' ) ) ) { ?>
+			<li><strong><?php esc_html_e( 'Tags', 'eventorganiser' ); ?> : </strong> <?php echo get_the_term_list( get_the_ID(), 'event-tag', '', ', ', '' ); ?></li>
 		<?php } ?>
 
 		<?php do_action( 'eventorganiser_additional_event_meta' ) ?>

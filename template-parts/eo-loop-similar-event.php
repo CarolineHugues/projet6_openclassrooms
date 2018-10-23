@@ -17,9 +17,7 @@
 	</header><!-- .entry-header -->
 
 	<div>
-		<?php
-		//If it has one, display the thumbnail
-		if ( has_post_thumbnail($event->ID) ) { ?>
+		<?php if ( has_post_thumbnail($event->ID) ) { ?>
 			<a href="<?php echo eo_get_permalink($event->ID); ?>" itemprop="url">
 				<?php echo get_the_post_thumbnail( $event->ID, 'thumbnail', array( 'class' => 'attachment-thumbnail eo-event-thumbnail' ) ); ?>
 			</a>

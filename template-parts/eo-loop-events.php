@@ -17,9 +17,16 @@
 	endwhile;
 	?>
 
-	<?php if (function_exists('numbered_pagination')) numbered_pagination(); ?>
+	<?php if (function_exists('numbered_pagination')) numbered_pagination(); 
+	if (eo_is_event_archive( 'month' ) )
+	{ ?>
+		<p>
+			<a href="<?php echo eo_get_event_archive_link(get_nextYear_month_monthly_archive()); ?>"> <?php echo get_french_nextMonth(); ?></a>
+		</p>
+	<?php 
+	}
 
-<?php } else { ?>
+} else { ?>
 
 	<!-- If there are no events -->
 	<article id="post-0" class="post no-results not-found">

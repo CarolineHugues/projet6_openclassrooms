@@ -8,7 +8,6 @@
  * @since 1.0.0
  */
 
-//Call the template header
 get_header(); ?>
 
 
@@ -52,6 +51,5 @@ get_header(); ?>
 
 </div><!-- #primary -->
 
-<!-- Call template sidebar and footer -->
 <?php get_sidebar(); ?>
 <?php get_footer();

@@ -20,9 +20,7 @@
 
 	<div class="eo-event-details event-entry-meta">
 
-		<?php
-		//If it has one, display the thumbnail
-		if ( has_post_thumbnail() ) {
+		<?php if ( has_post_thumbnail() ) {
 			the_post_thumbnail( 'thumbnail', array( 'class' => 'attachment-thumbnail eo-event-thumbnail' ) );
 		} ?>
 
@@ -30,17 +28,15 @@
 			<span itemprop="summary"><?php the_title() ?></span>
 		</h2>
 
-		<?php
-		if ( eo_is_event_archive() ) {
-			if ( get_the_terms( get_the_ID(), 'event-category' ) && ! is_wp_error( get_the_terms( get_the_ID(), 'event-category' ) ) ) { ?>
-				<p><?php echo get_the_term_list( get_the_ID(),'event-category', '', ', ', '' ); ?></p>
-			<?php } 
-		} ?>
+		<?php if ( get_the_terms( get_the_ID(), 'event-category' ) && ! is_wp_error( get_the_terms( get_the_ID(), 'event-category' ) ) ) { ?>
+			<p><?php echo get_the_term_list( get_the_ID(),'event-category', '', ', ', '' ); ?></p>
+		<?php } ?>
 
 	</div><!-- .event-entry-meta -->
 
-	<!-- Show Event text as 'the_excerpt' or 'the_content' -->
-	<div class="eo-event-content" itemprop="description"><?php the_excerpt(); ?></div>
+	<div class="eo-event-content" itemprop="description">
+		<?php the_excerpt(); ?>
+	</div>
 
 	<div>
 		<a href="<?php echo eo_get_permalink(); ?>" itemprop="url">
