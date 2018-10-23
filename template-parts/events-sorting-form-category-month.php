@@ -6,7 +6,7 @@
 ?>
 
 <div id="categories">
-	<form id="category-select" class="category-select" action="<?php echo home_url( '/evenements-organises-par-le-bde/' ) ; ?>" method="get">
+	<form id="category-month-select" class="category-month-select" action="<?php echo home_url( '/evenements-organises-par-le-bde/' ) ; ?>" method="get">
 		<?php wp_dropdown_categories( get_args_sorting_categories() ); ?>
 		<input type="hidden" value="<?php if (eo_is_event_archive( 'month' ) ) 
 				{echo eo_get_event_archive_date( 'Y' ); } ?>"/>
@@ -29,6 +29,6 @@
 			<option value="juillet">juillet</option>
 			<option value="aout">aout</option>
 		</select>
-		<input type="submit" value="Rechercher"/>
+		<input type="submit" value="Rechercher" class="button"/>
 	</form>
 </div>

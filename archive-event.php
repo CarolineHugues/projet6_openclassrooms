@@ -24,27 +24,36 @@ get_header(); ?>
 				echo __( 'Evènements','eventorganiser' );
 			}
 			?></h1>
-		<p>
-			<?php
-			if ( eo_is_event_archive( 'day' ) ) {
-				//Viewing date archive
-				echo eo_get_event_archive_date( 'j F Y' );
-			} elseif ( eo_is_event_archive( 'month' ) ) {
-				//Viewing month archive ?>
-				<a href="<?php echo eo_get_event_archive_link(get_previousYear_month_monthly_archive()); ?>"> < </a>
-				<?php echo eo_get_event_archive_date( 'F Y' ); ?>
-				<a href="<?php echo eo_get_event_archive_link(get_nextYear_month_monthly_archive()); ?>"> ></a>
-				
-				<?php get_template_part( 'template-parts/page/events/events', 'sorting-form-category-month' );
-			} elseif ( eo_is_event_archive( 'year' ) ) {
-				//Viewing year archive ?>
+
+		<?php
+		if ( eo_is_event_archive( 'day' ) ) { 
+			//Viewing date archive ?>
+			<p class="archive-navigation">
+				<?php echo eo_get_event_archive_date( 'j F Y' ); ?>
+			</p>
+		<?php
+		} elseif ( eo_is_event_archive( 'month' ) ) {
+			//Viewing month archive ?>
+			<div class="events-sorting-navigation">
+				<p class="archive-navigation">
+					<a href="<?php echo eo_get_event_archive_link(get_previousYear_month_monthly_archive()); ?>"> < </a>
+						<?php echo eo_get_event_archive_date( 'F Y' ); ?>
+					<a href="<?php echo eo_get_event_archive_link(get_nextYear_month_monthly_archive()); ?>"> ></a>
+				</p>
+					
+				<?php get_template_part( 'template-parts/page/events/events', 'sorting-form-category-month' ); ?>
+			</div>
+		<?php
+		} elseif ( eo_is_event_archive( 'year' ) ) {
+			//Viewing year archive ?>
+			<p class="archive-navigation">
 				<a href="<?php echo eo_get_event_archive_link(get_previousYear_annual_archive()); ?>/"> < </a>
-				<?php echo ' ' . eo_get_event_archive_date( 'Y' ) . ' '; ?>
+					<?php echo ' ' . eo_get_event_archive_date( 'Y' ) . ' '; ?>
 				<a href="<?php echo eo_get_event_archive_link(get_nextYear_annual_archive()); ?>/"> ></a>
-			<?php
-			} 
-			?>
-		</p>
+			</p>
+		<?php
+		} 
+		?>
 	</header>
 
 	<?php eo_get_template_part( 'template-parts/page/events/eo', 'loop-events' ); //Lists the events ?>

@@ -11,21 +11,26 @@
 
 <?php if ( have_posts() ) { ?>
 
-	<?php
-	while ( have_posts() ) : the_post();
-		eo_get_template_part( 'template-parts/page/events/eo', 'loop-single-event' );
-	endwhile;
-	?>
+	<section class="articles-resume">
+		<?php
+		while ( have_posts() ) : the_post();
+			eo_get_template_part( 'template-parts/page/events/eo', 'loop-single-event' );
+		endwhile;
+		?>
+	</section>
 
-	<?php if (function_exists('numbered_pagination')) numbered_pagination(); 
-	if (eo_is_event_archive( 'month' ) )
-	{ ?>
-		<p>
-			<a href="<?php echo eo_get_event_archive_link(get_nextYear_month_monthly_archive()); ?>"> <?php echo get_french_nextMonth(); ?></a>
-		</p>
-	<?php 
-	}
+	<section class="event-navigation">
+		<?php if (function_exists('numbered_pagination')) numbered_pagination(); 
+		if (eo_is_event_archive( 'month' ) )
+		{ ?>
+			<p>
+				<a href="<?php echo eo_get_event_archive_link(get_nextYear_month_monthly_archive()); ?>"> <?php echo get_french_nextMonth(); ?></a>
+			</p>
+		<?php 
+		}?>
+	</section>
 
+<?php
 } else { ?>
 
 	<!-- If there are no events -->

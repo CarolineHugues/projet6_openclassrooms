@@ -10,35 +10,40 @@
 
 	<header class="eo-event-header entry-header">
 
-		<div class="eo-event-date">
+		<p class="eo-event-date">
 			<?php
 				echo eo_get_the_start( 'l j F Y' ) . ' - ' . eo_get_the_start( 'H' ) . ' h ' . eo_get_the_start( 'i' ); 
 			?>
-		</div>
+		</p>
+
+		<?php if ( has_post_thumbnail() ) { ?>
+			<a href="<?php echo eo_get_permalink(); ?>" itemprop="url">
+				<?php the_post_thumbnail(); ?>
+			</a>
+		<?php 
+		} ?>
 
 	</header><!-- .entry-header -->
 
-	<div class="eo-event-details event-entry-meta">
+	<section class="event-presentation">
+		<div class="eo-event-details event-entry-meta">
 
-		<?php if ( has_post_thumbnail() ) {
-			the_post_thumbnail( 'thumbnail', array( 'class' => 'attachment-thumbnail eo-event-thumbnail' ) );
-		} ?>
+			<h2 class="eo-event-title entry-title">
+				<span itemprop="summary"><?php the_title() ?></span>
+			</h2>
 
-		<h2 class="eo-event-title entry-title">
-			<span itemprop="summary"><?php the_title() ?></span>
-		</h2>
+			<?php if ( get_the_terms( get_the_ID(), 'event-category' ) && ! is_wp_error( get_the_terms( get_the_ID(), 'event-category' ) ) ) { ?>
+				<p class="event-category"><?php echo get_the_term_list( get_the_ID(),'event-category', '', ', ', '' ); ?></p>
+			<?php } ?>
 
-		<?php if ( get_the_terms( get_the_ID(), 'event-category' ) && ! is_wp_error( get_the_terms( get_the_ID(), 'event-category' ) ) ) { ?>
-			<p><?php echo get_the_term_list( get_the_ID(),'event-category', '', ', ', '' ); ?></p>
-		<?php } ?>
+		</div><!-- .event-entry-meta -->
 
-	</div><!-- .event-entry-meta -->
+		<div class="eo-event-content" itemprop="description">
+			<?php the_excerpt(); ?>
+		</div>
+	</section>
 
-	<div class="eo-event-content" itemprop="description">
-		<?php the_excerpt(); ?>
-	</div>
-
-	<div>
+	<div class="button-more-informations">
 		<a href="<?php echo eo_get_permalink(); ?>" itemprop="url">
 			<button>Informations supplémentaires</button>
 		</a>

@@ -15,14 +15,14 @@ get_header(); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-				<header class="entry-header">
+				<header class="entry-header large">
 					
 					<?php if ( get_the_terms( get_the_ID(), 'event-category' ) && ! is_wp_error( get_the_terms( get_the_ID(), 'event-category' ) ) ) { ?>
-							<p> <?php echo $categories = get_the_term_list( get_the_ID(),'event-category', '', ', ', '' ); ?></p>
+							<p class="event-category"> <?php echo $categories = get_the_term_list( get_the_ID(),'event-category', '', ', ', '' ); ?></p>
 						<?php } ?>
 
 					<?php if ( has_post_thumbnail() ) {
-							the_post_thumbnail( 'thumbnail', array( 'class' => 'attachment-thumbnail eo-event-thumbnail' ) );
+							the_post_thumbnail();
 						} ?>
 				
 				</header><!-- .entry-header -->

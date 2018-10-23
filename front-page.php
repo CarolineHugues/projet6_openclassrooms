@@ -26,14 +26,18 @@ get_header(); ?>
 			get_template_part( 'template-parts/post/content', 'none' );
 		endif; ?>
 
-		<?php $the_query = new WP_Query( get_upcomming_event() ); ?>
-    	<section id="section-upcomming-event">
+		<?php $the_query = new WP_Query( get_upcoming_event() ); ?>
+    	<section id="section-upcoming-event">
     		<h1>Prochain évènement :</h1>
      		<?php if ( $the_query->have_posts() ) {
      			while ( $the_query->have_posts() ) : $the_query->the_post();
 				eo_get_template_part( 'template-parts/page/events/eo', 'loop-single-event' );
 				endwhile; 
-			} ?>
+			} 
+			else{ ?>
+				<h2>Aucun évènement organisé</h2>
+			<?php
+			}?>
         </section>
 
 		<?php get_template_part( 'template-parts/page/home/home', 'widgets' ); ?>
