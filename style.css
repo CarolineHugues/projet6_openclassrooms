@@ -50,16 +50,16 @@ h1{
 
 h2{
 	font-size:35px !important;
-	padding-left:20px;
 }
 
 h3,
 #around-caen-section .csColumn p:first-child,
-#section-calendar h2 {
+#section-calendar h2{
 	font-size:30px !important;
 }
 
-h4{
+h4,
+.subtitle-event-venue {
 	font-size:28px !important;
 }
 
@@ -81,12 +81,19 @@ h6{
 }
 
 .jt__member-name h2,
-.eo-event-date {
+.archive-navigation,
+#section-upcoming-event .eo-event-date {
 	font-size:20px !important;
+}
+
+.eo-event-date{
+	font-size:18px !important;
 }
  
 .document-icon .title,
-.event-category{
+.event-category,
+.category-subtitle,
+.event-dates{
 	font-size:17px !important;
 }
 
@@ -102,7 +109,9 @@ h6{
 p,
 .jt__member,
 #wp-calendar,
-button{
+button,
+ul,
+li{
 	font-family: 'Roboto', sans-serif;
 }
 
@@ -129,7 +138,8 @@ h5,
 h6,
 .colors-custom caption,
 .colors-custom td,
-.page-numbers.current{
+.page-numbers.current,
+.similar-event h3:hover{
 	color: #22427C !important;
 }
 
@@ -155,20 +165,23 @@ button,
 .articles-resume .eo-event-date,
 select,
 .button,
-option:hover{
+option:hover,
+#similar-events header{
 	background-color: #22427C !important;
 }
 
 a,
 button,
 select,
-.button{
+.button,
+.category-subtitle,
+.similar-event h3{
 	color: #cea525 !important;
 }
 
 a:hover,
 button:hover,
-.button:hover {
+.button:hover{
 	color: #295095 !important;
 }
 
@@ -183,7 +196,8 @@ footer p,
 #n2-ss-3 p,
 #around-caen-section .csColumn p:first-child,
 .jt__member-position,
-.eo-event-date {
+.eo-event-date,
+.white-text {
 	color:#FFFFFF !important;
 }
 
@@ -196,7 +210,9 @@ p,
 #section-download-app h2,
 .jt__member-name h2,
 .jt__member-email,
-.colors-custom thead{
+.colors-custom thead,
+ul,
+li{
 	color:#000000 !important;
 }
 
@@ -230,7 +246,7 @@ button, .button{
 
 select {
 	border: none;
-	height: 32px;
+	height: 36px;
 	text-align: center;
 }
 
