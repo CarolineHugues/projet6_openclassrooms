@@ -25,9 +25,12 @@ Version: 0.1.0
 }
 
 #section-upcoming-event .eo-event-header.entry-header{
-	text-align:center;
 	position:relative;
 	margin-bottom:10px !important;
+}
+
+#section-upcoming-event .eo-event-header.entry-header p{
+	text-align:center !important;
 }
 
 #section-upcoming-event .eo-event-header.entry-header::before{
@@ -100,6 +103,10 @@ Version: 0.1.0
 	margin-bottom: 13.5px;
 }
 
+.link-text-next-month{
+	font-weight: bold;
+}
+
 .archive .page-header{
 	max-width:100% !important;
 	margin-bottom:0 !important;
@@ -107,6 +114,17 @@ Version: 0.1.0
 
 .archive .page-header h1{
 	text-align: center;
+}
+
+.events-sorting-navigation{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap:wrap;
+}
+
+.events-sorting-navigation p{
+	margin-top: 11px;
+	margin-bottom: 11px;
 }
 
 .events-sorting-navigation{
@@ -123,23 +141,158 @@ Version: 0.1.0
 	margin-right: 12px;
 }
 
-/*-----------------------------------------------------------
-			Events and partners resume
-------------------------------------------------------------*/
-
-.events-sorting-navigation{
-	display: flex;
-	justify-content: space-between;
-}
-
-.events-sorting-navigation p{
-	margin-top: 11px;
-	margin-bottom: 11px;
-}
-
 .page-template-template-page-events h1{
 	text-align: center;
 }
+
+.page-template-template-page-events .category-subtitle{
+	margin-bottom:20px !important;
+}
+
+.archive.tax-event-category h1{
+	margin-bottom: 10px !important;
+}
+
+.category-subtitle{
+	text-align: center;
+	padding-top:0;
+	margin-bottom: 10px;
+	text-transform: uppercase !important;
+	font-weight: bold;
+}
+
+.archive.tax-event-category .event-category{
+	display:none;
+}
+
+/*-----------------------------------------------------------
+							Event
+------------------------------------------------------------*/
+
+.event-template-default.single.single-event h1{
+	margin-bottom: 10px;
+}
+
+.event-venue-subtitle{
+	text-align: center;
+	padding-top: 0;
+}
+
+.event-address,
+.event-dates{
+	text-align: center;
+	font-weight: bold;
+}
+
+.eo-venue-map{
+	z-index:0 !important;
+}
+
+.event-template-default.single.single-event .eo-venue-map{
+	width:98% !important;
+	margin:auto;
+}
+
+.event-meta{
+	width:100%;
+	padding-right: 2%;
+	padding-left: 2%;
+	margin-top:20px;
+	padding-bottom: 20px;
+}
+
+.event-meta,
+.event-meta li{
+	list-style: none !important;
+}
+
+.event-tags{
+	font-style: italic;
+	text-align: right;
+}
+
+.subtitle-event-venue{
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.event-venue-name{
+	text-align:center;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+/*-----------------------------------------------------------
+			Similar events
+------------------------------------------------------------*/
+
+#section-similar-events h2{
+	text-align: center;
+}
+
+#similar-events{
+	display:flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.similar-event{
+	width:30%;
+}
+
+.similar-event header{
+	padding-bottom: 5px !important;
+	padding-top:5px !important;
+}
+
+.similar-event .eo-event-date{
+	padding-top: 0;
+}
+
+.similar-event-content {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  bottom:6px;
+  left: 0;
+  right: 0;
+  background-color: rgba(34, 66, 124, 0.7);
+  overflow: hidden;
+  width: 100%;
+  height: 50px;
+  transition: .5s ease;
+}
+
+.similar-event-content:hover .overlay {
+  height: 100%;
+}
+
+.similar-event-text {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -5%);
+  -ms-transform: translate(-50%, -5%);
+  transform: translate(-50%, -5%);
+  text-align: center;
+  width:80%;
+}
+
+.similar-event-text h3,
+.similar-event-text p
+{
+	width:100% !important;
+}
+
+.similar-event-text h3{
+	padding-top:10px;
+}
+
+/*-----------------------------------------------------------
+			Events and partners resume
+------------------------------------------------------------*/
 
 .articles-resume{
 	display:flex;
@@ -153,6 +306,12 @@ Version: 0.1.0
  	margin-right: 5% !important;
  	margin-left: 5% !important;
 }
+
+.articles-resume article header p{
+	text-align: center;
+	margin-bottom:0 !important;
+}
+
 
 .articles-resume .entry-header{
 	margin-bottom:0 !important;
@@ -171,10 +330,29 @@ Version: 0.1.0
 .articles-resume .event-presentation{
 	width:100%;
 }
-
 /*-----------------------------------------------------------
 						Media queries
 ------------------------------------------------------------*/
+
+@media screen and (max-width: 959px) 
+{
+/*-----------------------------------------------------------
+						Events
+------------------------------------------------------------*/
+	#categories{
+		margin-left:auto;
+	}
+
+/*-----------------------------------------------------------
+			Similar events
+------------------------------------------------------------*/
+
+	.similar-event{
+		width:45%;
+		margin-bottom: 20px;
+	}
+}
+
 
 @media screen and (max-width: 768px) 
 {
@@ -202,13 +380,23 @@ Version: 0.1.0
 		font-size:14px !important;
 	}
 
-	.event-presentation{
-		width:96%;
+	.event-presentation,
+	.event-template-default.single.single-event .entry-content{
+		width:96% !important;
 	}
 
-	.eo-event-details.event-entry-meta, .eo-event-content{
-	width:90%;
-}
+	.events-sorting-navigation{
+		padding-right:5%;
+		padding-left: 5%;
+	}
+
+	#category-month-dropdown{
+		text-align: right;
+	}
+
+	#category-month-dropdown .custom-dropdown{
+		margin-bottom: 5px;
+	}
 
 /*-----------------------------------------------------------
 			Events and partners resume
@@ -222,5 +410,29 @@ Version: 0.1.0
 
 	.articles-resume .event-presentation{
 		width:96%;
+	}
+
+/*-----------------------------------------------------------
+			Similar events
+------------------------------------------------------------*/
+
+	.similar-event{
+		width:96%;
+	}
+
+	.similar-event-content{
+		text-align:center;
+	}
+}
+
+@media screen and (max-width: 600px) 
+{
+/*-----------------------------------------------------------
+					Events
+------------------------------------------------------------*/
+
+	.events-sorting-navigation{
+		padding-right:2%;
+		padding-left: 2%;
 	}
 }

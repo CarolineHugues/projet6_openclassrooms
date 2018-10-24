@@ -16,16 +16,17 @@ get_header(); ?>
 		
 		<h1 class="page-title">
 			<?php if ( (FALSE != get_post_status( 281 ) ) && ( 'publish' === get_post_status ( 281 ) ) ) {
-				echo get_title_section(281) . ' : à ' . eo_get_venue_name( $venue_id ); 
+				echo get_title_section(281); 
 			}
 			else {
-				printf( __( 'Events at: %s', 'eventorganiser' ), '<span>' . eo_get_venue_name( $venue_id ) . '</span>' );
+				printf( __( 'Events at: %s', 'eventorganiser' ));
 			}
 			?>
 		</h1>
+		<h2 class="event-venue-subtitle"><?php echo eo_get_venue_name( $venue_id ); ?></h2>
 		
 		<?php $address = eo_get_venue_address(eo_get_venue()); ?>
-		<p>  <?php echo $address['address'] . ' ' . $address['postcode'] . ' ' . $address['city']; ?> </p>
+		<p class="event-address">  <?php echo $address['address'] . ' ' . $address['postcode'] . ' ' . $address['city']; ?> </p>
 
 		<?php
 		if ( $venue_description = eo_get_venue_description( $venue_id ) ) {

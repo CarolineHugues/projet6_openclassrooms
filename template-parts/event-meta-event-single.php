@@ -10,26 +10,25 @@
 
 <div class="eventorganiser-event-meta">
 
-	<!-- Is event recurring or a single event -->
-	<?php if ( eo_recurs() ) :?>
-		<!-- Event recurs - is there a next occurrence? -->
-		<?php $next = eo_get_next_occurrence( eo_get_event_datetime_format() );?>
+	<?php if ( eo_get_venue() ) {?>
+		<h2 class="subtitle-event-venue">Adresse :</h2>
+		<?php $tax = get_taxonomy( 'event-venue' ); ?>
+		<p class="event-venue-name"><a href="<?php eo_venue_link(); ?>"> <?php eo_venue_name(); ?></a></p>
+	<?php } ?>
 
-		<?php if ( $next ) : ?>
-			<!-- If the event is occurring again in the future, display the date -->
-			<?php printf( '<p>' . __( 'Cet événement se déroule du %1$s au %2$s. La prochaine date est le %3$s', 'eventorganiser' ) . '</p>', eo_get_schedule_start( 'j F Y' ), eo_get_schedule_last( 'j F Y' ), $next );?>
+	<?php $address = eo_get_venue_address(eo_get_venue()); ?>
+	<p class="event-address">  <?php echo $address['address'] . ' ' . $address['postcode'] . ' ' . $address['city']; ?> </p>
 
-		<?php else : ?>
-			<!-- Otherwise the event has finished (no more occurrences) -->
-			<?php printf( '<p>' . __( 'This event finished on %s', 'eventorganiser' ) . '</p>', eo_get_schedule_last( 'd F Y', '' ) );?>
-		<?php endif; ?>
+	<!-- Does the event have a venue? -->
+	<?php if ( eo_get_venue() && eo_venue_has_latlng( eo_get_venue() ) ) : ?>
+		<!-- Display map -->
+		<div class="eo-venue-map">
+			<?php echo eo_get_venue_map( eo_get_venue(), array( 'width' => '100%' ) ); ?>
+		</div>
 	<?php endif; ?>
+	
 
-	<ul class="eo-event-meta">
-
-		<?php if ( ! eo_recurs() ) { 
-			echo eo_get_the_start( 'l j F Y' ) . ' ' . eo_get_the_start( 'H' ) . ' h ' . eo_get_the_start( 'i' ) . ' - ' . eo_get_the_end( 'H' ) . ' h ' . eo_get_the_end( 'i' ); 
-		} ?>
+	<ul class="event-meta">
 
 		<?php if ( eo_recurs() ) {
 				//Event recurs - display dates.
@@ -63,29 +62,12 @@
 		<?php } ?>
 
 		<?php if ( get_the_terms( get_the_ID(), 'event-tag' ) && ! is_wp_error( get_the_terms( get_the_ID(), 'event-tag' ) ) ) { ?>
-			<li><strong><?php esc_html_e( 'Tags', 'eventorganiser' ); ?> : </strong> <?php echo get_the_term_list( get_the_ID(), 'event-tag', '', ', ', '' ); ?></li>
+			<li class="event-tags"><strong><?php esc_html_e( 'Tags', 'eventorganiser' ); ?> : </strong> <?php echo get_the_term_list( get_the_ID(), 'event-tag', '', ', ', '' ); ?></li>
 		<?php } ?>
 
 		<?php do_action( 'eventorganiser_additional_event_meta' ) ?>
 
 	</ul>
-
-
-	<?php if ( eo_get_venue() ) {
-		$tax = get_taxonomy( 'event-venue' ); ?>
-		<p><a href="<?php eo_venue_link(); ?>"> <?php eo_venue_name(); ?></a></p>
-	<?php } ?>
-
-	<?php $address = eo_get_venue_address(eo_get_venue()); ?>
-	<p>  <?php echo $address['address'] . ' ' . $address['postcode'] . ' ' . $address['city']; ?> </p>
-
-	<!-- Does the event have a venue? -->
-	<?php if ( eo_get_venue() && eo_venue_has_latlng( eo_get_venue() ) ) : ?>
-		<!-- Display map -->
-		<div class="eo-event-venue-map">
-			<?php echo eo_get_venue_map( eo_get_venue(), array( 'width' => '100%' ) ); ?>
-		</div>
-	<?php endif; ?>
 
 
 	<div style="clear:both"></div>

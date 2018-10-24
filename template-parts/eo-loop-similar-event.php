@@ -6,7 +6,7 @@
  * @since 3.0.0
  */
 ?>
-<div>
+<div class="similar-event">
 
 	<header class="eo-event-header entry-header">
 
@@ -16,24 +16,29 @@
 
 	</header><!-- .entry-header -->
 
-	<div>
+	<div class="similar-event-content">
 		<?php if ( has_post_thumbnail($event->ID) ) { ?>
 			<a href="<?php echo eo_get_permalink($event->ID); ?>" itemprop="url">
-				<?php echo get_the_post_thumbnail( $event->ID, 'thumbnail', array( 'class' => 'attachment-thumbnail eo-event-thumbnail' ) ); ?>
+				<?php echo get_the_post_thumbnail( $event->ID); ?>
 			</a>
 		<?php
 		} ?>
-	</div>
 
-	<div>
-		<a href="<?php echo eo_get_permalink($event->ID); ?>" itemprop="url">
-			<h3 class="eo-event-title entry-title">
-				<span itemprop="summary"><?php echo get_the_title( $event->ID ); ?></span>
-			</h3>
-		</a>
+		<div <?php if ( has_post_thumbnail($event->ID) ) {echo 'class="overlay"';}?>>
+			<div <?php if ( has_post_thumbnail($event->ID) ) {echo 'class="similar-event-text"'; }?>>
+				<a href="<?php echo eo_get_permalink($event->ID); ?>" itemprop="url">
+					<h3 class="eo-event-title entry-title">
+						<span itemprop="summary"><?php echo title(10, $event->ID); ?></span>
+					</h3>
+				</a>
 
-		<p class="eo-event-content" itemprop="description">
-			<?php echo get_the_excerpt($event->ID); ?>
-		</p>
+				<p class="eo-event-content <?php if ( has_post_thumbnail($event->ID) ) {echo 'white-text'; }?>" itemprop="description">
+					<?php if(has_excerpt($event->ID))
+					{
+						echo excerpt(25, $event->ID);
+					} ?>
+				</p>
+			</div>
+		</div>
 	</div>
 </div>

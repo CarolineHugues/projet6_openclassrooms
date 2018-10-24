@@ -15,6 +15,13 @@
 			<?php the_title(); ?>
 		</h1>
 
+		<p class="category-subtitle">
+			<?php if($_GET['cat'] != 'tous')
+			{
+				echo $_GET['cat']; 
+			}?>			
+		</p>
+
 		<div class="events-sorting-navigation">
 			<p class="archive-navigation">
 				<a href="<?php echo eo_get_event_archive_link(get_previousMonth_page_current_or_sorting_month()); ?>"> < </a>
@@ -44,7 +51,7 @@
 		<section class="event-navigation">
 			<?php 
 		    if (function_exists('numbered_pagination')) numbered_pagination(); ?>
-		    <p>
+		    <p class="link-text-next-month">
 		    	<a href="<?php echo eo_get_event_archive_link(get_nextMonth_page_current_or_sorting_month()); ?>"><?php echo get_french_nextMonth(); ?></a>
 		    </p>
 	    </section>

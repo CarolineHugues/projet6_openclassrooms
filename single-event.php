@@ -27,26 +27,50 @@ get_header(); ?>
 				
 				</header><!-- .entry-header -->
 	
-				<div class="entry-content">
+				<div class="entry-content event-presentation">
 					<h1 class="entry-title"><?php the_title(); ?></h1>
 
-					<?php eo_get_template_part( 'template-parts/page/events/event-meta', 'event-single' ); ?>
+					<!-- Is event recurring or a single event -->
+					<?php if ( eo_recurs() ) :?>
+						<!-- Event recurs - is there a next occurrence? -->
+						<?php $next = eo_get_next_occurrence( eo_get_event_datetime_format() );?>
+
+						<?php if ( $next ) : ?>
+							<!-- If the event is occurring again in the future, display the date -->
+							<?php printf( '<p class="event-dates">' . __( 'Cet événement se déroule du %1$s au %2$s. </br>La prochaine date est le %3$s', 'eventorganiser' ) . '</p>', eo_get_schedule_start( 'j F Y' ), eo_get_schedule_last( 'j F Y' ), $next );?>
+
+						<?php else : ?>
+							<!-- Otherwise the event has finished (no more occurrences) -->
+							<?php printf( '<p class="event-dates">' . __( 'This event finished on %s', 'eventorganiser' ) . '</p>', eo_get_schedule_last( 'd F Y', '' ) );?>
+						<?php endif; ?>
+
+					<?php else : ?>
+						<p class="event-dates">
+							<?php echo eo_get_the_start( 'l j F Y' ) . ' ' . eo_get_the_start( 'H' ) . ' h ' . eo_get_the_start( 'i' ) . ' - ' . eo_get_the_end( 'H' ) . ' h ' . eo_get_the_end( 'i' ); ?>
+						</p>
+					<?php
+					endif; ?>
 
 					<?php the_content(); ?>
+
+					<?php eo_get_template_part( 'template-parts/page/events/event-meta', 'event-single' ); ?>
 				</div><!-- .entry-content -->
 
 			</article><!-- #post-<?php the_ID(); ?> -->
 
-			<section id="similar-events">
+			<section id="section-similar-events">
 
 				<?php $similarevents = get_similar_events($categories);
 
 				if($similarevents): ?>
 					<h2>Evènements similaires</h2>
-		     		<?php foreach ($similarevents as $event):
-		     			set_query_var( 'event', $event );
-						get_template_part( 'template-parts/page/events/eo', 'loop-similar-event', 'event' );
-		        	endforeach;
+					<div id="similar-events">
+			     		<?php foreach ($similarevents as $event):
+			     			set_query_var( 'event', $event );
+							get_template_part( 'template-parts/page/events/eo', 'loop-similar-event', 'event' );  
+			        	endforeach; ?>
+		        	</div>
+		        <?php
 		        endif;?>
 			</section>
 

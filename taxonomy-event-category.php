@@ -20,7 +20,7 @@ get_header(); ?>
 			}
 			?>
 		</h1>
-		<p>
+		<p class="category-subtitle">
 			<?php printf( '<span>' . single_cat_title( '', false ) . '</span>' ); ?>
 		</p>
 
