@@ -392,3 +392,33 @@ function numbered_pagination() {
 		echo '</div>';
 	}
 }
+
+/* ------------------------------------------------------------------------
+				Limit number of words displayed
+---------------------------------------------------------------------------*/
+
+/* ------------------ for excerpt --------------------------*/
+function excerpt($limit, $id) {
+  $excerpt = explode(' ', get_the_excerpt($id), $limit);
+  if (count($excerpt)>=$limit) {
+    array_pop($excerpt);
+    $excerpt = implode(" ",$excerpt).' ...';
+  } else {
+    $excerpt = implode(" ",$excerpt);
+  }	
+  $excerpt = preg_replace('`[[^]]*]`','',$excerpt);
+  return $excerpt;
+}
+
+/* ------------------ for title --------------------------*/
+function title($limit, $id) {
+  $title = explode(' ', get_the_title($id), $limit);
+  if (count($title)>=$limit) {
+    array_pop($title);
+    $title = implode(" ",$title).' ...';
+  } else {
+    $title = implode(" ",$title);
+  }	
+  $title = preg_replace('`[[^]]*]`','',$title);
+  return $title;
+}
