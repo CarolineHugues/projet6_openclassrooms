@@ -211,6 +211,17 @@ Version: 0.1.0
 	text-align: right;
 }
 
+.event-venue-meta{
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.venue-address,
+.event-template-default.single.single-event .eo-event-venue-map{
+	width:45% !important;
+}
+
 .subtitle-event-venue{
 	text-align: center;
 	margin-bottom: 5px;
@@ -396,6 +407,15 @@ Version: 0.1.0
 
 	#category-month-dropdown .custom-dropdown{
 		margin-bottom: 5px;
+	}
+
+/*-----------------------------------------------------------
+						Event
+------------------------------------------------------------*/
+
+	.venue-address,
+	.event-template-default.single.single-event .eo-event-venue-map{
+		width:98% !important;
 	}
 
 /*-----------------------------------------------------------

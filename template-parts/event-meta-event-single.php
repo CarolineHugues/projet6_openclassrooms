@@ -10,22 +10,26 @@
 
 <div class="eventorganiser-event-meta">
 
-	<?php if ( eo_get_venue() ) {?>
-		<h2 class="subtitle-event-venue">Adresse :</h2>
-		<?php $tax = get_taxonomy( 'event-venue' ); ?>
-		<p class="event-venue-name"><a href="<?php eo_venue_link(); ?>"> <?php eo_venue_name(); ?></a></p>
-	<?php } ?>
+	<section class="event-venue-meta">
+		<?php if ( eo_get_venue() ) {?>
+			<div class="venue-address">
+				<h2 class="subtitle-event-venue">Adresse :</h2>
+				<?php $tax = get_taxonomy( 'event-venue' ); ?>
+				<p class="event-venue-name"><a href="<?php eo_venue_link(); ?>"> <?php eo_venue_name(); ?></a></p>
 
-	<?php $address = eo_get_venue_address(eo_get_venue()); ?>
-	<p class="event-address">  <?php echo $address['address'] . ' ' . $address['postcode'] . ' ' . $address['city']; ?> </p>
+				<?php $address = eo_get_venue_address(eo_get_venue()); ?>
+				<p class="event-address">  <?php echo $address['address'] . ' ' . $address['postcode'] . ' ' . $address['city']; ?> </p>
+			</div>
+		<?php } ?>
 
-	<!-- Does the event have a venue? -->
-	<?php if ( eo_get_venue() && eo_venue_has_latlng( eo_get_venue() ) ) : ?>
-		<!-- Display map -->
-		<div class="eo-venue-map">
-			<?php echo eo_get_venue_map( eo_get_venue(), array( 'width' => '100%' ) ); ?>
-		</div>
-	<?php endif; ?>
+		<!-- Does the event have a venue? -->
+		<?php if ( eo_get_venue() && eo_venue_has_latlng( eo_get_venue() ) ) : ?>
+			<!-- Display map -->
+			<div class="eo-event-venue-map">
+				<?php echo eo_get_venue_map( eo_get_venue(), array( 'width' => '100%' ) ); ?>
+			</div>
+		<?php endif; ?>
+	</section>
 	
 
 	<ul class="event-meta">
