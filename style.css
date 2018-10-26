@@ -82,17 +82,20 @@ h6{
 
 .jt__member-name h2,
 .archive-navigation,
-#section-upcoming-event .eo-event-date {
+.category-subtitle,
+.tag-subtitle,
+#section-upcoming-event .eo-event-date,
+.day-date-events {
 	font-size:20px !important;
 }
 
-.eo-event-date{
+.eo-event-date,
+.link-text-next-month{
 	font-size:18px !important;
 }
  
 .document-icon .title,
 .event-category,
-.category-subtitle,
 .event-dates{
 	font-size:17px !important;
 }
@@ -111,7 +114,8 @@ p,
 #wp-calendar,
 button,
 ul,
-li{
+li,
+.submit{
 	font-family: 'Roboto', sans-serif;
 }
 
@@ -165,9 +169,18 @@ button,
 .articles-resume .eo-event-date,
 select,
 .button,
-option:hover,
-#similar-events header{
+option,
+#similar-events header,
+.submit,
+.comment-body .reply,
+.comment-list li:after{
 	background-color: #22427C !important;
+}
+
+#commentform textarea:focus,
+#commentform #author:focus,
+#commentform #email:focus{
+	border-color:#22427C;
 }
 
 a,
@@ -175,13 +188,16 @@ button,
 select,
 .button,
 .category-subtitle,
-.similar-event h3{
+.tag-subtitle,
+.similar-event h3,
+.submit{
 	color: #cea525 !important;
 }
 
 a:hover,
 button:hover,
-.button:hover{
+.button:hover,
+.submit:hover{
 	color: #295095 !important;
 }
 
@@ -220,16 +236,28 @@ li{
 						Buttons
 ------------------------------------------------------------*/
 
-.buttons-slideshow .n2-ss-button-container, button, .button{
-	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 2px rgba(0, 0, 0, 0.12);
+.buttons-slideshow .n2-ss-button-container, 
+button, 
+.button,
+.submit,
+.comment-body .reply{
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 2px rgba(0, 0, 0, 0.12) !important;
 	border-radius: 2px;
 }
 
-.buttons-slideshow .n2-ss-button-container:hover, button:hover, .button:hover{
-	box-shadow: none;
+.buttons-slideshow .n2-ss-button-container:hover, 
+button:hover, 
+.button:hover,
+.submit:hover,
+button.menu-toggle,
+.comment-body .reply:hover{
+	box-shadow: none !important;
 }
 
-button, .button{
+button, 
+.button,
+.submit,
+.comment-body .reply{
 	text-transform: uppercase;
 }
 
@@ -334,7 +362,8 @@ fieldset legend header h2{
 #section-page-partnership::after,
 #section-download-app::after,
 .jt__member::after,
-.event-presentation::after{
+.event-presentation::after,
+.comment-list li::after{
 	content:"";
 	height:4px;
 	position:absolute;
@@ -348,6 +377,10 @@ fieldset legend header h2{
 #section-download-app::after{
 	width:95% !important;
 	margin:auto;
+}
+
+.comment-list li::after{
+	width:82%;
 }
 
 /* ------------ Line with shadow -------------- */
