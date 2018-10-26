@@ -15,13 +15,16 @@ get_header(); ?>
 	<header class="page-header">
 		<h1 class="page-title">
 			<?php if ( (FALSE != get_post_status( 281 ) ) && ( 'publish' === get_post_status ( 281 ) ) ) {
-				echo get_title_section(281) . ' : ' . single_cat_title( '', false );
+				echo get_title_section(281);
 			}
 			else
 			{
-				printf( __( 'Event Tag: %s', 'eventorganiser' ), '<span>' . single_cat_title( '', false ) . '</span>' ); 
+				printf( __( 'Evènements', 'eventorganiser' )); 
 			}?>
 		</h1>
+		<p class="tag-subtitle">
+			<?php printf( '<span>' . single_cat_title( '', false ) . '</span>' ); ?>
+		</p>
 
 		<!-- If the tag has a description display it-->
 		<?php

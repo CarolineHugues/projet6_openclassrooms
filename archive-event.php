@@ -28,7 +28,7 @@ get_header(); ?>
 		<?php
 		if ( eo_is_event_archive( 'day' ) ) { 
 			//Viewing date archive ?>
-			<p class="archive-navigation">
+			<p class="day-date-events">
 				<?php echo eo_get_event_archive_date( 'j F Y' ); ?>
 			</p>
 		<?php
