@@ -1,0 +1,169 @@
+/*
+Theme Name: twentyseventeen-child
+Template: twentyseventeen
+Description: Theme enfant du site web du BDE ENSICAEN
+Author: Caroline Hugues
+Author URI: https://www.carolinehugues.ovh/
+Version: 0.1.0
+*/
+
+/*-----------------------------------------------------------
+					Single article
+------------------------------------------------------------*/
+
+.single-category{
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+
+.single-category li{
+	list-style: none;
+}
+
+.post.type-post .entry-content{
+	position:relative;
+	padding-bottom: 5px;
+}
+
+.post.type-post .entry-content p:last-child{
+	margin-bottom: 8px !important;
+}
+
+.post.type-post .entry-header.large{
+	text-align:center;
+}
+
+.post.type-post .entry-header.large::before{
+	margin-top:40px !important;
+	height:525px !important;
+}
+
+.post.type-post .entry-header.large img{
+	margin-top:50px;
+	max-width:75%;
+}
+
+.post.type-post span{
+	text-transform: none !important;
+}
+
+
+/*-----------------------------------------------------------
+			Similar article
+------------------------------------------------------------*/
+
+.similar-articles{
+	margin-top:50px;
+	display:flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.similar-articles h2{
+	text-align: center;
+	width:100%;
+}
+
+.similar-article{
+	width:30%;
+}
+
+.similar-article header{
+	padding-bottom: 5px !important;
+	padding-top:5px !important;
+	margin-bottom:10px;
+}
+
+.similar-article h3{
+	margin-bottom:0 !important;
+}
+
+.similar-article-content {
+  position: relative;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.similar-article .overlay {
+  position: absolute;
+  bottom:0;
+  left: 0;
+  right: 0;
+  background-color: rgba(34, 66, 124, 0.7);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+
+.similar-article-content:hover .overlay {
+  height: 110%;
+}
+
+.similar-article-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width:80%;
+}
+
+.similar-article-text p
+{
+	width:100% !important;
+}
+
+.similar-article .entry-header::before{
+	display:none !important;
+}
+
+/*-----------------------------------------------------------
+					Articles page
+------------------------------------------------------------*/
+
+.article-resume-presentation{
+	position: relative;
+	padding-bottom: 10px;
+}
+
+.article-resume-content p,
+.article-resume-entry-meta{
+	width:75%;
+	margin:auto;
+}
+
+
+/*-----------------------------------------------------------
+					Partners page
+------------------------------------------------------------*/
+
+.page-title{
+	text-align: center;
+}
+
+.partners-sorting-navigation #category-dropdown{
+	text-align: right;
+	margin-right: 10px;
+}
+
+/*-----------------------------------------------------------
+					Single partner page
+------------------------------------------------------------*/
+
+.partners .entry-header::before{
+	display:none;
+}
+
+.partners .post-thumbnail{
+	text-align: center;
+}
+
+.partners .similar-article img{
+	max-height:180px;
+	width:auto;
+}
