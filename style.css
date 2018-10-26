@@ -1,0 +1,223 @@
+/*
+Theme Name: twentyseventeen-child
+Template: twentyseventeen
+Description: Theme enfant du site web du BDE ENSICAEN
+Author: Caroline Hugues
+Author URI: https://www.carolinehugues.ovh/
+Version: 0.1.0
+*/
+
+/*-----------------------------------------------------------
+						Comments
+------------------------------------------------------------*/
+
+#reply-title{
+	text-align:center;
+}
+
+#commentform textarea,
+#commentform #author,
+#commentform #email{
+	background: #F1F1F1;
+	box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 5px;
+	border-color:#FFFFFF;
+}
+
+#commentform textarea{
+	height:150px;
+}
+
+.commentform{
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width:55%;
+	margin:auto;
+}
+
+.comment-form-comment{
+	width:58%;
+}
+
+#commentform .author-data{
+	width:40%;
+}
+
+#commentform .form-submit{
+	text-align: center;
+}
+
+.comment{
+	width:65%;
+	margin-left:5%;
+}
+
+.comment b{
+	color:#FFFFFF !important;
+}
+
+.comment .comment-metadata{
+	text-align: right;
+}
+
+.comment .comment-metadata time{
+	text-transform: none !important;
+	font-style: italic;
+}
+
+.comment-body{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-bottom: 0;
+}
+
+.comment-body footer:nth-child(1)
+{
+	order: 1;
+	width:82%;
+	margin-top:0 !important;
+	padding: 5px 10px 5px 80px;
+}
+
+.comment-body .comment-content:nth-child(2)
+{
+	order: 3;
+	width:100%;
+	padding-left:5%;
+	padding-right: 25%;
+}
+
+.comment-body .reply:nth-child(3)
+{
+	order: 2;
+	width:15%;
+	cursor: pointer;
+	text-align: center;
+	height: auto;
+	margin-top:auto;
+	padding-top:7px;
+	padding-bottom: 7px;
+}
+
+.children .comment{
+	width:100% !important;
+	margin-left:0 !important;
+}
+
+.comment-list li{
+	position:relative;
+	margin-bottom:70px;
+}
+
+.comment .children{
+	padding-left: 0 !important;
+}
+
+.comments-pagination .nav-links{
+	display: flex;
+	justify-content: center;
+}
+
+
+/*-----------------------------------------------------------
+						Media queries
+------------------------------------------------------------*/
+
+@media screen and (max-width: 1200px) 
+{
+
+/*-----------------------------------------------------------
+							Comments
+------------------------------------------------------------*/
+
+	.comment{
+		width:80%;
+	}
+
+	.comment article{
+		margin-left:0 !important;
+	}
+
+	.commentform{
+		width:70% !important;
+	}
+}
+
+
+@media screen and (max-width: 768px) 
+{
+
+/*-----------------------------------------------------------
+							Comments
+------------------------------------------------------------*/
+	
+	.comment
+	{
+		margin:auto;
+	}
+
+	.comment-body footer:nth-child(1)
+	{
+		order: 1;
+		width: 100%;
+	}
+
+	.comment-body .comment-content:nth-child(2)
+	{
+		order: 2;
+		width:100%;
+	}
+
+	.comment-body .reply:nth-child(3)
+	{
+		order: 3;
+		margin-left:auto;
+		width:20% !important;
+		margin-bottom:10px;
+	}
+
+	.comment-list li::after{
+		width:100%;
+	}
+
+	.commentform{
+		width:80% !important;
+	}
+
+	.commentform .comment-form-comment{
+		width:100% !important;
+	}
+
+	.commentform .author-data{
+		width:100% !important;
+	}
+}
+
+@media screen and (max-width: 480px) 
+{
+
+/*-----------------------------------------------------------
+				Comments
+------------------------------------------------------------*/
+	
+	.comment{
+		width:100% !important;
+	}
+
+	.comment-body .comment-meta{
+		padding-left:10% !important;
+	}
+
+	.comment-body .reply
+	{
+		width:30% !important;
+		margin-right:5%;
+	}
+
+	.comment-list li::after{
+		width:96%;
+		margin:auto;
+	}
+}
