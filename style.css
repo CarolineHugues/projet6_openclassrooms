@@ -167,3 +167,69 @@ Version: 0.1.0
 	max-height:180px;
 	width:auto;
 }
+
+
+/*-----------------------------------------------------------
+						Media queries
+------------------------------------------------------------*/
+
+@media screen and (max-width: 959px) 
+{
+/*-----------------------------------------------------------
+				Similar events / partners / articles
+------------------------------------------------------------*/
+
+	.similar-event,
+	.similar-article{
+		width:45%;
+		margin-bottom: 20px;
+	}
+}
+
+@media screen and (max-width: 768px) 
+{
+/*-----------------------------------------------------------
+			Events and partners resume
+------------------------------------------------------------*/
+
+	.articles-resume article{
+	 	width:100%;
+	 	margin-left: 0 !important;
+	 	margin-right: 0 !important;
+	}
+
+	.articles-resume .event-presentation{
+		width:96%;
+	}
+
+/*-----------------------------------------------------------
+						Partners 
+------------------------------------------------------------*/
+
+	.partners.has-post-thumbnail .attachment-post-thumbnail {
+		width: auto !important;
+	}
+
+	.page-template.page-template-template-page-partners img {
+		width: auto !important;
+	}
+
+	.article-resume-presentation::after,
+	.entry-content::after{
+		width:96% !important;
+		margin: auto;
+	}
+
+/*-----------------------------------------------------------
+			Similar events / partners / articles
+------------------------------------------------------------*/
+
+	.similar-event,
+	.similar-article{
+		width:96%;
+	}
+
+	.similar-event-content{
+		text-align:center;
+	}
+}
