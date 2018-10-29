@@ -1,0 +1,151 @@
+/*
+Theme Name: twentyseventeen-child
+Template: twentyseventeen
+Description: Theme enfant du site web du BDE ENSICAEN
+Author: Caroline Hugues
+Author URI: https://www.carolinehugues.ovh/
+Version: 0.1.0
+*/
+
+/*-----------------------------------------------------------
+					Search form
+------------------------------------------------------------*/
+
+#site-navigation .openBtn {
+    background: #f1f1f1;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: none !important;
+}
+
+#site-navigation .openBtn:hover {
+    background: #bbb;
+    padding-bottom:5px;
+}
+
+#site-navigation .overlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(34, 66, 124, 0.8);
+}
+
+#site-navigation .overlay-content {
+    position: relative;
+    top: 30%;
+    width: 80%;
+    text-align: center;
+    margin-top: 30px;
+    margin: auto;
+}
+
+#site-navigation .overlay .closebtn {
+    position: absolute;
+    right: 45px;
+    font-size: 55px;
+    cursor: pointer;
+    color: white;
+}
+
+#site-navigation .overlay .closebtn:hover {
+    color: #ccc;
+}
+
+#site-navigation .overlay input[type=text] {
+    padding: 15px;
+    font-size: 17px;
+    border: none;
+    float: left;
+    width: 80%;
+    background: white;
+    border-radius: 0 !important;
+    height:55px;
+}
+
+#site-navigation .overlay input[type=text]:hover {
+    background: #f1f1f1;
+}
+
+#site-navigation .overlay button {
+    float: left;
+    width: 20%;
+    padding: 9px;
+    border: none;
+    cursor: pointer;
+ 	border-radius: 0 !important;
+ 	height: 55px;
+}
+
+/*-----------------------------------------------------------
+						Page search
+------------------------------------------------------------*/
+
+.search .has-post-thumbnail .entry-header::before{
+	display:none;
+}
+
+.search article{
+	margin-right:2%;
+}
+
+.search h2
+{
+	margin-bottom:0 !important;
+}
+
+.search .search-form{
+	width:90%;
+	margin:auto;
+}
+
+.search #primary{
+	width:64%;
+	margin-left:auto;
+	margin-right: 2%;
+}
+
+.search .page-header{
+	position:fixed;
+}
+
+.search #content{
+	margin-top:50px;
+}
+
+.search input{
+	border-color:#22427C !important;
+	color:#22427C !important;
+}
+
+
+
+/*-----------------------------------------------------------
+						Media queries
+------------------------------------------------------------*/
+
+@media screen and (max-width: 768px) 
+{
+
+/*-----------------------------------------------------------
+						Page search
+------------------------------------------------------------*/
+
+	.search article{
+		margin-right:0;
+	}
+
+	.search #primary{
+		width:96%;
+		margin:auto;
+	}
+
+	.search .page-header{
+		position:inherit;
+	}
+}
