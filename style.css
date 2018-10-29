@@ -1,0 +1,144 @@
+/*
+Theme Name: twentyseventeen-child
+Template: twentyseventeen
+Description: Theme enfant du site web du BDE ENSICAEN
+Author: Caroline Hugues
+Author URI: https://www.carolinehugues.ovh/
+Version: 0.1.0
+*/
+
+/*-----------------------------------------------------------
+					Contact form
+------------------------------------------------------------*/
+
+#post-374 .entry-header{
+	margin-top:35px;
+	margin-bottom:30px !important;
+	padding-bottom:0 !important;
+}
+
+#post-374 .wpcf7-form{
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+#post-374 .wpcf7-form p{
+	margin-right:0;
+	margin-left:0;
+}
+
+.wpcf7-form input,
+.wpcf7-form textarea{
+	background: #F1F1F1;
+	box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 5px;
+	border-color:#FFFFFF !important;
+}
+
+.wpcf7-form #contact-subject,
+.wpcf7-form #contact-message,
+.wpcf7-form #contact-name,
+.wpcf7-form #contact-firstname,
+.wpcf7-form #contact-mail,
+.wpcf7-form #contact-identity,
+.wpcf7-form #contact-identity span{
+	width:100% !important;
+}
+
+.wpcf7-form #contact-subject,
+.wpcf7-form #contact-message{
+	width:100% !important;
+}
+
+.wpcf7-form #contact-text{
+	width:62% !important;
+}
+
+.wpcf7-form #contact-informations{
+	width:35% !important;
+}
+
+.wpcf7-form .submit{
+	border-radius:2px !important;
+}
+
+#captcha{
+	margin-left:auto;
+}
+
+.wpcf7-form #contact-submit{
+	width:100% !important;
+	text-align: center;
+}
+
+
+/*-----------------------------------------------------------
+						Media queries
+------------------------------------------------------------*/
+
+@media screen and (max-width: 959px) 
+{
+
+/*-----------------------------------------------------------
+					Contact form
+------------------------------------------------------------*/
+
+	#post-374 .entry-content{
+		width:90%;
+	}
+}
+
+
+@media screen and (max-width: 768px) 
+{
+
+/*-----------------------------------------------------------
+					Contact form
+------------------------------------------------------------*/
+	
+	#post-374 .wpcf7-form p{
+		margin-bottom: 8px !important;
+	}
+
+	#post-374 .wpcf7-form #contact-message{
+		margin-bottom: 15px !important;
+	}
+
+	.wpcf7-form #contact-text,
+	.wpcf7-form #contact-informations{
+		width:90% !important;
+		margin:auto;
+	}
+
+	.wpcf7-form #contact-informations{
+		margin-bottom:15px;
+	}
+
+	.wpcf7-form #contact-identity{
+		width:70% !important;
+		margin:auto !important;
+	}
+
+	#captcha{
+		margin-top:20px;
+	}
+
+	.wpcf7-form-control.g-recaptcha.wpcf7-recaptcha div{
+		margin-left: auto !important;
+	}
+
+}
+
+
+@media screen and (max-width: 480px) 
+{
+
+/*-----------------------------------------------------------
+					Contact form
+------------------------------------------------------------*/
+	
+	.wpcf7-form #contact-identity{
+		width:90% !important;
+	}
+}
