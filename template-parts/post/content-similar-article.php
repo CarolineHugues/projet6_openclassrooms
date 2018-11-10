@@ -18,9 +18,7 @@
 
 	<div class="similar-article-content">
 		<?php if ( has_post_thumbnail($similararticles->ID) ) { ?>
-			<a href="<?php echo eo_get_permalink($similararticles->ID); ?>" itemprop="url">
-				<?php echo get_the_post_thumbnail( $similararticles->ID); ?>
-			</a>
+			<?php echo get_the_post_thumbnail( $similararticles->ID); ?>
 		<?php
 		} ?>
 
@@ -33,6 +31,7 @@
 					</p>
 				</div>
 			</div>
-		<?php } ?>
+		<?php 
+		} ?>
 	</div>
 </div>
