@@ -18,9 +18,7 @@
 
 	<div class="similar-event-content">
 		<?php if ( has_post_thumbnail($event->ID) ) { ?>
-			<a href="<?php echo eo_get_permalink($event->ID); ?>" itemprop="url">
-				<?php echo get_the_post_thumbnail( $event->ID); ?>
-			</a>
+			<?php echo get_the_post_thumbnail( $event->ID); ?>
 		<?php
 		} ?>
 
