@@ -1,0 +1,2788 @@
+/*
+Theme Name: twentyseventeen-child
+Template: twentyseventeen
+Description: Theme enfant du site web du BDE ENSICAEN
+Author: Caroline Hugues
+Author URI: https://www.carolinehugues.ovh/
+Version: 0.1.0
+*/
+
+/*-----------------------------------------------------------
+					Text : fonts and sizes 
+------------------------------------------------------------*/
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('font/Roboto-regular/Roboto-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'Source Sans Pro Regular';
+	src: url('font/SourceSansPro-Regular/SourceSansPro-Regular.ttf'),
+		 url('font/SourceSansPro-Regular/SourceSansPro-Regular.eot'),
+		 url('font/SourceSansPro-Regular/SourceSansPro-Regular.otf');
+}
+
+@font-face {
+	font-family: 'Source Sans Pro Bold';
+	src: url('font/SourceSansPro-Bold/SourceSansPro-Bold.ttf'),
+		 url('font/SourceSansPro-Bold/SourceSansPro-Bold.eot'),
+		 url('font/SourceSansPro-Bold/SourceSansPro-Bold.otf');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+#n2-ss-3 h2,
+#around-caen-section .csColumn p:first-child,
+.jt__member-position,
+#section-calendar caption {
+	font-family: 'Source Sans Pro Bold', arial !important;
+	text-transform: none !important;
+}
+
+h1{
+	font-size:45px !important;
+}
+
+h2{
+	font-size:30px !important;
+}
+
+h3,
+#around-caen-section .csColumn p:first-child,
+.subtitle-event-venue,
+#section-page-partnership h2,
+#section-download-app h2,
+#section-calendar caption {
+	font-size:28px !important;
+}
+
+h4,
+#section-calendar h2,
+.similar-article h3 {
+	font-size:26px !important;
+}
+
+h5 {
+	font-size:24px !important;
+}
+
+h6{
+	font-size:22px !important;
+}
+
+
+.jt__member-position{
+	font-size:22px !important;
+}
+
+.jt__member-name h2,
+.archive-navigation,
+.category-subtitle,
+.tag-subtitle,
+#section-upcoming-event .eo-event-date,
+.day-date-events {
+	font-size:20px !important;
+}
+
+.eo-event-date,
+.link-text-next-month{
+	font-size:18px !important;
+}
+ 
+.document-icon .title,
+.event-category,
+.event-dates{
+	font-size:17px !important;
+}
+
+#top-menu a, 
+#top-mobile-menu a,
+#useful-links-section a,
+#wp-calendar .thead{
+	font-family: 'Source Sans Pro Regular', arial;
+	font-size:16px; 
+	font-weight: bold;
+}
+
+p,
+.jt__member,
+#wp-calendar,
+button,
+ul,
+li,
+.submit{
+	font-family: 'Roboto', sans-serif;
+}
+
+p,
+.jt__member,
+#wp-calendar{
+	text-align:justify;
+	font-size: 15px !important;
+}
+
+button{
+	font-size: 14px;
+}
+
+/*-----------------------------------------------------------
+						Colors
+------------------------------------------------------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.colors-custom caption,
+.colors-custom td,
+.page-numbers.current,
+.similar-event h3:hover,
+.post.type-post span{
+	color: #22427C !important;
+}
+
+.navigation-top.site-navigation-fixed, 
+#top-menu, 
+#site-navigation, 
+#top-mobile-menu,
+#top-social-menu,
+footer,
+.has-post-thumbnail .entry-header::before,
+.document-icon-row::after,
+button,
+#around-caen-section .csColumn p:first-child,
+#around-caen-section .csColumn::after,
+#section-page-partnership::after,
+#section-download-app::after,
+.jt__member::after,
+.jt__member-position,
+#section-calendar tfoot,
+#section-upcoming-event .eo-event-header.entry-header::before,
+.eo-event-header.entry-header.large::before,
+.event-presentation::after,
+.articles-resume .eo-event-date,
+select,
+.button,
+option,
+#similar-events header,
+.submit,
+.comment-body .reply,
+.comment-list li::after,
+.post.type-post .entry-content::after,
+.similar-articles header,
+.similar-article-content::after,
+.background-blue,
+.article-resume-presentation::after{
+	background-color: #22427C !important;
+}
+
+#commentform textarea:focus,
+#commentform #author:focus,
+#commentform #email:focus,
+.wpcf7-form input:focus,
+.wpcf7-form textarea:focus{
+	border-color:#22427C !important;
+}
+
+a,
+button,
+select,
+.button,
+.category-subtitle,
+.tag-subtitle,
+.similar-event h3,
+.submit,
+.similar-article h3{
+	color: #cea525 !important;
+}
+
+a:hover,
+button:hover,
+.button:hover,
+.submit:hover,
+.similar-article h3:hover{
+	color: #295095 !important;
+}
+
+a{
+	box-shadow: none !important;
+}
+
+.navigation-top .current-menu-item a, 
+.navigation-top .current_page_item a,
+footer p,
+#n2-ss-3 h2,
+#n2-ss-3 p,
+#around-caen-section .csColumn p:first-child,
+.jt__member-position,
+.eo-event-date,
+.white-text,
+#site-navigation .overlay h1{
+	color:#FFFFFF !important;
+}
+
+#nav-top .icon{
+	fill:#FFFFFF !important;
+}
+
+p,
+#section-page-partnership h2,
+#section-download-app h2,
+.jt__member-name h2,
+.jt__member-email,
+.colors-custom thead,
+ul,
+li,
+label{
+	color:#000000 !important;
+}
+
+/*-----------------------------------------------------------
+						Buttons
+------------------------------------------------------------*/
+
+.buttons-slideshow .n2-ss-button-container, 
+button, 
+.button,
+.submit,
+.comment-body .reply{
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 2px rgba(0, 0, 0, 0.12) !important;
+	border-radius: 2px;
+}
+
+.buttons-slideshow .n2-ss-button-container:hover, 
+button:hover, 
+.button:hover,
+.submit:hover,
+button.menu-toggle,
+.comment-body .reply:hover{
+	box-shadow: none !important;
+}
+
+button, 
+.button,
+.submit,
+.comment-body .reply{
+	text-transform: uppercase;
+}
+
+.button-more-informations button{
+	padding-left:20px;
+	padding-right:20px;
+	padding-bottom:9px;
+	padding-top:9px;
+}
+
+#section-useful-links-more button{
+	border-radius:6px;
+	padding-left:45px;
+	padding-right:45px;
+}
+
+
+/*-----------------------------------------------------------
+						Dropdown
+------------------------------------------------------------*/
+
+select {
+	border: none;
+	height: 36px;
+	text-align: center;
+	padding-left: 5px !important;
+}
+
+@supports (pointer-events: none) and
+      ((-webkit-appearance: none) or
+      (-moz-appearance: none) or
+      (appearance: none)) {
+
+    .custom-dropdown {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .custom-dropdown-select,
+    .postform {
+        padding-right: 2.5em; 
+        border: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;    
+    }
+
+    .custom-dropdown::before,
+    .custom-dropdown::after {
+        content: "";
+        position: absolute;
+        pointer-events: none;
+    }
+
+    .custom-dropdown::after { /*  Custom dropdown arrow */
+        content: "\25BC";
+        height: 1em;
+        font-size: .625em;
+        line-height: 1;
+        right: 1.2em;
+        top: 35%;
+    }
+
+    .custom-dropdown::before {
+        background-color: #22427C;
+    }
+
+    .custom-dropdown::after {
+        color: #cea525;
+    }
+}
+
+/*-----------------------------------------------------------
+						Fieldset
+------------------------------------------------------------*/
+
+fieldset{
+	border: 5px solid #22427C !important;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 5px;
+}
+
+legend{
+	margin-left:20px;
+	padding-left:20px;
+	padding-right:20px;
+}
+
+#useful-links-section legend{
+	margin-left:55px !important;
+}
+
+fieldset legend header{
+	margin-bottom:0 !important;
+}
+
+fieldset legend header h2{
+	margin:0 !important;
+	padding-left:0 !important;
+}
+
+
+/*-----------------------------------------------------------
+						Line
+------------------------------------------------------------*/
+
+.document-icon-row::after,
+#around-caen-section .csColumn::after,
+#section-page-partnership::after,
+#section-download-app::after,
+.jt__member::after,
+.event-presentation::after,
+.comment-list li::after,
+.post.type-post .entry-content::after,
+.similar-article-content::after,
+.article-resume-presentation::after{
+	content:"";
+	height:4px;
+	position:absolute;
+	left:0;
+	right:0;
+	width:100%;
+	bottom:0;
+}
+
+#section-page-partnership::after,
+#section-download-app::after{
+	width:95% !important;
+	margin:auto;
+}
+
+.comment-list li::after{
+	width:82%;
+}
+
+/* ------------ Line with shadow -------------- */
+.document-icon-row::after,
+#section-page-partnership::after,
+#section-download-app::after,
+.jt__member::after{
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+/*-----------------------------------------------------------
+						Structure
+------------------------------------------------------------*/
+
+html,
+body,
+.site,
+.site-content-contain {
+  height: 100%;
+}
+
+.site-content-contain{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+#content .wrap{
+	padding:0 !important;
+}
+
+#primary{
+	max-width: 100% !important;
+}
+
+.page:not(.home) #content{
+	padding-bottom:0 !important;
+}
+
+.link-more{
+	text-align:right;
+}
+
+.text-center{
+	text-align: center;
+}
+
+/*-----------------------------------------------------------
+						Menu
+------------------------------------------------------------*/
+
+#logo-bde{
+	width:132px;
+}
+
+#logo-bde .custom-logo-link{
+	padding:0 0 0 0;
+}
+
+#nav-top{
+	display:flex;
+}
+
+.wrap, .navigation-top .wrap{
+	max-width:100%;
+}
+
+.navigation-top{
+	box-shadow: 0px 4px 4px rgba(34, 66, 124, 0.24), 0px 0px 4px rgba(34, 66, 124, 0.12);
+	border:none;
+}
+
+.navigation-top .current-menu-item a, .navigation-top .current_page_item a{
+	pointer-events: none;
+	cursor: default;
+}
+
+.navigation-top .wrap{
+	padding-top:0.05px;
+	padding-bottom:0.05px;
+}
+
+#top-menu, #top-social-menu{
+	min-height:75px;
+	display: flex !important;
+	align-items: center;
+	padding:0 0 0 0;
+}
+
+#top-menu li{
+	vertical-align:middle; 
+}
+
+#top-menu a{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+#top-social-menu a{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#top-menu img:hover, 
+#top-social-menu img:hover{
+	padding-bottom:5px;
+}
+
+.menu-menu-superieur-container{
+	margin:auto;
+}
+
+
+/*----------------- Menu sandwich ---------------*/
+
+.menu-menu-superieur-mobile-container{
+	display: none;
+}
+
+/*-----------------------------------------------------------
+						footer
+------------------------------------------------------------*/
+footer{
+	border: none;
+	margin-top: 25px !important;
+}
+
+footer p{
+	text-align: center;
+}
+
+footer .wrap{
+	display: flex !important;
+	align-items:center;
+	flex-wrap:wrap;
+}
+
+
+.wrap .widget-column.footer-widget-2:nth-child(2)
+{
+	order: 3;
+}
+
+.wrap .site-info:nth-child(3)
+{
+	order: 2;
+}
+
+.widget-column.footer-widget-1, 
+.widget-column.footer-widget-2{
+	width:250px !important;
+	height: 100%;
+}
+
+.site-info{
+	width:350px ! important;
+	margin:auto;
+	padding-top: 0;
+}
+
+.site-info p{
+	margin-bottom: 0;
+}
+
+footer .wrap .widget.widget_text p{
+	margin-bottom: 0;
+}
+
+footer .wrap .widget.widget_text{
+	padding-bottom: 0;
+}
+
+/*-----------------------------------------------------------
+					Image thumbnail
+------------------------------------------------------------*/
+
+.single-post .attachment-post-thumbnail,
+.single-event .attachment-post-thumbnail,
+.page-template .single-featured-image-header img,
+.home .attachment-post-thumbnail {
+	min-height: 600px !important;
+}
+
+.similar-event-content .attachment-post-thumbnail{
+	min-height: 0 !important;
+}
+
+/*-----------------------------------------------------------
+						Home page
+------------------------------------------------------------*/
+
+.page-id-19 .panel-content .wrap{
+	padding-top:0;
+}
+
+.post-19 .entry-header{
+	display:none;
+}
+
+.page-id-19 .entry-content{
+	padding-bottom:10px;
+}
+
+.page-id-19 .entry-content h2,
+.page-id-19 .entry-content h3,
+.page-id-19 .entry-content h4,
+.page-id-19 .entry-content h5,
+.page-id-19 .entry-content h6,
+.page-id-19 .entry-content p{
+	width:100% !important;
+}
+
+/* --------------- Slideshow ------------*/
+
+#n2-ss-3-align {
+	margin-top:75px;
+	box-shadow: 0px 4px 4px rgba(34, 66, 124, 0.25) !important;
+}
+
+#n2-ss-3 .n2-ss-layer-row-inner{
+	justify-content: space-between;
+}
+
+#n2-ss-3 .col-button a{
+	font-weight: bold !important;
+}
+
+/*-----------------------------------------------------------
+						Page template
+------------------------------------------------------------*/
+
+.entry-title{
+	text-align:center;
+}
+
+.has-post-thumbnail .entry-header{
+	position:relative;
+	z-index: 2;
+}
+
+.has-post-thumbnail .entry-header::before{
+	content:"";
+	height:480px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	margin-top:90px;
+	z-index:-10;
+}
+
+.single-featured-image-header {
+	max-width:75%;
+	margin:auto;
+	margin-top:70px;
+}
+
+.entry-content {
+	width:75%;
+	margin:auto;
+}
+
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6,
+.entry-content p{
+	width:80% !important;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+
+/*-----------------------------------------------------------
+					Page upload documents
+------------------------------------------------------------*/
+
+.page-id-102 .entry-content{
+	width:80% !important;
+}
+
+.document-icon{
+	margin-bottom:15px !important;
+}
+
+.document-icon img{
+	width:140px !important;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+}
+
+.document-icon .title{
+	margin-top:10px;
+	margin-bottom:5px;
+	line-height: 1.3;
+}
+
+.document-icon-row{
+	margin-bottom:40px;
+	position:relative;
+}
+
+.page-id-102 .entry-content h2,
+.page-id-102 .entry-content h3,
+.page-id-102 .entry-content h4,
+.page-id-102 .entry-content h5,
+.page-id-102 .entry-content h6,
+.page-id-102 .entry-content p{
+	width:100% !important;
+}
+
+
+/*-----------------------------------------------------------
+				Home page widgets
+------------------------------------------------------------*/
+
+#section-home-widgets{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap:wrap; 
+	margin-top:80px;
+	margin-bottom: 80px;
+}
+
+#section-download-app,
+#section-page-partnership,
+#section-calendar{
+	width:30%;
+	position:relative;
+	display:flex;
+	align-items: flex-end;
+}
+
+#section-calendar{
+	width:34% !important;
+}
+
+#section-download-app h2,
+#section-page-partnership h2{
+	margin-top:0;
+	margin-bottom:20px !important;
+}
+
+#section-download-app h2{
+	text-align: left;
+}
+
+#section-page-partnership h2{
+	text-align: center;
+}
+
+#section-download-app p,
+#section-page-partnership p{
+	text-align: center;
+	margin-bottom: 40px !important;
+}
+
+#section-download-app p{
+	margin-top: 80px !important;
+}
+
+#section-page-partnership p{
+	margin-top: 60px !important;
+}
+
+#section-download-app section,
+#section-page-partnership section{
+	padding-bottom: 0 !important;
+}
+
+#section-download-app section:first-child{
+	width:60%;
+}
+
+#section-download-app section:last-child{
+	width:60%;
+}
+
+#section-download-app img{
+	margin-bottom:10px;
+}
+
+/* ----------- Calendar --------- */
+
+.widget.widget_calendar{
+	padding-bottom:0;
+}
+
+#wp-calendar{
+	margin-bottom:0;
+}
+
+#section-calendar h2{
+	margin-bottom:20px !important;
+	text-align:center;
+}
+
+#wp-calendar thead th{
+	border-bottom: solid 2px #22427C !important;
+	border-top:solid 10px #22427C;
+}
+
+/*-----------------------------------------------------------
+				Home section upload documents
+------------------------------------------------------------*/
+
+.post-109{
+	border-top:none !important;
+	margin-top:50px;
+	padding-bottom:10px;
+}
+
+.post-109 .wrap{
+	max-width:100% !important;
+}
+
+.post-109 fieldset{
+	width:80%;
+	margin:auto;
+}
+
+.post-109 .entry-content{
+	width:100% !important;
+}
+
+.post-109 .document-icon-row{
+	margin:0 !important;
+}
+
+.post-109 .document-icon-row::after{
+	display:none;
+}
+
+#button-section-upload-files{
+	text-align:center;
+	margin-top: 30px;
+	margin-bottom:0;
+}
+
+/*-----------------------------------------------------------
+				Caen page - useful links section
+------------------------------------------------------------*/
+
+#useful-links-section{
+	width:65%;
+	margin:auto;
+}
+
+#useful-links-section header{
+	padding-bottom: 0;
+}
+
+#useful-links-section .entry-content-wide{
+	width:92%;
+	margin:auto;
+}
+
+#section-useful-links-more{
+	margin-top:50px;
+}
+
+#section-useful-links-more p{
+	text-align: center;
+}
+
+/*-----------------------------------------------------------
+				Caen page - around Caen section
+------------------------------------------------------------*/
+
+#around-caen-section{
+	margin-top:50px;
+}
+
+#around-caen-section .entry-header{
+	margin-bottom:30px;
+}
+
+#around-caen-section .csColumn p:first-child {
+	text-align: center;
+	margin-bottom: 0;
+}
+
+#around-caen-section .csColumn p:nth-child(2) {
+	padding-left:0 !important;
+	padding-right: 0 !important;
+}
+
+#around-caen-section .csColumn p {
+	padding-left:20px;
+	padding-right: 20px;
+}
+
+#around-caen-section .csColumn{
+	position:relative;
+}
+
+/*-----------------------------------------------------------
+					BDE page
+------------------------------------------------------------*/
+
+.post-81 .entry-content{
+	width:100% !important;	
+}
+
+.post-81 .entry-content h2,
+.post-81 .entry-content h3,
+.post-81 .entry-content h4,
+.post-81 .entry-content h5,
+.post-81 .entry-content h6,
+.post-81 .entry-content p{
+	width:60% !important;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+.post-81 h2{
+	padding-left:20px; 
+}
+
+/*-----------------------------------------------------------
+			BDE page - team section
+------------------------------------------------------------*/
+.post-81 .jt__wrapper{
+	margin-left:auto !important;
+	margin-right:auto !important;
+	width:90%;
+}
+
+.jt__member{
+	display: flex !important;
+	flex-direction: column;
+	padding-bottom: 10px !important;
+	margin-right:12% !important;
+	margin-left:12% !important;
+}
+
+.jt__member li:nth-child(3)
+{
+	order: 1;
+}
+
+.jt__member li:nth-child(1){
+	order:2;
+}
+
+.jt__member li:nth-child(2){
+	order:3;
+}
+
+.jt__member li:nth-child(4){
+	order:4;
+}
+
+.jt__member li:nth-child(5){
+	order:5;
+}
+
+.jt__member li:nth-child(6){
+	order:6;
+}
+
+.jt__member li:nth-child(7){
+	order:7;
+}
+
+.jt__member-position{
+	padding-right: 30px;
+	padding-left: 30px;
+	min-height: 66px;
+	display: flex !important;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.jt__member-img{
+	margin-bottom:1em !important;
+}
+
+.jt__member img{
+	width:100%;
+}
+
+.post-81 .jt__wrapper h2,
+.post-81 .jt__wrapper h3,
+.post-81 .jt__wrapper h4,
+.post-81 .jt__wrapper h5,
+.post-81 .jt__wrapper h6,
+.post-81 .jt__wrapper p{
+	padding-left:0 !important;
+	width:100% !important;
+}
+
+/*-----------------------------------------------------------
+				Page BDE - widgets
+------------------------------------------------------------*/
+
+#section-page-bde-widgets{
+	padding-right:5%;
+	padding-left:5%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin-top:40px;
+}
+
+#section-page-bde-widgets,
+#section-page-bde-widgets p{
+	text-align:center;
+}
+
+#section-page-bde-widgets section{
+	padding-bottom: 0 !important;
+	margin-bottom: 30px;
+}
+
+#section-contact-bde {
+	margin-bottom:40px;
+}
+
+#section-contact-bde p {
+	font-weight: bold;
+}
+
+#section-social-networks #menu-menu-des-liens-de-reseaux-sociaux{
+	display:flex !important;
+	justify-content: center;
+}
+
+#section-social-networks #menu-menu-des-liens-de-reseaux-sociaux li{
+	margin-right:20px;
+	margin-left:20px;
+}
+
+#section-social-networks .menu-item{
+	border:none;
+}
+
+#section-social-networks #menu-menu-des-liens-de-reseaux-sociaux img:hover{
+	-webkit-transform:rotate(540deg); 
+    -moz-transform:rotate(540deg);
+    -o-transform:rotate(540deg); 
+    -ms-transform:rotate(540deg); 
+    transform:rotate(540deg);
+}
+
+#section-social-networks #menu-menu-des-liens-de-reseaux-sociaux img{
+  -webkit-transition:-webkit-transform .9s; 
+  -moz-transition:-moz-transform .9s;       
+  -o-transition:-o-transform .9s;          
+  -ms-transition:-ms-transform .9s;         
+  transition:transform .9s;
+}
+
+#section-social-networks-others #custom_html-6 p{
+	font-weight: bold;
+	font-size:18px !important;
+	letter-spacing: 3px;
+}
+
+/*-----------------------------------------------------------
+				Page useful links
+------------------------------------------------------------*/
+
+.page-template-default.page.page-id-417 a{
+	font-weight: bold;
+}
+
+/*-----------------------------------------------------------
+						Events
+------------------------------------------------------------*/
+
+#section-upcoming-event{
+	margin-top:50px;
+	margin-bottom:50px;
+}
+
+#section-upcoming-event h1{
+	text-align: center;
+}
+
+#section-upcoming-event img, .event-template-default.single.single-event .entry-header.large img{
+	max-width:75%;
+}
+
+#section-upcoming-event .eo-event-header.entry-header{
+	position:relative;
+	margin-bottom:10px !important;
+}
+
+#section-upcoming-event .eo-event-header.entry-header p{
+	text-align:center !important;
+}
+
+#section-upcoming-event .eo-event-header.entry-header::before{
+	content:"";
+	height:480px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	margin-top:0px !important;
+	z-index:-10;
+}
+
+.eo-event-date{
+	text-align: center;
+	font-weight: bold;
+	padding-top:30px;
+}
+
+.eo-event-details.event-entry-meta, .eo-event-content{
+	width:80%;
+	margin:auto;
+}
+
+.event-presentation{
+	width:75%;
+	margin:auto;
+	margin-bottom:10px;
+	position:relative;
+}
+
+.event-category{
+	text-align:center;
+	font-weight:bold;
+	text-transform: uppercase;
+}
+
+.eo-event-content{
+	padding-bottom:2px;
+}
+
+.button-more-informations{
+	text-align:center;
+	margin-top:20px;
+}
+
+.event-template-default.single.single-event .entry-header.large{
+	text-align:center;
+}
+
+.event-template-default.single.single-event .entry-header.large::before{
+	margin-top:40px !important;
+	height:525px !important;
+}
+
+.event-template-default.single.single-event .event-category{
+	margin-top:5px;
+}
+
+.event-template-default.single.single-event .entry-header.large img{
+	margin-top:50px;
+}
+
+.event-navigation{
+	display: flex;
+	justify-content: center;
+}
+
+.event-navigation p{
+	margin-top: 9px;
+	margin-bottom: 13.5px;
+}
+
+.link-text-next-month{
+	font-weight: bold;
+}
+
+.archive .page-header{
+	max-width:100% !important;
+	margin-bottom:0 !important;
+}
+
+.archive .page-header h1{
+	text-align: center;
+}
+
+.events-sorting-navigation{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap:wrap;
+}
+
+.events-sorting-navigation p{
+	margin-top: 11px;
+	margin-bottom: 11px;
+}
+
+.events-sorting-navigation{
+	padding-right: 5%;
+	padding-left: 10%;
+}
+
+.archive-navigation{
+	font-weight: bold;
+}
+
+.archive-navigation a{
+	margin-left: 12px;
+	margin-right: 12px;
+}
+
+.page-template-template-page-events h1{
+	text-align: center;
+}
+
+.page-template-template-page-events .category-subtitle,
+.tag-subtitle{
+	margin-bottom:20px !important;
+}
+
+.archive.tax-event-category h1,
+.archive.tax-event-tag h1{
+	margin-bottom: 10px !important;
+}
+
+.category-subtitle,
+.tag-subtitle{
+	text-align: center;
+	padding-top:0;
+	margin-bottom: 10px;
+	text-transform: uppercase !important;
+	font-weight: bold;
+}
+
+.archive.tax-event-category .event-category{
+	display:none;
+}
+
+.day-date-events{
+	text-align: center;
+	font-weight: bold;
+}
+
+/*-----------------------------------------------------------
+							Event
+------------------------------------------------------------*/
+
+.event-template-default.single.single-event h1{
+	margin-bottom: 10px;
+}
+
+.event-venue-subtitle{
+	text-align: center;
+	padding-top: 0;
+}
+
+.event-address,
+.event-dates{
+	text-align: center;
+	font-weight: bold;
+}
+
+.eo-venue-map{
+	z-index:0 !important;
+}
+
+.event-meta{
+	width:100%;
+	padding-right: 2%;
+	padding-left: 2%;
+	margin-top:20px;
+	padding-bottom: 20px;
+}
+
+.event-meta,
+.event-meta li{
+	list-style: none !important;
+}
+
+.event-tags{
+	font-style: italic;
+	text-align: right;
+}
+
+.eventorganiser-event-meta{
+	width:90%;
+	margin:auto;
+	margin-top:40px;
+}
+
+.event-venue-meta{
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.venue-address,
+.event-template-default.single.single-event .eo-event-venue-map{
+	width:45% !important;
+}
+
+.subtitle-event-venue{
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.event-venue-name{
+	text-align:center;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.entry-content.event-presentation{
+
+}
+
+/*-----------------------------------------------------------
+			Similar events
+------------------------------------------------------------*/
+
+#section-similar-events{
+	margin-bottom:30px;
+}
+
+#section-similar-events h2{
+	text-align: center;
+}
+
+#similar-events{
+	display:flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.similar-event{
+	width:30%;
+}
+
+.similar-event header{
+	padding-bottom: 5px !important;
+	padding-top:5px !important;
+}
+
+.similar-event .eo-event-date{
+	padding-top: 0;
+}
+
+.similar-event-content {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  bottom:0;
+  left: 0;
+  right: 0;
+  background-color: rgba(34, 66, 124, 0.7);
+  overflow: hidden;
+  width: 100%;
+  height: 50px;
+  transition: .5s ease;
+}
+
+.similar-event-content:hover .overlay {
+  height: 100%;
+}
+
+.similar-event-text {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -5%);
+  -ms-transform: translate(-50%, -5%);
+  transform: translate(-50%, -5%);
+  text-align: center;
+  width:80%;
+}
+
+.similar-event-text h3,
+.similar-event-text p
+{
+	width:100% !important;
+}
+
+.similar-event-text h3{
+	padding-top:10px;
+}
+
+/*-----------------------------------------------------------
+			Events and partners resume
+------------------------------------------------------------*/
+
+.articles-resume{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content: space-between;
+}
+
+.articles-resume article{
+ 	width:40%;
+ 	margin-bottom:40px;
+ 	margin-right: 5% !important;
+ 	margin-left: 5% !important;
+}
+
+.articles-resume article header p{
+	text-align: center;
+	margin-bottom:0 !important;
+}
+
+
+.articles-resume .entry-header{
+	margin-bottom:0 !important;
+	padding-bottom: 0 !important;
+}
+
+.articles-resume .entry-header::before{
+	display:none !important;
+}
+
+.articles-resume .eo-event-date{
+	margin-bottom:0;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+
+.articles-resume .event-presentation{
+	width:100%;
+}
+
+/*-----------------------------------------------------------
+						Pagination
+------------------------------------------------------------*/
+
+.numbered-pagination{
+	display: flex;
+	justify-content: center;
+}
+
+.colors-custom .next.page-numbers, .colors-custom .prev.page-numbers{
+	background-color:#FFFFFF !important;
+}
+
+/*-----------------------------------------------------------
+						Comments
+------------------------------------------------------------*/
+
+#respond{
+	margin-bottom: 40px;
+}
+
+#comments{
+	padding-top: 20px;
+}
+
+#reply-title{
+	text-align:center;
+}
+
+#commentform textarea,
+#commentform #author,
+#commentform #email{
+	background: #F1F1F1;
+	box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 5px;
+	border-color:#FFFFFF;
+}
+
+#commentform textarea{
+	height:150px;
+}
+
+.commentform{
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width:55%;
+	margin:auto;
+}
+
+.comment-form-comment{
+	width:58%;
+}
+
+#commentform .author-data{
+	width:40%;
+}
+
+#commentform .form-submit{
+	text-align: center;
+}
+
+.comment{
+	width:65%;
+	margin-left:5%;
+}
+
+.comment b{
+	color:#FFFFFF !important;
+}
+
+.comment .comment-metadata{
+	text-align: right;
+}
+
+.comment .comment-metadata time{
+	text-transform: none !important;
+	font-style: italic;
+}
+
+.comment-body{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-bottom: 0;
+}
+
+.comment-body footer:nth-child(1)
+{
+	order: 1;
+	width:82%;
+	margin-top:0 !important;
+	padding: 5px 10px 5px 80px;
+}
+
+.comment-body .comment-content:nth-child(2)
+{
+	order: 3;
+	width:100%;
+	padding-left:5%;
+	padding-right: 25%;
+}
+
+.comment-body .reply:nth-child(3)
+{
+	order: 2;
+	width:15%;
+	cursor: pointer;
+	text-align: center;
+	height: auto;
+	margin-top:auto;
+	padding-top:7px;
+	padding-bottom: 7px;
+}
+
+.children .comment{
+	width:100% !important;
+	margin-left:0 !important;
+}
+
+.comment-list li{
+	position:relative;
+	margin-bottom:70px;
+}
+
+.comment .children{
+	padding-left: 0 !important;
+}
+
+.comments-pagination .nav-links{
+	display: flex;
+	justify-content: center;
+}
+
+/*-----------------------------------------------------------
+					Single article
+------------------------------------------------------------*/
+
+.single-category{
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+
+.single-category li{
+	list-style: none;
+}
+
+.post.type-post .entry-content{
+	position:relative;
+	padding-bottom: 5px;
+}
+
+.post.type-post .entry-content p:last-child{
+	margin-bottom: 8px !important;
+}
+
+.post.type-post .entry-header.large{
+	text-align:center;
+}
+
+.post.type-post .entry-header.large::before{
+	margin-top:40px !important;
+	height:525px !important;
+}
+
+.post.type-post .entry-header.large img{
+	margin-top:50px;
+	max-width:75%;
+}
+
+.post.type-post span{
+	text-transform: none !important;
+}
+
+
+/*-----------------------------------------------------------
+			Similar article
+------------------------------------------------------------*/
+
+.similar-articles{
+	margin-top:50px;
+	display:flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.similar-articles h2{
+	text-align: center;
+	width:100%;
+}
+
+.similar-article{
+	width:30%;
+}
+
+.similar-article header{
+	padding-bottom: 5px !important;
+	padding-top:5px !important;
+	margin-bottom:10px;
+}
+
+.similar-article h3{
+	margin-bottom:0 !important;
+}
+
+.similar-article-content {
+  position: relative;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.similar-article .overlay {
+  position: absolute;
+  bottom:0;
+  left: 0;
+  right: 0;
+  background-color: rgba(34, 66, 124, 0.7);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+
+.similar-article-content:hover .overlay {
+  height: 110%;
+}
+
+.similar-article-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width:80%;
+}
+
+.similar-article-text p
+{
+	width:100% !important;
+}
+
+.similar-article .entry-header::before{
+	display:none !important;
+}
+
+/*-----------------------------------------------------------
+					Articles page
+------------------------------------------------------------*/
+
+.article-resume-presentation{
+	position: relative;
+	padding-bottom: 10px;
+}
+
+.article-resume-content p,
+.article-resume-entry-meta{
+	width:75%;
+	margin:auto;
+}
+
+
+/*-----------------------------------------------------------
+					Partners page
+------------------------------------------------------------*/
+
+.page-title{
+	text-align: center;
+}
+
+.partners-sorting-navigation #category-dropdown{
+	text-align: right;
+	margin-right: 10px;
+}
+
+/*-----------------------------------------------------------
+					Single partner page
+------------------------------------------------------------*/
+
+.partners .entry-header::before{
+	display:none;
+}
+
+.partners .attachment-post-thumbnail{
+	min-height: 0 !important;
+}
+
+.partners .post-thumbnail{
+	text-align: center;
+}
+
+.partners .similar-article img{
+	max-height:180px;
+	width:auto;
+}
+
+/*-----------------------------------------------------------
+					Contact form
+------------------------------------------------------------*/
+
+#post-374 .entry-header{
+	margin-top:35px;
+	margin-bottom:30px !important;
+	padding-bottom:0 !important;
+}
+
+#post-374 .wpcf7-form{
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+#post-374 .wpcf7-form p{
+	margin-right:0;
+	margin-left:0;
+}
+
+.wpcf7-form input,
+.wpcf7-form textarea{
+	background: #F1F1F1;
+	box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 5px;
+	border-color:#FFFFFF !important;
+}
+
+.wpcf7-form #contact-subject,
+.wpcf7-form #contact-message,
+.wpcf7-form #contact-name,
+.wpcf7-form #contact-firstname,
+.wpcf7-form #contact-mail,
+.wpcf7-form #contact-identity,
+.wpcf7-form #contact-identity span{
+	width:100% !important;
+}
+
+.wpcf7-form #contact-subject,
+.wpcf7-form #contact-message{
+	width:100% !important;
+}
+
+.wpcf7-form #contact-text{
+	width:62% !important;
+}
+
+.wpcf7-form #contact-informations{
+	width:35% !important;
+}
+
+.wpcf7-form .submit{
+	border-radius:2px !important;
+}
+
+#captcha{
+	margin-left:auto;
+}
+
+.wpcf7-form #contact-submit{
+	width:100% !important;
+	text-align: center;
+}
+
+/*-----------------------------------------------------------
+					Search form
+------------------------------------------------------------*/
+
+#site-navigation .openBtn {
+    background: #f1f1f1;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: none !important;
+}
+
+#site-navigation .openBtn:hover {
+    background: #bbb;
+    padding-bottom:5px;
+}
+
+#site-navigation .overlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(34, 66, 124, 0.8);
+}
+
+#site-navigation .overlay-content {
+    position: relative;
+    top: 30%;
+    width: 80%;
+    text-align: center;
+    margin-top: 30px;
+    margin: auto;
+}
+
+#site-navigation .overlay .closebtn {
+    position: absolute;
+    right: 45px;
+    font-size: 55px;
+    cursor: pointer;
+    color: white;
+}
+
+#site-navigation .overlay .closebtn:hover {
+    color: #ccc;
+}
+
+#site-navigation .overlay input[type=text] {
+    padding: 15px;
+    font-size: 17px;
+    border: none;
+    float: left;
+    width: 80%;
+    background: white;
+    border-radius: 0 !important;
+    height:55px;
+}
+
+#site-navigation .overlay input[type=text]:hover {
+    background: #f1f1f1;
+}
+
+#site-navigation .overlay button {
+    float: left;
+    width: 20%;
+    padding: 9px;
+    border: none;
+    cursor: pointer;
+ 	border-radius: 0 !important;
+ 	height: 55px;
+}
+
+/*-----------------------------------------------------------
+						Page search
+------------------------------------------------------------*/
+
+.search .has-post-thumbnail .entry-header::before{
+	display:none;
+}
+
+.search article{
+	margin-right:2%;
+	width:80% !important;
+}
+
+.search h2
+{
+	margin-bottom:0 !important;
+}
+
+.search .search-form{
+	width:90%;
+	margin:auto;
+}
+
+.search #primary{
+	width:64%;
+	margin-left:auto;
+	margin-right: 2%;
+}
+
+.search .page-header{
+	position:fixed;
+}
+
+.search #content{
+	margin-top:50px;
+}
+
+.search input{
+	border-color:#22427C !important;
+	color:#22427C !important;
+}
+
+/*-----------------------------------------------------------
+					Social medias share
+------------------------------------------------------------*/
+
+.panel-content .sharedaddy{
+	display:none;
+}
+
+.sharedaddy ul{
+	display: flex;
+	justify-content: right;
+}
+
+.sd-social-official .sd-content ul > li {
+	float:none !important;
+}
+
+.sharedaddy{
+	padding-bottom:2px;
+}
+
+
+/*-----------------------------------------------------------
+						Media queries
+------------------------------------------------------------*/
+
+@media screen and (max-width: 1200px) 
+{
+
+/*-----------------------------------------------------------
+					Image thumbnail
+------------------------------------------------------------*/
+
+	.single-post .attachment-post-thumbnail,
+	.single-event .attachment-post-thumbnail,
+	.page-template .single-featured-image-header img,
+	.home .attachment-post-thumbnail {
+		min-height: 0 !important;
+	}
+
+/*-----------------------------------------------------------
+						Fieldset
+------------------------------------------------------------*/
+
+	legend{
+		margin-left:0 !important;
+		padding-left:10px;
+		padding-right:10px !important;
+	}
+
+/*-----------------------------------------------------------
+				Caen page - around Caen section
+------------------------------------------------------------*/
+
+	#around-caen-section .csColumn p:last-child{
+		padding-bottom:20px;
+	}
+
+	#around-caen-section .csColumn img{
+		width:100% !important;
+	}
+
+/*-----------------------------------------------------------
+			Home page widgets
+------------------------------------------------------------*/
+
+	#section-calendar h2{
+		font-size:22px !important;
+	}
+
+	#section-calendar caption{
+		font-size:21px !important;
+	}
+
+	#section-page-partnership h2,
+	#section-download-app h2{
+		font-size:20px !important;
+	}
+
+/*-----------------------------------------------------------
+				BDE page - team section
+------------------------------------------------------------*/
+
+	.jt__member{
+		margin-right:5% !important;
+		margin-left:5% !important;
+	}
+
+/*-----------------------------------------------------------
+							Comments
+------------------------------------------------------------*/
+
+	.comment{
+		width:80%;
+	}
+
+	.comment article{
+		margin-left:0 !important;
+	}
+
+	.commentform{
+		width:70% !important;
+	}
+
+/*-----------------------------------------------------------
+				Similar events / partners / articles
+------------------------------------------------------------*/
+
+	.similar-event-content{
+		height:150px;
+	}
+}
+
+@media screen and (max-width: 959px) 
+{
+
+/*-----------------------------------------------------------
+						Text
+------------------------------------------------------------*/
+
+	h1{
+		font-size:35px !important;
+	}
+
+	h2{
+		font-size:25px !important;
+	}
+
+	h3,
+	#around-caen-section .csColumn p:first-child {
+		font-size:23px !important;
+	}
+
+	h4{
+		font-size:21px !important;
+	}
+
+	h5{
+		font-size:20px !important;
+	}
+
+	h6{
+		font-size:18px !important;
+	}
+
+/*-----------------------------------------------------------
+					Structure
+------------------------------------------------------------*/
+
+	.site-content{
+		padding-top:5.5em;
+	}
+
+	.page-id-19 .site-content{
+		padding-top:0 !important;
+	}
+
+/*-----------------------------------------------------------
+					Menu sandwich
+------------------------------------------------------------*/
+
+	#top-menu a{
+		font-size:14px;
+		padding-left: 6px;
+		padding-right: 6px;
+	}
+
+	#top-social-menu a{
+		padding-left: 3px;
+		padding-right: 3px;
+	}
+
+/*-----------------------------------------------------------
+				Home page widgets
+------------------------------------------------------------*/
+
+	#section-download-app,
+	#section-page-partnership{
+		width:45% !important;
+	}
+
+	#section-calendar{
+		width:100% !important;
+		margin-top: 50px;
+	}
+
+	.widget.widget_calendar{
+		margin:auto;
+	}
+
+	#section-page-partnership:nth-child(1)
+	{
+		order: 1;
+	}
+
+	#section-calendar:nth-child(2)
+	{
+		order: 3;
+	}
+
+	#section-download-app:nth-child(3)
+	{
+		order: 2;
+	}
+
+/*-----------------------------------------------------------
+						Events
+------------------------------------------------------------*/
+	#categories{
+		margin-left:auto;
+	}
+
+/*-----------------------------------------------------------
+				Similar events / partners / articles
+------------------------------------------------------------*/
+
+	.similar-event,
+	.similar-article{
+		width:45%;
+		margin-bottom: 20px;
+	}
+
+	.similar-event-content{
+		height: 200px;
+	}
+
+/*-----------------------------------------------------------
+					Contact form
+------------------------------------------------------------*/
+
+	#post-374 .entry-content{
+		width:90%;
+	}
+}
+
+
+@media screen and (max-width: 765px) 
+{
+
+/*-----------------------------------------------------------
+						Text
+------------------------------------------------------------*/
+
+	h1{
+		font-size:30px !important;
+	}
+
+	h2{
+		font-size:22px !important;
+	}
+
+	h3,
+	#around-caen-section .csColumn p:first-child {
+		font-size:20px !important;
+	}
+
+	h4{
+		font-size:19px !important;
+	}
+
+	h5,
+	#section-page-partnership h2,
+	#section-download-app h2{
+		font-size:18px !important;
+	}
+
+	h6{
+		font-size:17px !important;
+	}
+
+/*-----------------------------------------------------------
+					Menu sandwich
+------------------------------------------------------------*/
+	#logo-bde{
+		margin: auto;
+	}
+
+	.menu-menu-superieur-container{
+		display:none;
+	}
+
+	.menu-menu-superieur-mobile-container{
+		display:initial;
+	}
+
+	#nav-top #logo-bde:nth-child(1)
+	{
+		order: 2;
+	}
+
+	#nav-top .menu-menu-des-liens-de-reseaux-sociaux-container:nth-child(4)
+	{
+		order: 3;
+	}
+
+	#nav-top #openSearch:nth-child(5)
+	{
+		order: 4;
+	}
+
+	#nav-top .icon{
+		height:1.8em !important;
+		width:1.8em !important;
+	}
+
+	.navigation-top {
+		position: fixed;		
+		width: 100%;
+		z-index: 10;
+	}
+
+	#top-social-menu li{
+		padding:0 2px 0 2px;
+	}
+
+	#top-mobile-menu li, #top-social-menu li{
+		border:none;
+	}
+
+	.menu-toggle{
+		width:84px;
+		padding-left: 0;
+		padding-right:0;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.menu-toggle:focus{
+		outline:none;
+	}
+
+	#openSearch{
+		padding-right: 10px !important;
+		padding-left: 10px !important;
+	}
+
+/*-----------------------------------------------------------
+						footer
+------------------------------------------------------------*/
+
+	.widget-column.footer-widget-2{
+		margin:auto;
+	}
+
+	.wrap .site-info:nth-child(3)
+	{
+		order: 1;
+	}
+
+	.wrap .widget-column.footer-widget-1:nth-child(1)
+	{
+		order: 3;
+	}
+
+	.wrap .widget-column.footer-widget-2:nth-child(2)
+	{
+		order: 2;
+	}
+
+	.site-info, .widget-column.footer-widget-2{
+		margin-bottom:20px;
+	}
+
+	.widget-column.footer-widget-1
+	{
+		width:300px !important;
+		margin:auto;
+	}
+
+/*-----------------------------------------------------------
+						Page template
+------------------------------------------------------------*/
+
+	.has-post-thumbnail .entry-header::before{
+		display:none;
+	}
+
+	.single-featured-image-header,
+	.has-post-thumbnail .attachment-post-thumbnail,
+	.post.type-post .entry-header.large img {
+		max-width:100% !important;
+		margin-top:0 !important;
+	}
+
+	.entry-content{
+		width:100% !important;
+	}
+
+	.post-81 .entry-content h2,
+	.post-81 .entry-content h3,
+	.post-81 .entry-content h4,
+	.post-81 .entry-content h5,
+	.post-81 .entry-content h6,
+	.post-81 .entry-content p
+	{
+		width:80% !important;
+	}
+
+/*-----------------------------------------------------------
+				Home section upload documents
+------------------------------------------------------------*/
+
+	.post-109 fieldset{
+		width:90% !important;
+	}
+
+/*-----------------------------------------------------------
+				Caen page - useful links section
+------------------------------------------------------------*/
+
+	#useful-links-section {
+		width:90% !important;
+	}
+
+
+/*-----------------------------------------------------------
+				BDE page - team section
+------------------------------------------------------------*/
+
+	.jt__member{
+		margin-right:20% !important;
+		margin-left:20% !important;
+	}
+
+	.jt__wrapper{
+		width:95% !important;
+	}
+
+/*-----------------------------------------------------------
+						Events
+------------------------------------------------------------*/
+
+	#section-upcoming-event{
+		margin-top:20px;
+	}
+
+	#section-upcoming-event img{
+		max-width:100% !important;
+	}
+
+	.eo-event-date, 
+	#section-upcoming-event .eo-event-date {
+		font-size:16px !important;
+	}
+
+	#section-upcoming-event .eo-event-date{
+		background-color:#22427C;
+		margin-bottom:0;
+		padding-top:5px;
+		padding-bottom:5px;
+	}
+
+	.event-category{
+		font-size:14px !important;
+	}
+
+	.event-presentation,
+	.event-template-default.single.single-event .entry-content{
+		width:96% !important;
+	}
+
+	.events-sorting-navigation{
+		padding-right:5%;
+		padding-left: 5%;
+	}
+
+	#category-month-dropdown{
+		text-align: right;
+	}
+
+	#category-month-dropdown .custom-dropdown{
+		margin-bottom: 5px;
+	}
+/*-----------------------------------------------------------
+						Event
+------------------------------------------------------------*/
+
+	.venue-address,
+	.event-template-default.single.single-event .eo-event-venue-map{
+		width:98% !important;
+	}
+
+/*-----------------------------------------------------------
+			Events and partners resume
+------------------------------------------------------------*/
+
+	.articles-resume article{
+	 	width:100%;
+	 	margin-left: 0 !important;
+	 	margin-right: 0 !important;
+	}
+
+	.articles-resume .event-presentation{
+		width:96%;
+	}
+
+/*-----------------------------------------------------------
+						Partners 
+------------------------------------------------------------*/
+
+	.partners.has-post-thumbnail .attachment-post-thumbnail {
+		width: auto !important;
+	}
+
+	.page-template.page-template-template-page-partners img {
+		width: auto !important;
+	}
+
+	.article-resume-presentation::after,
+	.entry-content::after{
+		width:96% !important;
+		margin: auto;
+	}
+
+/*-----------------------------------------------------------
+			Similar events / partners / articles
+------------------------------------------------------------*/
+
+	.similar-event,
+	.similar-article{
+		width:96%;
+	}
+
+	.similar-event-content{
+		text-align:center;
+		height:250px;
+	}
+
+/*-----------------------------------------------------------
+							Comments
+------------------------------------------------------------*/
+	
+	.comment
+	{
+		margin:auto;
+	}
+
+	.comment-body footer:nth-child(1)
+	{
+		order: 1;
+		width: 100%;
+	}
+
+	.comment-body .comment-content:nth-child(2)
+	{
+		order: 2;
+		width:100%;
+	}
+
+	.comment-body .reply:nth-child(3)
+	{
+		order: 3;
+		margin-left:auto;
+		width:26% !important;
+		margin-bottom:10px;
+	}
+
+	.comment-list li::after{
+		width:100%;
+	}
+
+	.commentform{
+		width:80% !important;
+	}
+
+	.commentform .comment-form-comment{
+		width:100% !important;
+	}
+
+	.commentform .author-data{
+		width:100% !important;
+	}
+
+/*-----------------------------------------------------------
+					Contact form
+------------------------------------------------------------*/
+	
+	#post-374 .wpcf7-form p{
+		margin-bottom: 8px !important;
+	}
+
+	#post-374 .wpcf7-form #contact-message{
+		margin-bottom: 15px !important;
+	}
+
+	.wpcf7-form #contact-text,
+	.wpcf7-form #contact-informations{
+		width:90% !important;
+		margin:auto;
+	}
+
+	.wpcf7-form #contact-informations{
+		margin-bottom:15px;
+	}
+
+	.wpcf7-form #contact-identity{
+		width:70% !important;
+		margin:auto !important;
+	}
+
+	#captcha{
+		margin-top:20px;
+	}
+
+	.wpcf7-form-control.g-recaptcha.wpcf7-recaptcha div{
+		margin-left: auto !important;
+	}
+
+/*-----------------------------------------------------------
+						Page search
+------------------------------------------------------------*/
+
+	.search article{
+		margin-right:0;
+		width:100% !important;
+	}
+
+	.search #primary{
+		width:96%;
+		margin:auto;
+	}
+
+	.search .page-header{
+		position:inherit;
+	}
+}
+
+@media screen and (max-width: 700px) 
+{
+/*-----------------------------------------------------------
+					Home page
+------------------------------------------------------------*/
+
+	/*---------- Slideshow ------------*/
+
+	#n2-ss-3 p{
+		font-size:13px !important;
+	}
+
+	.row-two-columns .n2-ss-layer-row-inner{
+		flex-wrap:wrap !important;
+	}
+
+	.row-two-columns .n2-ss-layer.n2-ow,
+	.row-two-columns .n2-ss-layer.n2-ow.n2-ss-last-in-row{
+		width:100% !important;
+		margin-top:1px !important;
+		max-width:100% !important;
+	}
+
+	.row-two-columns .n2-ss-layer.n2-ow{
+		margin-bottom:3px !important;
+	}
+}
+
+@media screen and (max-width: 600px) 
+{
+
+/*-----------------------------------------------------------
+						Text
+------------------------------------------------------------*/
+
+	h1{
+		font-size:25px !important;
+	}
+
+	h2{
+		font-size:20px !important;
+	}
+
+	h3,
+	#around-caen-section .csColumn p:first-child {
+		font-size:19px !important;
+	}
+
+	h4{
+		font-size:18px !important;
+	}
+
+	h5,
+	#section-page-partnership h2,
+	#section-download-app h2{
+		font-size:17px !important;
+	}
+
+	h6{
+		font-size:16px !important;
+	}
+
+
+/*-----------------------------------------------------------
+					Page upload documents
+------------------------------------------------------------*/
+	.document-icon-row{
+		display:flex;
+		flex-direction: column;
+		margin-bottom:0 !important;
+	}
+
+	.document-icon{
+		width:100% !important;
+	}
+
+	.document-icon-row::after{
+		display:none;
+	}
+
+/*-----------------------------------------------------------
+				Home page widgets
+------------------------------------------------------------*/
+	#section-download-app,
+	#section-page-partnership{
+		width:100% !important;
+		padding-left: 15%;
+		padding-right: 15%;
+	}
+
+	#wp-calendar{
+		margin-bottom:50px;
+	}
+
+/*-----------------------------------------------------------
+					Events
+------------------------------------------------------------*/
+
+	.events-sorting-navigation{
+		padding-right:2%;
+		padding-left: 2%;
+	}
+}
+
+@media screen and (max-width: 480px) 
+{
+
+/*-----------------------------------------------------------
+					Home page
+------------------------------------------------------------*/
+
+	/*---------- Slideshow ------------*/
+
+	#n2-ss-3 p{
+		font-size:12px !important;
+	}
+
+	#n2-ss-3 .n2-ss-button-container a{
+		font-size:10px !important;
+	}
+
+/*-----------------------------------------------------------
+				Home section upload documents
+------------------------------------------------------------*/
+
+	.post-109 fieldset{
+		width:98% !important;
+	}
+
+
+/*-----------------------------------------------------------
+				Caen page - useful links section
+------------------------------------------------------------*/
+
+	#useful-links-section {
+		width:98% !important;
+	}
+
+	#useful-links-section legend{
+		margin-left:0px !important;
+		text-align: center;
+	}
+
+/*-----------------------------------------------------------
+				Caen page - around Caen section
+------------------------------------------------------------*/
+
+	#around-caen-section .csColumn {
+		width:100% !important;
+		margin:0 !important;
+	}
+
+	#around-caen-section .csColumn::after{
+		width:96%;
+		margin:auto;
+	}
+
+/*-----------------------------------------------------------
+				Home page widgets
+------------------------------------------------------------*/
+	
+	#section-page-partnership,
+	#section-download-app,
+	#section-calendar{
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+	#section-page-partnership:nth-child(1)
+	{
+		order: 1;
+	}
+
+	#section-calendar:nth-child(2)
+	{
+		order: 2;
+	}
+
+	#section-download-app:nth-child(3)
+	{
+		order: 3;
+	}
+
+/*-----------------------------------------------------------
+				Comments
+------------------------------------------------------------*/
+	
+	.comment{
+		width:100% !important;
+	}
+
+	.comment-body .comment-meta{
+		padding-left:10% !important;
+	}
+
+	.comment-body .reply
+	{
+		margin-right:5%;
+	}
+
+	.comment-list li::after{
+		width:96%;
+		margin:auto;
+	}
+
+/*-----------------------------------------------------------
+			Similar events / partners / articles
+------------------------------------------------------------*/
+
+	.similar-event-content{
+		height:180px;
+	}
+
+	.similar-event .eo-event-date{
+		font-size:14px !important;
+	}
+
+/*-----------------------------------------------------------
+					Contact form
+------------------------------------------------------------*/
+	
+	.wpcf7-form #contact-identity{
+		width:90% !important;
+	}
+
+/*-----------------------------------------------------------
+				BDE page - team section
+------------------------------------------------------------*/
+
+	.jt__member{
+		margin-right:5% !important;
+		margin-left:5% !important;
+	}
+
+	#section-social-networks-others #custom_html-6 p{
+		font-size:15px !important;
+	}
+}
+
+@media screen and (max-width: 359px) 
+{
+/*-----------------------------------------------------------
+				Home page
+------------------------------------------------------------*/
+	.n2-section-smartslider{
+		display: none;
+	}
+
+	#section-upcoming-event{
+		margin-top: 75px !important;
+	}
+}
